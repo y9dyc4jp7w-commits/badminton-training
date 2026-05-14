@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MyTraining">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>MyTraining</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #13131a;
+      --surface2: #1c1c27;
+      --accent: #e8ff47;
+      --accent2: #47c8ff;
+      --text: #f0f0f0;
+      --text-muted: #7a7a8a;
+      --border: #2a2a38;
+      --gym: #ff6b35;
+      --badminton: #47c8ff;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .header-logo span { color: var(--accent); }
+
+    .header-btn {
+      background: var(--accent);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ── NAV TABS ── */
+    .nav {
+      display: flex;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      flex: 1;
+      min-width: 80px;
+      padding: 12px 8px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── CONTENT ── */
+    .content { padding: 16px; padding-bottom: 32px; }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* ── HERO HEUTE ── */
+    .today-hero {
+      background: linear-gradient(135deg, var(--surface2) 0%, #1a1a28 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .today-hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 140px; height: 140px;
+      background: var(--accent);
+      opacity: 0.05;
+      border-radius: 50%;
+    }
+
+    .today-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .today-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .today-title .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .tag-gym { background: var(--gym); color: #fff; }
+    .tag-badminton { background: var(--badminton); color: #0a0a0f; }
+    .tag-rest { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); }
+
+    .today-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .today-meta-item {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .today-meta-item strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .start-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* ── EXERCISE CARD ── */
+    .exercise-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+    .exercise-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .exercise-header {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      cursor: pointer;
+      gap: 12px;
+    }
+
+    .exercise-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--accent);
+      min-width: 28px;
+      line-height: 1;
+    }
+
+    .exercise-info { flex: 1 }
+    .exercise-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .exercise-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .exercise-sets {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent2);
+      text-align: right;
+    }
+
+    .exercise-chevron {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+    }
+    .exercise-card.open .exercise-chevron { transform: rotate(180deg); }
+
+    .exercise-body {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+    }
+    .exercise-card.open .exercise-body { display: block; }
+
+    .set-row {
+      display: grid;
+      grid-template-columns: 32px 1fr 1fr 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .set-row:last-child { border-bottom: none; }
+
+    .set-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .set-input {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 8px;
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem;
+      text-align: center;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+    .set-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .set-input::placeholder { color: var(--text-muted); font-size: 0.75rem; }
+
+    .set-done {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem;
+      transition: all 0.15s;
+      margin: 0 auto;
+    }
+    .set-done.checked {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0a0a0f;
+    }
+
+    .exercise-note {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: var(--surface2);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .exercise-note strong { color: var(--accent2); }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── ARCHIV ── */
+    .archive-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .archive-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+    }
+
+    .archive-date-box {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: center;
+      min-width: 46px;
+    }
+    .archive-day {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .archive-month {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .archive-info { flex: 1 }
+    .archive-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    .archive-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .archive-score {
+      text-align: right;
+    }
+    .archive-pct {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+    .archive-pct-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FORTSCHRITT BARS ── */
+    .progress-bar-wrap {
+      background: var(--surface2);
+      border-radius: 4px;
+      height: 4px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    .stat-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .stat-unit {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-left: 2px;
+    }
+
+    /* ── NEUER PLAN FORMULAR ── */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-textarea { min-height: 80px; resize: vertical; }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .type-btn {
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-muted);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+    }
+    .type-btn.selected-gym { border-color: var(--gym); color: var(--gym); background: rgba(255,107,53,0.1); }
+    .type-btn.selected-badminton { border-color: var(--badminton); color: var(--badminton); background: rgba(71,200,255,0.1); }
+
+    .save-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--accent);
+      color: #0a0a0f;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      z-index: 999;
+      transition: transform 0.3s ease;
+      white-space: nowrap;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ── EMPTY STATE ── */
+    .empty {
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--text-muted);
+    }
+    .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+    .empty-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .empty-sub { font-size: 0.85rem; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">My<span>Training</span></div>
+  <button class="header-btn" onclick="showSection('neu')">＋ Neuer Plan</button>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('heute', this)">Heute</button>
+  <button class="nav-btn" onclick="showSection('archiv', this)">Archiv</button>
+  <button class="nav-btn" onclick="showSection('stats', this)">Stats</button>
+  <button class="nav-btn" onclick="showSection('neu', this)">＋ Neu</button>
+</nav>
+
+<!-- ═══════ HEUTE ═══════ -->
+<div class="content">
+  <section id="heute" class="section active">
+
+    <div class="today-hero">
+      <div class="today-date" id="todayDate"></div>
+      <div class="today-title">
+        Push Day A <span class="tag tag-gym">GYM</span>
+      </div>
+      <div class="today-meta">
+        <div class="today-meta-item">
+          <strong>6</strong>Übungen
+        </div>
+        <div class="today-meta-item">
+          <strong>~65</strong>Minuten
+        </div>
+        <div class="today-meta-item">
+          <strong>Woche 3</strong>Block 1
+        </div>
+      </div>
+      <button class="start-btn" onclick="showToast('Training gestartet! 💪')">Training starten</button>
+    </div>
+
+    <p class="section-title">Aufwärmen</p>
+    <div class="exercise-list">
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">W</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Rudern / Bike</div>
+            <div class="exercise-sub">Allgemeine Aktivierung</div>
+          </div>
+          <div class="exercise-sets">5 Min</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="exercise-note">
+            <strong>Ziel:</strong> Puls auf ~130 bpm bringen. Locker bleiben, kein Stress.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-title">Hauptübungen</p>
+    <div class="exercise-list" id="mainExercises">
+
+      <!-- Übung 1 -->
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">1</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Bankdrücken</div>
+            <div class="exercise-sub">Brust / Schulter / Trizeps</div>
+          </div>
+          <div class="exercise-sets">4 × 6–8</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="set-row">
+            <div class="set-label" style="font-size:0.65rem;color:var(--text-muted)">Set</div>
+            <div class="set-label" style="text-align:center">kg</div>
+            <div class="set-label" style="text-align:center">Wdh</div>
+            <div class="set-label" style="text-align:center">✓</div>
+          </div>
+          <div class="set-row">
+            <div class="set-label">1</div>
+            <input class="set-input" type="number" placeholder="80" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="8" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">2</div>
+            <input class="set-input" type="number" placeholder="82.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="7" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">3</div>
+            <input class="set-input" type="number" placeholder="82.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="6" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">4</div>
+            <input class="set-input" type="number" placeholder="80" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="8" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="exercise-note">
+            <strong>Pause:</strong> 2–3 Min · <strong>Fokus:</strong> Kontrollierte Exzentrik (3 Sek runter)
+          </div>
+        </div>
+      </div>
+
+      <!-- Übung 2 -->
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">2</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Schulterdrücken</div>
+            <div class="exercise-sub">Schulter / Trizeps</div>
+          </div>
+          <div class="exercise-sets">4 × 8–10</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="set-row">
+            <div class="set-label" style="font-size:0.65rem;color:var(--text-muted)">Set</div>
+            <div class="set-label" style="text-align:center">kg</div>
+            <div class="set-label" style="text-align:center">Wdh</div>
+            <div class="set-label" style="text-align:center">✓</div>
+          </div>
+          <div class="set-row">
+            <div class="set-label">1</div>
+            <input class="set-input" type="number" placeholder="55" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="10" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">2</div>
+            <input class="set-input" type="number" placeholder="57.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="9" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">3</div>
+            <input class="set-input" type="number" placeholder="57.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="8" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">4</div>
+            <input class="set-input" type="number" placeholder="55" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="10" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="exercise-note">
+            <strong>Pause:</strong> 2 Min · <strong>Tipp:</strong> Ellbogen leicht nach vorne, nicht flügeln
+          </div>
+        </div>
+      </div>
+
+      <!-- Übung 3 -->
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">3</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Schrägbankdrücken</div>
+            <div class="exercise-sub">Obere Brust</div>
+          </div>
+          <div class="exercise-sets">3 × 10–12</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="set-row">
+            <div class="set-label" style="font-size:0.65rem;color:var(--text-muted)">Set</div>
+            <div class="set-label" style="text-align:center">kg</div>
+            <div class="set-label" style="text-align:center">Wdh</div>
+            <div class="set-label" style="text-align:center">✓</div>
+          </div>
+          <div class="set-row">
+            <div class="set-label">1</div>
+            <input class="set-input" type="number" placeholder="65" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="12" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">2</div>
+            <input class="set-input" type="number" placeholder="65" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="11" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">3</div>
+            <input class="set-input" type="number" placeholder="62.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="12" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="exercise-note">
+            <strong>Pause:</strong> 90 Sek · 30° Neigung
+          </div>
+        </div>
+      </div>
+
+      <!-- Übung 4 -->
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">4</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Seitheben</div>
+            <div class="exercise-sub">Mittlerer Deltamuskel</div>
+          </div>
+          <div class="exercise-sets">4 × 12–15</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="set-row">
+            <div class="set-label" style="font-size:0.65rem;color:var(--text-muted)">Set</div>
+            <div class="set-label" style="text-align:center">kg</div>
+            <div class="set-label" style="text-align:center">Wdh</div>
+            <div class="set-label" style="text-align:center">✓</div>
+          </div>
+          <div class="set-row">
+            <div class="set-label">1</div>
+            <input class="set-input" type="number" placeholder="12" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">2</div>
+            <input class="set-input" type="number" placeholder="12" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="14" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">3</div>
+            <input class="set-input" type="number" placeholder="12" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="13" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">4</div>
+            <input class="set-input" type="number" placeholder="10" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="exercise-note">
+            <strong>Pause:</strong> 60 Sek · Daumen leicht nach unten, langsam runter
+          </div>
+        </div>
+      </div>
+
+      <!-- Übung 5 -->
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">5</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Trizeps Pushdown</div>
+            <div class="exercise-sub">Trizeps</div>
+          </div>
+          <div class="exercise-sets">3 × 12–15</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="set-row">
+            <div class="set-label" style="font-size:0.65rem;color:var(--text-muted)">Set</div>
+            <div class="set-label" style="text-align:center">kg</div>
+            <div class="set-label" style="text-align:center">Wdh</div>
+            <div class="set-label" style="text-align:center">✓</div>
+          </div>
+          <div class="set-row">
+            <div class="set-label">1</div>
+            <input class="set-input" type="number" placeholder="35" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">2</div>
+            <input class="set-input" type="number" placeholder="37.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="13" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">3</div>
+            <input class="set-input" type="number" placeholder="35" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="exercise-note">
+            <strong>Pause:</strong> 60 Sek · Ellbogen fest am Körper halten
+          </div>
+        </div>
+      </div>
+
+      <!-- Übung 6 -->
+      <div class="exercise-card" onclick="toggleExercise(this)">
+        <div class="exercise-header">
+          <div class="exercise-num">6</div>
+          <div class="exercise-info">
+            <div class="exercise-name">Kabelfliegende</div>
+            <div class="exercise-sub">Brust – Isolationsübung</div>
+          </div>
+          <div class="exercise-sets">3 × 15</div>
+          <div class="exercise-chevron">▼</div>
+        </div>
+        <div class="exercise-body">
+          <div class="set-row">
+            <div class="set-label" style="font-size:0.65rem;color:var(--text-muted)">Set</div>
+            <div class="set-label" style="text-align:center">kg</div>
+            <div class="set-label" style="text-align:center">Wdh</div>
+            <div class="set-label" style="text-align:center">✓</div>
+          </div>
+          <div class="set-row">
+            <div class="set-label">1</div>
+            <input class="set-input" type="number" placeholder="15" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">2</div>
+            <input class="set-input" type="number" placeholder="15" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="set-row">
+            <div class="set-label">3</div>
+            <input class="set-input" type="number" placeholder="12.5" inputmode="decimal">
+            <input class="set-input" type="number" placeholder="15" inputmode="numeric">
+            <button class="set-done" onclick="toggleDone(this, event)">✓</button>
+          </div>
+          <div class="exercise-note">
+            <strong>Finisher:</strong> Letzter Set als Drop-Set möglich
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="save-btn" onclick="saveWorkout()" style="margin-top:8px">
+      Training abschliessen & speichern
+    </button>
+
+  </section>
+
+  <!-- ═══════ ARCHIV ═══════ -->
+  <section id="archiv" class="section">
+    <p class="section-title">Trainingsarchiv</p>
+    <div class="archive-list" id="archiveList">
+      <!-- Beispieleinträge -->
+      <div class="archive-card">
+        <div class="archive-date-box">
+          <div class="archive-day">13</div>
+          <div class="archive-month">Mai</div>
+        </div>
+        <div class="archive-info">
+          <div class="archive-name">Push Day A <span class="tag tag-gym" style="font-size:0.6rem;padding:2px 6px">GYM</span></div>
+          <div class="archive-sub">6 Übungen · 68 Min</div>
+          <div class="progress-bar-wrap"><div class="progress-bar" style="width:92%"></div></div>
+        </div>
+        <div class="archive-score">
+          <div class="archive-pct">92%</div>
+          <div class="archive-pct-label">Abschluss</div>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div class="archive-date-box">
+          <div class="archive-day">11</div>
+          <div class="archive-month">Mai</div>
+        </div>
+        <div class="archive-info">
+          <div class="archive-name">Technik + Footwork <span class="tag tag-badminton" style="font-size:0.6rem;padding:2px 6px">Badminton</span></div>
+          <div class="archive-sub">Einzel · 90 Min</div>
+          <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+        </div>
+        <div class="archive-score">
+          <div class="archive-pct">100%</div>
+          <div class="archive-pct-label">Abschluss</div>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div class="archive-date-box">
+          <div class="archive-day">10</div>
+          <div class="archive-month">Mai</div>
+        </div>
+        <div class="archive-info">
+          <div class="archive-name">Pull Day A <span class="tag tag-gym" style="font-size:0.6rem;padding:2px 6px">GYM</span></div>
+          <div class="archive-sub">5 Übungen · 55 Min</div>
+          <div class="progress-bar-wrap"><div class="progress-bar" style="width:80%"></div></div>
+        </div>
+        <div class="archive-score">
+          <div class="archive-pct">80%</div>
+          <div class="archive-pct-label">Abschluss</div>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div class="archive-date-box">
+          <div class="archive-day">08</div>
+          <div class="archive-month">Mai</div>
+        </div>
+        <div class="archive-info">
+          <div class="archive-name">Beine / Core <span class="tag tag-gym" style="font-size:0.6rem;padding:2px 6px">GYM</span></div>
+          <div class="archive-sub">7 Übungen · 72 Min</div>
+          <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+        </div>
+        <div class="archive-score">
+          <div class="archive-pct">100%</div>
+          <div class="archive-pct-label">Abschluss</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ STATS ═══════ -->
+  <section id="stats" class="section">
+    <p class="section-title">Diese Woche</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Trainings</div>
+        <div class="stat-value">3<span class="stat-unit">/ 5</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Minuten</div>
+        <div class="stat-value">213<span class="stat-unit">min</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">GYM Sets</div>
+        <div class="stat-value">64</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Badminton</div>
+        <div class="stat-value">1<span class="stat-unit">× 90'</span></div>
+      </div>
+    </div>
+
+    <p class="section-title">Mai 2026</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Trainings</div>
+        <div class="stat-value">9</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Ø Dauer</div>
+        <div class="stat-value">71<span class="stat-unit">min</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Compliance</div>
+        <div class="stat-value">90<span class="stat-unit">%</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Streak</div>
+        <div class="stat-value">4<span class="stat-unit">Tage</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ NEUER PLAN ═══════ -->
+  <section id="neu" class="section">
+    <p class="section-title">Neuen Trainingsplan</p>
+    <div class="form-card">
+      <label class="form-label">Trainingsname</label>
+      <input class="form-input" type="text" placeholder="z.B. Push Day B, Footwork, Beine/Core…">
+
+      <label class="form-label">Typ</label>
+      <div class="type-grid">
+        <button class="type-btn" onclick="selectType(this,'gym')">🏋️ GYM</button>
+        <button class="type-btn" onclick="selectType(this,'badminton')">🏸 Badminton</button>
+      </div>
+
+      <label class="form-label">Datum</label>
+      <input class="form-input" type="date" id="newDate">
+
+      <label class="form-label">Dauer (Minuten)</label>
+      <input class="form-input" type="number" placeholder="60" inputmode="numeric">
+
+      <label class="form-label">Notizen / Fokus</label>
+      <textarea class="form-textarea" placeholder="Was ist der Fokus heute? Besondere Ziele, Einschränkungen…"></textarea>
+
+      <button class="save-btn" onclick="showToast('Plan gespeichert! ✅')">Plan speichern</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  // Datum setzen
+  const now = new Date();
+  const days = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+  const months = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  document.getElementById('todayDate').textContent =
+    days[now.getDay()] + ', ' + now.getDate() + '. ' + months[now.getMonth()] + ' ' + now.getFullYear();
+  document.getElementById('newDate').valueAsDate = now;
+
+  // Navigation
+  function showSection(id, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (btn) {
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  }
+
+  // Übung auf/zu
+  function toggleExercise(card) {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.exercise-card').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+
+  // Set abhaken
+  function toggleDone(btn, e) {
+    e.stopPropagation();
+    btn.classList.toggle('checked');
+  }
+
+  // Typ wählen
+  function selectType(btn, type) {
+    document.querySelectorAll('.type-btn').forEach(b => b.className = 'type-btn');
+    btn.classList.add('selected-' + type);
+  }
+
+  // Training speichern
+  function saveWorkout() {
+    showToast('Training gespeichert! 💪🔥');
+    setTimeout(() => showSection('archiv'), 1200);
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+</script>
+</body>
+</html>
