@@ -5,48 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="MyTraining">
+  <meta name="apple-mobile-web-app-title" content="MyBadmintonPlan">
   <meta name="theme-color" content="#1E3A5F">
-  <title>MyTraining</title>
+  <link rel="apple-touch-icon" href="icon.png">
+  <title>MyBadmintonPlan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --hdr: #1E3A5F; --hdr2: #2E5080; --bg: #f2f4f7; --white: #fff;
-      --border: #dde1e8; --text: #1a1a2e; --muted: #6b7280;
-      --aufw: #E8690A; --aufw-bg: #FFF3EB;
-      --haupt: #1E3A5F; --haupt-bg: #EBF0F7;
-      --cool: #16a34a; --cool-bg: #EDFBF2;
-      --hint: #7c3aed; --hint-bg: #F4EEFF;
-      --ist-bg: #fef9c3; --ist-bdr: #f59e0b;
-      --radius: 10px;
+      --hdr:#1E3A5F;--hdr2:#2E5080;--bg:#f2f4f7;--white:#fff;
+      --border:#dde1e8;--text:#1a1a2e;--muted:#6b7280;
+      --aufw:#E8690A;--aufw-bg:#FFF3EB;
+      --haupt:#1E3A5F;--haupt-bg:#EBF0F7;
+      --cool:#16a34a;--cool-bg:#EDFBF2;
+      --hint:#7c3aed;--hint-bg:#F4EEFF;
+      --ist-bg:#fef9c3;--ist-bdr:#f59e0b;
+      --radius:10px;
     }
     *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
     body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;font-size:14px}
 
-    /* ── HEADER ── */
+    /* HEADER */
     .hdr{background:var(--hdr);color:#fff;padding:12px 16px 0;position:sticky;top:0;z-index:100}
     .hdr-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px}
-    .hdr-title{font-size:1.1rem;font-weight:700}.hdr-title span{color:#e8ff47}
+    .hdr-title{font-size:1.1rem;font-weight:700;color:#fff}
+    .hdr-title span{color:#e8ff47}
     .hdr-date{font-size:0.7rem;opacity:0.65}
     .nav{display:flex;border-bottom:1px solid rgba(255,255,255,0.15)}
-    .nav-btn{flex:1;padding:9px 4px;background:none;border:none;color:rgba(255,255,255,0.5);font-family:inherit;font-size:0.7rem;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;text-transform:uppercase;letter-spacing:.04em}
+    .nav-btn{flex:1;padding:9px 2px;background:none;border:none;color:rgba(255,255,255,0.5);font-family:inherit;font-size:0.65rem;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;text-transform:uppercase;letter-spacing:.03em}
     .nav-btn.active{color:#e8ff47;border-bottom-color:#e8ff47}
 
-    /* ── CONTENT ── */
+    /* CONTENT */
     .content{padding:12px;padding-bottom:48px}
     .sec{display:none}.sec.active{display:block}
     .sec-title{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:8px}
     .sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
 
-    /* ── WOCHE NAVIGATOR ── */
+    /* WOCHE NAVIGATOR */
     .week-nav{display:flex;align-items:center;justify-content:space-between;background:var(--white);border-radius:var(--radius);padding:10px 14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.07)}
     .week-nav-btn{background:none;border:none;color:var(--hdr);font-size:1.1rem;cursor:pointer;padding:4px 8px;border-radius:6px}
     .week-nav-btn:active{background:var(--haupt-bg)}
     .week-info{text-align:center}
     .week-kw{font-size:0.75rem;font-weight:700;color:var(--hdr);text-transform:uppercase;letter-spacing:.06em}
     .week-fokus{font-size:0.68rem;color:var(--muted);margin-top:2px}
+    .week-badge-current{display:inline-block;background:#e8ff47;color:var(--hdr);font-size:0.6rem;font-weight:700;padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
 
-    /* ── WOCHEN-GRID ── */
+    /* WOCHEN-GRID */
     .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:12px}
     .day-cell{background:var(--white);border-radius:8px;padding:7px 4px;text-align:center;cursor:pointer;border:2px solid transparent;box-shadow:0 1px 2px rgba(0,0,0,.06);transition:border-color .15s}
     .day-cell.today{border-color:var(--hdr)}
@@ -59,10 +62,15 @@
     .dc-dot.gym{background:var(--aufw)}
     .dc-dot.badminton{background:#2563eb}
     .dc-dot.pause{background:#d1d5db}
+    .dc-dot.andere{background:#9333ea}
     .dc-dot.done{background:var(--cool)}
     .dc-pct{font-size:0.55rem;color:var(--cool);margin-top:1px;font-weight:600}
 
-    /* ── TAGESPLAN KARTE ── */
+    /* TAGESPLAN HEADER-BANNER (zeigt gewähltes Datum) */
+    .plan-date-banner{background:rgba(30,58,95,0.07);border-radius:8px;padding:7px 12px;margin-bottom:10px;font-size:0.75rem;color:var(--hdr);font-weight:600;display:flex;align-items:center;gap:6px}
+    .plan-date-banner span{opacity:0.6;font-weight:400}
+
+    /* TAGESPLAN KARTE */
     .plan-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
     .plan-hdr{background:var(--hdr);color:#fff;padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
     .ph-left{flex:1;min-width:0}
@@ -76,9 +84,8 @@
     .ibar.lv6,.ibar.lv7{background:#f97316}
     .ibar.lv8,.ibar.lv9,.ibar.lv10{background:#ef4444}
 
-    /* ── BEREICH ── */
+    /* BEREICH */
     .bh{display:flex;align-items:center;gap:8px;padding:8px 14px 6px;font-size:0.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--border)}
-    .bh:first-of-type{border-top:none}
     .bdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
     .bh-a{color:var(--aufw);background:var(--aufw-bg)}.bh-a .bdot{background:var(--aufw)}
     .bh-h{color:var(--haupt);background:var(--haupt-bg)}.bh-h .bdot{background:var(--haupt)}
@@ -89,7 +96,7 @@
     .ib-c{background:var(--cool-bg);border-left:3px solid var(--cool);color:#14532d}
     .ib-n{background:var(--hint-bg);border-left:3px solid var(--hint);color:#4c1d95}
 
-    /* ── TABELLE ── */
+    /* TABELLE */
     .utable{width:100%;border-collapse:collapse}
     .utable thead tr{background:#f8f9fb}
     .utable th{padding:5px 5px;font-size:0.58rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:left;border-bottom:1px solid var(--border)}
@@ -102,35 +109,43 @@
     .egym-b{display:inline-block;background:var(--haupt-bg);color:var(--haupt);border-radius:3px;padding:1px 5px;font-size:0.62rem;font-weight:700}
     .td-soll{text-align:center;font-size:0.75rem;color:var(--muted)}
     .td-ist{text-align:center;padding:3px 3px}
+
+    /* IST-Feld: numerisch (mit SOLL) */
     .ist-inp{width:48px;padding:5px 2px;background:var(--ist-bg);border:1.5px solid var(--ist-bdr);border-radius:5px;font-family:inherit;font-size:0.8rem;font-weight:600;color:#92400e;text-align:center;-webkit-appearance:none;display:block;margin:0 auto}
     .ist-inp:focus{outline:none;border-color:#d97706;background:#fef3c7}
     .ist-inp::placeholder{color:#d97706;font-size:.65rem;font-weight:400}
     .ist-inp.filled{background:#dcfce7;border-color:var(--cool);color:#15803d}
+
+    /* IST-Feld: frei (ohne SOLL) */
+    .ist-free{width:60px;padding:5px 4px;background:#f8f9fb;border:1.5px dashed #cbd5e1;border-radius:5px;font-family:inherit;font-size:0.75rem;color:var(--text);text-align:center;display:block;margin:0 auto}
+    .ist-free:focus{outline:none;border-color:#94a3b8;background:#fff}
+    .ist-free::placeholder{color:#cbd5e1;font-size:.62rem}
+    .ist-free.filled{background:#f0fdf4;border-color:#86efac;border-style:solid;color:#15803d}
+
     .td-notiz{font-size:0.62rem;color:var(--muted);max-width:65px;line-height:1.3}
 
-    /* ── FORTSCHRITT ── */
+    /* FORTSCHRITT */
     .prog-wrap{padding:7px 14px 10px;display:flex;align-items:center;gap:10px}
     .prog-bg{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
     .prog-fill{height:100%;background:var(--cool);border-radius:3px;transition:width .3s}
     .prog-lbl{font-size:0.7rem;font-weight:600;color:var(--cool);min-width:30px;text-align:right}
 
-    /* ── SAVE BTN ── */
+    /* SAVE BTN */
     .save-btn{width:calc(100% - 28px);margin:0 14px 14px;padding:11px;background:var(--hdr);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:600;font-size:0.85rem;cursor:pointer}
     .save-btn:active{opacity:.85}
 
-    /* ── PAUSE CARD ── */
+    /* PAUSE CARD */
     .pause-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
     .pause-hdr{background:#6b7280;color:#fff;padding:12px 14px}
-    .pause-title{font-size:1rem;font-weight:700}
-    .pause-sub{font-size:0.72rem;opacity:.75;margin-top:2px}
 
-    /* ── TYP BADGE ── */
+    /* TYP BADGE */
     .tbadge{font-size:0.6rem;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase}
     .tb-gym{background:#fff3eb;color:#e8690a}
     .tb-badminton{background:#eff6ff;color:#2563eb}
     .tb-pause{background:#f3f4f6;color:#6b7280}
+    .tb-andere{background:#faf5ff;color:#7c3aed}
 
-    /* ── ARCHIV ── */
+    /* ARCHIV */
     .arch-list{display:flex;flex-direction:column;gap:8px}
     .arch-card{background:var(--white);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,.07);cursor:pointer}
     .arch-date{background:var(--hdr);color:#fff;border-radius:8px;padding:7px 9px;text-align:center;min-width:42px}
@@ -142,14 +157,26 @@
     .arch-pct{font-weight:700;font-size:1.05rem;text-align:right}
     .arch-pct small{display:block;font-size:.6rem;color:var(--muted);font-weight:400}
 
-    /* ── STATS ── */
+    /* STATS */
     .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
     .stat-card{background:var(--white);border-radius:var(--radius);padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.07)}
     .stat-lbl{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
     .stat-val{font-size:1.55rem;font-weight:700;color:var(--hdr);line-height:1}
     .stat-val small{font-size:.72rem;color:var(--muted);font-weight:400}
+    .stat-card.wide{grid-column:1/-1}
+    .stat-bar-wrap{margin-top:8px}
+    .stat-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+    .stat-bar-lbl{font-size:0.65rem;color:var(--muted);min-width:70px}
+    .stat-bar-bg{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+    .stat-bar-fill{height:100%;border-radius:3px;transition:width .4s}
+    .stat-bar-val{font-size:0.65rem;font-weight:600;color:var(--text);min-width:28px;text-align:right}
+    .trend-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border)}
+    .trend-row:last-child{border-bottom:none}
+    .trend-lbl{font-size:0.75rem;color:var(--text)}
+    .trend-val{font-size:0.75rem;font-weight:600;color:var(--hdr)}
+    .trend-icon{font-size:0.9rem}
 
-    /* ── LANGZEITPLAN ── */
+    /* LANGZEITPLAN */
     .lz-card{background:var(--white);border-radius:var(--radius);padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.07);margin-bottom:10px}
     .lz-kw{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
     .lz-fokus{font-size:0.85rem;font-weight:600;margin-bottom:8px}
@@ -158,16 +185,12 @@
     .lz-tag.gym{background:var(--aufw)}
     .lz-tag.badminton{background:#2563eb}
     .lz-tag.pause{background:#d1d5db;color:var(--muted)}
-    .lz-tag.done{opacity:0.6}
+    .lz-tag.andere{background:#9333ea}
+    .lz-tag.done{opacity:0.55}
 
-    /* ── LOADING ── */
     .loading{text-align:center;padding:40px 20px;color:var(--muted);font-size:0.85rem}
-
-    /* ── TOAST ── */
     .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--hdr);color:#fff;padding:10px 20px;border-radius:50px;font-size:0.82rem;font-weight:600;z-index:999;transition:transform .25s ease;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.25)}
     .toast.show{transform:translateX(-50%) translateY(0)}
-
-    /* ── LEER ── */
     .empty{text-align:center;padding:32px 20px;color:var(--muted);font-size:0.82rem}
   </style>
 </head>
@@ -175,11 +198,11 @@
 
 <div class="hdr">
   <div class="hdr-top">
-    <div class="hdr-title">My<span>Training</span></div>
+    <div class="hdr-title">My<span>BadmintonPlan</span></div>
     <span class="hdr-date" id="hdrDate"></span>
   </div>
   <nav class="nav">
-    <button class="nav-btn active" onclick="showSec('heute',this)">Heute</button>
+    <button class="nav-btn active" onclick="showSec('training',this)">Training</button>
     <button class="nav-btn" onclick="showSec('woche',this)">Woche</button>
     <button class="nav-btn" onclick="showSec('langzeit',this)">Plan</button>
     <button class="nav-btn" onclick="showSec('archiv',this)">Archiv</button>
@@ -188,7 +211,7 @@
 </div>
 
 <div class="content">
-  <section id="heute" class="sec active"><div id="heuteContent"><div class="loading">Lade Trainingsdaten…</div></div></section>
+  <section id="training" class="sec active"><div id="trainingContent"><div class="loading">Lade Trainingsdaten…</div></div></section>
   <section id="woche" class="sec"><div id="wocheContent"><div class="loading">Lade Wochenplan…</div></div></section>
   <section id="langzeit" class="sec"><div id="langzeitContent"><div class="loading">Lade Langzeitplan…</div></div></section>
   <section id="archiv" class="sec"><div id="archivContent"><div class="loading">Lade Archiv…</div></div></section>
@@ -198,30 +221,22 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ═══════════════════════════════════════════
-//  KONFIGURATION – NUR DIESE ZEILE ANPASSEN
-// ═══════════════════════════════════════════
 const DATA_URL = 'training-data.json';
-
-// ═══ GLOBALE STATE ═══
 let DATA = null;
 let selectedDate = todayStr();
-let currentWeekIdx = 0;
+let currentWeekIdx = 0; // 0 = aktuelle/neueste Woche (oben)
 
 const DAYS = ['So','Mo','Di','Mi','Do','Fr','Sa'];
 const MONTHS = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
 const MONTHS_SHORT = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
 
 function todayStr() {
-  const d = new Date();
-  return d.toISOString().split('T')[0];
+  return new Date().toISOString().split('T')[0];
 }
-
 function fmtDate(str) {
   const d = new Date(str + 'T12:00:00');
   return DAYS[d.getDay()] + ', ' + d.getDate() + '. ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
 }
-
 function fmtDateShort(str) {
   const d = new Date(str + 'T12:00:00');
   return d.getDate() + '. ' + MONTHS_SHORT[d.getMonth()];
@@ -237,13 +252,15 @@ async function loadData() {
   try {
     const r = await fetch(DATA_URL + '?v=' + Date.now());
     DATA = await r.json();
-    // Finde aktuelle Woche
+    // Wochen sortieren: neueste zuerst (für Woche-Tab)
+    DATA.wochen.sort((a, b) => b.start.localeCompare(a.start));
+    // Aktuelle Woche finden
     currentWeekIdx = findWeekIdx(todayStr());
     if (currentWeekIdx < 0) currentWeekIdx = 0;
     renderAll();
   } catch(e) {
     document.querySelectorAll('.loading').forEach(el => {
-      el.textContent = '⚠️ training-data.json nicht gefunden. Bitte Datei auf GitHub hochladen.';
+      el.textContent = '⚠️ training-data.json nicht gefunden.';
     });
   }
 }
@@ -254,8 +271,7 @@ function findWeekIdx(dateStr) {
     const w = DATA.wochen[i];
     if (dateStr >= w.start && dateStr <= w.ende) return i;
   }
-  // Fallback: letzte Woche
-  return DATA.wochen.length - 1;
+  return 0;
 }
 
 function findTagByDate(dateStr) {
@@ -269,7 +285,7 @@ function findTagByDate(dateStr) {
 }
 
 function renderAll() {
-  renderHeute();
+  renderTraining();
   renderWoche();
   renderLangzeit();
   renderArchiv();
@@ -277,42 +293,56 @@ function renderAll() {
 }
 
 // ═══════════════════════════════
-//  HEUTE
+//  TRAINING (ehem. HEUTE)
 // ═══════════════════════════════
-function renderHeute() {
+function renderTraining() {
   const tag = findTagByDate(selectedDate);
-  const el = document.getElementById('heuteContent');
+  const el = document.getElementById('trainingContent');
+  const isToday = selectedDate === todayStr();
+  const label = isToday ? 'Heutiges Training' : fmtDate(selectedDate);
+
+  let banner = `<div class="plan-date-banner">
+    ${isToday ? '📅' : '🗓'} <span>${label}</span>
+    ${!isToday ? `<button onclick="goToToday()" style="margin-left:auto;background:var(--hdr);color:#fff;border:none;border-radius:5px;padding:3px 8px;font-size:0.62rem;cursor:pointer">→ Heute</button>` : ''}
+  </div>`;
+
   if (!tag) {
-    el.innerHTML = '<div class="empty">Kein Trainingsplan für dieses Datum.</div>';
+    el.innerHTML = banner + '<div class="empty">Kein Trainingsplan für dieses Datum.</div>';
     return;
   }
-  el.innerHTML = buildTagesplan(tag);
+  el.innerHTML = banner + buildTagesplan(tag);
   restoreIst(tag);
   updateProgress(tag);
 }
 
+function goToToday() {
+  selectedDate = todayStr();
+  currentWeekIdx = findWeekIdx(selectedDate);
+  renderTraining();
+  renderWoche();
+}
+
+// ═══════════════════════════════
+//  TAGESPLAN AUFBAU
+// ═══════════════════════════════
 function buildTagesplan(tag) {
   if (tag.typ === 'pause') return buildPauseCard(tag);
 
   let html = '<div class="plan-card">';
-  // Header
-  const lvl = tag.intensitaet || 0;
   html += `<div class="plan-hdr">
     <div class="ph-left">
       <div class="ph-datum">${fmtDate(tag.datum)}</div>
       <div class="ph-name">${tag.titel}</div>
-      <div class="ph-meta">${tag.dauer} Min · <span class="tbadge tb-${tag.typ}">${tag.typ.toUpperCase()}</span></div>
+      <div class="ph-meta">${tag.dauer > 0 ? tag.dauer + ' Min · ' : ''}<span class="tbadge tb-${tag.typ}">${tag.typ.toUpperCase()}</span></div>
     </div>
     <div class="ibars" id="ibars_${tag.datum}"></div>
   </div>`;
 
-  // Blöcke
   for (const block of (tag.blocks || [])) {
     html += buildBlock(block, tag.datum);
   }
 
-  // Fortschritt
-  const totalUeb = countUebungen(tag);
+  const totalUeb = countPflichtUebungen(tag);
   if (totalUeb > 0) {
     html += `<div class="prog-wrap">
       <span style="font-size:.68rem;color:var(--muted)">Abschluss</span>
@@ -320,7 +350,6 @@ function buildTagesplan(tag) {
       <span class="prog-lbl" id="pl_${tag.datum}">0%</span>
     </div>`;
   }
-
   html += `<button class="save-btn" onclick="saveWorkout('${tag.datum}')">✓ Training abschliessen & speichern</button>`;
   html += '</div>';
   return html;
@@ -328,11 +357,10 @@ function buildTagesplan(tag) {
 
 function buildBlock(block, datum) {
   let html = '';
-  const bhClass = {aufwaermen:'bh-a', hauptteil:'bh-h', cooldown:'bh-c', hinweis:'bh-n'}[block.bereich] || 'bh-h';
-  const ibClass = {aufwaermen:'ib-a', cooldown:'ib-c', hinweis:'ib-n'}[block.bereich];
+  const bhClass = {aufwaermen:'bh-a',hauptteil:'bh-h',cooldown:'bh-c',hinweis:'bh-n'}[block.bereich] || 'bh-h';
+  const ibClass = {aufwaermen:'ib-a',cooldown:'ib-c',hinweis:'ib-n'}[block.bereich];
 
   html += `<div class="bh ${bhClass}"><span class="bdot"></span>${block.label}</div>`;
-
   if (block.inhalt) {
     html += `<div class="info-box ${ibClass||''}">${block.inhalt}</div>`;
   }
@@ -342,16 +370,30 @@ function buildBlock(block, datum) {
       <th>Übung</th><th class="c">EGYM</th><th class="c">S×W</th>
       <th class="c">SOLL</th><th class="c">IST</th><th>Notiz</th>
     </tr></thead><tbody>`;
+
     for (const u of block.uebungen) {
       const istId = datum + '_' + u.id;
+      const hasSoll = u.soll && u.soll !== '–' && u.soll !== '';
+
+      let istCell;
+      if (hasSoll) {
+        // Numerisches Pflichtfeld (gelb)
+        istCell = `<input class="ist-inp" type="number" inputmode="decimal" placeholder="IST"
+          data-key="${istId}" data-datum="${datum}" data-pflicht="1"
+          oninput="onIst(this)" id="ist_${istId}">`;
+      } else {
+        // Freies optionales Textfeld (grau gestrichelt)
+        istCell = `<input class="ist-free" type="text" inputmode="text" placeholder="Notiz"
+          data-key="${istId}" data-datum="${datum}" data-pflicht="0"
+          oninput="onIst(this)" id="ist_${istId}">`;
+      }
+
       html += `<tr>
         <td class="td-n">${u.name}${u.info ? '<small>'+u.info+'</small>' : ''}</td>
         <td class="td-c">${u.egym ? '<span class="egym-b">'+u.egym+'</span>' : '–'}</td>
         <td class="td-c">${u.sxw}</td>
-        <td class="td-soll">${u.soll}</td>
-        <td class="td-ist"><input class="ist-inp" type="number" inputmode="decimal" placeholder="IST"
-          data-key="${istId}" data-datum="${datum}"
-          oninput="onIst(this)" id="ist_${istId}"></td>
+        <td class="td-soll">${u.soll || '–'}</td>
+        <td class="td-ist">${istCell}</td>
         <td class="td-notiz">${u.notiz||''}</td>
       </tr>`;
     }
@@ -361,23 +403,23 @@ function buildBlock(block, datum) {
 }
 
 function buildPauseCard(tag) {
-  let html = `<div class="pause-card">
-    <div class="pause-hdr">
-      <div class="ph-datum" style="font-size:.68rem;opacity:.7;margin-bottom:2px">${fmtDate(tag.datum)}</div>
-      <div class="pause-title">${tag.titel}</div>
-      <div class="pause-sub"><span class="tbadge tb-pause">Pause</span></div>
-    </div>`;
-  for (const block of (tag.blocks || [])) {
-    html += buildBlock(block, tag.datum);
-  }
+  let html = `<div class="pause-card"><div class="pause-hdr">
+    <div style="font-size:.68rem;opacity:.7;margin-bottom:2px">${fmtDate(tag.datum)}</div>
+    <div style="font-size:1rem;font-weight:700">${tag.titel}</div>
+    <div style="margin-top:3px"><span class="tbadge tb-pause">Pause</span></div>
+  </div>`;
+  for (const block of (tag.blocks || [])) html += buildBlock(block, tag.datum);
   html += '</div>';
   return html;
 }
 
-function countUebungen(tag) {
+// Nur Pflichtfelder (mit SOLL) zählen für Fortschritt
+function countPflichtUebungen(tag) {
   let n = 0;
   for (const b of (tag.blocks || [])) {
-    if (b.uebungen) n += b.uebungen.length;
+    for (const u of (b.uebungen || [])) {
+      if (u.soll && u.soll !== '–' && u.soll !== '') n++;
+    }
   }
   return n;
 }
@@ -393,7 +435,6 @@ function renderIntensityBars(containerId, level) {
   }
 }
 
-// IST-Felder
 function onIst(input) {
   input.classList.toggle('filled', input.value.trim() !== '');
   const datum = input.dataset.datum;
@@ -402,9 +443,7 @@ function onIst(input) {
 }
 
 function restoreIst(tag) {
-  // Intensity bars
   setTimeout(() => renderIntensityBars('ibars_' + tag.datum, tag.intensitaet || 0), 0);
-
   for (const b of (tag.blocks || [])) {
     for (const u of (b.uebungen || [])) {
       const key = tag.datum + '_' + u.id;
@@ -419,9 +458,9 @@ function restoreIst(tag) {
 
 function updateProgress(tag) {
   if (!tag) return;
-  const total = countUebungen(tag);
+  const total = countPflichtUebungen(tag);
   if (total === 0) return;
-  const filled = document.querySelectorAll(`[data-datum="${tag.datum}"].ist-inp.filled`).length;
+  const filled = document.querySelectorAll(`[data-datum="${tag.datum}"][data-pflicht="1"].filled`).length;
   const pct = Math.round((filled / total) * 100);
   const pf = document.getElementById('pf_' + tag.datum);
   const pl = document.getElementById('pl_' + tag.datum);
@@ -431,31 +470,31 @@ function updateProgress(tag) {
 
 function saveWorkout(datum) {
   const pl = document.getElementById('pl_' + datum);
-  const pct = pl ? pl.textContent : '?';
+  const pct = pl ? pl.textContent : '–';
   showToast('Gespeichert! ' + pct + ' abgeschlossen ✓');
-  // Update status in Archiv
   setTimeout(() => { showSec('archiv'); renderArchiv(); }, 1500);
 }
 
 // ═══════════════════════════════
-//  WOCHE
+//  WOCHE (neueste oben, ‹ = älter, › = neuer)
 // ═══════════════════════════════
 function renderWoche() {
   if (!DATA || !DATA.wochen.length) return;
-  const idx = currentWeekIdx;
-  const woche = DATA.wochen[idx];
+  const woche = DATA.wochen[currentWeekIdx];
   const el = document.getElementById('wocheContent');
+  const isCurrentWeek = currentWeekIdx === findWeekIdx(todayStr());
 
   let html = `<div class="week-nav">
-    <button class="week-nav-btn" onclick="changeWeek(-1)">‹</button>
+    <button class="week-nav-btn" onclick="changeWeek(1)" title="Ältere Woche">‹</button>
     <div class="week-info">
-      <div class="week-kw">KW ${woche.kw} · ${fmtDateShort(woche.start)} – ${fmtDateShort(woche.ende)}</div>
+      <div class="week-kw">KW ${woche.kw} · ${fmtDateShort(woche.start)} – ${fmtDateShort(woche.ende)}
+        ${isCurrentWeek ? '<span class="week-badge-current">Aktuell</span>' : ''}
+      </div>
       <div class="week-fokus">${woche.fokus}</div>
     </div>
-    <button class="week-nav-btn" onclick="changeWeek(1)">›</button>
+    <button class="week-nav-btn" onclick="changeWeek(-1)" title="Neuere Woche">›</button>
   </div>`;
 
-  // 7-Tage-Grid
   html += '<div class="week-grid">';
   for (const tag of woche.tage) {
     const d = new Date(tag.datum + 'T12:00:00');
@@ -475,30 +514,25 @@ function renderWoche() {
   }
   html += '</div>';
 
-  // Tagesplan des gewählten Tages
   const selTag = findTagByDate(selectedDate);
   if (selTag && selTag.datum >= woche.start && selTag.datum <= woche.ende) {
     html += buildTagesplan(selTag);
   } else {
-    // Zeige ersten Tag der Woche
-    html += buildTagesplan(woche.tage[0]);
-    selectedDate = woche.tage[0].datum;
+    const firstTag = woche.tage[0];
+    html += buildTagesplan(firstTag);
+    selectedDate = firstTag.datum;
   }
 
   el.innerHTML = html;
   const selT = findTagByDate(selectedDate);
-  if (selT) {
-    restoreIst(selT);
-    updateProgress(selT);
-  }
+  if (selT) { restoreIst(selT); updateProgress(selT); }
 }
 
 function changeWeek(dir) {
+  // dir = -1 → neuer (Index sinkt), dir = 1 → älter (Index steigt)
   const newIdx = currentWeekIdx + dir;
-  if (newIdx < 0 || newIdx >= DATA.wochen.length) {
-    showToast(dir < 0 ? 'Keine früheren Wochen verfügbar' : 'Keine weiteren Wochen geplant');
-    return;
-  }
+  if (newIdx < 0) { showToast('Neueste Woche erreicht'); return; }
+  if (newIdx >= DATA.wochen.length) { showToast('Keine älteren Wochen verfügbar'); return; }
   currentWeekIdx = newIdx;
   selectedDate = DATA.wochen[currentWeekIdx].tage[0].datum;
   renderWoche();
@@ -506,8 +540,17 @@ function changeWeek(dir) {
 
 function selectDay(datum) {
   selectedDate = datum;
-  renderHeute();
+  renderTraining();
   renderWoche();
+}
+
+function goToDate(datum) {
+  selectedDate = datum;
+  currentWeekIdx = findWeekIdx(datum);
+  renderTraining();
+  renderWoche();
+  showSec('training');
+  document.querySelectorAll('.nav-btn').forEach((b,i) => b.classList.toggle('active', i===0));
 }
 
 // ═══════════════════════════════
@@ -520,48 +563,33 @@ function renderLangzeit() {
   let html = `<div style="background:var(--hdr);color:#fff;border-radius:var(--radius);padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.1)">
     <div style="font-size:.68rem;opacity:.65;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">Langzeitplan</div>
     <div style="font-size:1.05rem;font-weight:700">${lz.titel}</div>
-    <div style="font-size:.72rem;opacity:.7;margin-top:3px">${fmtDateShort(lz.start)} – ${fmtDateShort(lz.ende)} · ${lz.wochen} Wochen</div>
+    <div style="font-size:.72rem;opacity:.7;margin-top:3px">${fmtDateShort(lz.start)} – ${fmtDateShort(lz.ende)}</div>
     <div style="font-size:.78rem;margin-top:6px;opacity:.85">${lz.ziel}</div>
   </div>`;
 
   html += '<p class="sec-title">Wochenübersicht</p>';
-
-  for (const woche of DATA.wochen) {
+  // Langzeitplan chronologisch (älteste zuerst)
+  const sorted = [...DATA.wochen].sort((a,b) => a.start.localeCompare(b.start));
+  for (const woche of sorted) {
     const done = woche.tage.filter(t => t.status === 'abgeschlossen').length;
     const total = woche.tage.length;
-    html += `<div class="lz-card">
-      <div class="lz-kw">KW ${woche.kw} · ${fmtDateShort(woche.start)} – ${fmtDateShort(woche.ende)}</div>
+    html += `<div class="lz-card"><div class="lz-kw">KW ${woche.kw} · ${fmtDateShort(woche.start)} – ${fmtDateShort(woche.ende)}</div>
       <div class="lz-fokus">${woche.fokus}</div>
       <div class="lz-tage">`;
     for (const tag of woche.tage) {
       const d = new Date(tag.datum + 'T12:00:00');
-      const doneCls = tag.status === 'abgeschlossen' ? ' done' : '';
-      html += `<div class="lz-tag ${tag.typ}${doneCls}" onclick="goToDate('${tag.datum}')" title="${tag.titel}">
-        ${DAYS[d.getDay()]}
-      </div>`;
+      html += `<div class="lz-tag ${tag.typ}${tag.status==='abgeschlossen'?' done':''}" onclick="goToDate('${tag.datum}')" title="${tag.titel}">${DAYS[d.getDay()]}</div>`;
     }
-    html += `</div>
-      <div style="font-size:.68rem;color:var(--muted);margin-top:6px">${done}/${total} abgeschlossen</div>
-    </div>`;
+    html += `</div><div style="font-size:.68rem;color:var(--muted);margin-top:6px">${done}/${total} abgeschlossen</div></div>`;
   }
 
-  // Legende
   html += `<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
     <div style="display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--muted)"><div style="width:12px;height:12px;border-radius:3px;background:var(--aufw)"></div>GYM</div>
     <div style="display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--muted)"><div style="width:12px;height:12px;border-radius:3px;background:#2563eb"></div>Badminton</div>
     <div style="display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--muted)"><div style="width:12px;height:12px;border-radius:3px;background:#d1d5db"></div>Pause</div>
+    <div style="display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--muted)"><div style="width:12px;height:12px;border-radius:3px;background:#9333ea"></div>Andere</div>
   </div>`;
-
   el.innerHTML = html;
-}
-
-function goToDate(datum) {
-  selectedDate = datum;
-  currentWeekIdx = findWeekIdx(datum);
-  renderHeute();
-  renderWoche();
-  showSec('heute');
-  document.querySelectorAll('.nav-btn').forEach((b,i) => b.classList.toggle('active', i===0));
 }
 
 // ═══════════════════════════════
@@ -570,28 +598,21 @@ function goToDate(datum) {
 function renderArchiv() {
   if (!DATA) return;
   const el = document.getElementById('archivContent');
-  const abgeschlossen = [];
-  for (const w of DATA.wochen) {
-    for (const t of w.tage) {
-      if (t.status === 'abgeschlossen') abgeschlossen.push(t);
-    }
-  }
-  abgeschlossen.reverse();
+  const alle = [];
+  for (const w of DATA.wochen) for (const t of w.tage) if (t.status === 'abgeschlossen') alle.push(t);
+  alle.sort((a,b) => b.datum.localeCompare(a.datum));
 
-  if (abgeschlossen.length === 0) {
-    el.innerHTML = '<div class="empty">Noch keine abgeschlossenen Trainings.</div>';
-    return;
-  }
+  if (alle.length === 0) { el.innerHTML = '<div class="empty">Noch keine abgeschlossenen Trainings.</div>'; return; }
 
   let html = '<p class="sec-title">Abgeschlossene Trainings</p><div class="arch-list">';
-  for (const t of abgeschlossen) {
+  for (const t of alle) {
     const d = new Date(t.datum + 'T12:00:00');
     const pctColor = t.abschluss_pct >= 90 ? 'var(--cool)' : t.abschluss_pct >= 70 ? 'var(--aufw)' : 'var(--muted)';
     html += `<div class="arch-card" onclick="goToDate('${t.datum}')">
       <div class="arch-date"><div class="arch-day">${d.getDate()}</div><div class="arch-mon">${MONTHS_SHORT[d.getMonth()]}</div></div>
       <div class="arch-info">
         <div class="arch-name">${t.titel} <span class="tbadge tb-${t.typ}">${t.typ.toUpperCase()}</span></div>
-        <div class="arch-sub">${t.dauer > 0 ? t.dauer + ' Min' : 'Pause'}</div>
+        <div class="arch-sub">${t.dauer > 0 ? t.dauer + ' Min' : 'Pause'} · KW ${(() => { for(const w of DATA.wochen) if(t.datum>=w.start&&t.datum<=w.ende) return w.kw; return '–'; })()}</div>
       </div>
       <div class="arch-pct" style="color:${pctColor}">${t.abschluss_pct}%<small>Abschluss</small></div>
     </div>`;
@@ -601,66 +622,138 @@ function renderArchiv() {
 }
 
 // ═══════════════════════════════
-//  STATS
+//  STATS (erweitert)
 // ═══════════════════════════════
 function renderStats() {
   if (!DATA) return;
   const el = document.getElementById('statsContent');
 
+  // Alle Daten berechnen
+  let totalDone = 0, totalAll = 0, totalMin = 0;
+  let gymDone = 0, badmintonDone = 0, pauseDone = 0, andereDone = 0;
+  let gymMin = 0, badmintonMin = 0;
+  let intensitaeten = [];
+  let wochenMitTraining = 0;
+
+  for (const w of DATA.wochen) {
+    const wDone = w.tage.filter(t => t.status === 'abgeschlossen').length;
+    if (wDone > 0) wochenMitTraining++;
+    for (const t of w.tage) {
+      totalAll++;
+      if (t.status === 'abgeschlossen') {
+        totalDone++;
+        totalMin += t.dauer || 0;
+        if (t.typ === 'gym') { gymDone++; gymMin += t.dauer || 0; }
+        if (t.typ === 'badminton') { badmintonDone++; badmintonMin += t.dauer || 0; }
+        if (t.typ === 'pause') pauseDone++;
+        if (t.typ === 'andere') andereDone++;
+        if (t.intensitaet > 0) intensitaeten.push(t.intensitaet);
+      }
+    }
+  }
+
+  const compliance = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) : 0;
+  const avgIntensity = intensitaeten.length > 0 ? (intensitaeten.reduce((a,b)=>a+b,0)/intensitaeten.length).toFixed(1) : '–';
+  const avgSessionMin = totalDone > 0 ? Math.round(totalMin / totalDone) : 0;
+  const badmintonPerWeek = wochenMitTraining > 0 ? (badmintonDone / wochenMitTraining).toFixed(1) : '–';
+  const gymPerWeek = wochenMitTraining > 0 ? (gymDone / wochenMitTraining).toFixed(1) : '–';
+
   // Aktuelle Woche
   const woche = DATA.wochen[currentWeekIdx] || DATA.wochen[0];
-  const gyms = woche.tage.filter(t => t.typ === 'gym').length;
-  const badmintons = woche.tage.filter(t => t.typ === 'badminton').length;
-  const minuten = woche.tage.reduce((s, t) => s + (t.dauer || 0), 0);
-  const done = woche.tage.filter(t => t.status === 'abgeschlossen').length;
+  const wDone = woche.tage.filter(t => t.status === 'abgeschlossen').length;
+  const wMin = woche.tage.reduce((s,t) => s + (t.dauer||0), 0);
+  const wGym = woche.tage.filter(t => t.typ==='gym').length;
+  const wBad = woche.tage.filter(t => t.typ==='badminton').length;
+  const wIntensities = woche.tage.filter(t=>t.intensitaet>0).map(t=>t.intensitaet);
+  const wAvgInt = wIntensities.length > 0 ? (wIntensities.reduce((a,b)=>a+b,0)/wIntensities.length).toFixed(1) : '–';
 
   let html = `<p class="sec-title">KW ${woche.kw} – ${woche.fokus}</p>
   <div class="stats-grid">
-    <div class="stat-card"><div class="stat-lbl">Trainings</div><div class="stat-val">${done}<small> / ${woche.tage.length}</small></div></div>
-    <div class="stat-card"><div class="stat-lbl">Minuten gesamt</div><div class="stat-val">${minuten}<small> min</small></div></div>
-    <div class="stat-card"><div class="stat-lbl">GYM Einheiten</div><div class="stat-val">${gyms}</div></div>
-    <div class="stat-card"><div class="stat-lbl">Badminton</div><div class="stat-val">${badmintons}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Trainings</div><div class="stat-val">${wDone}<small> / ${woche.tage.length}</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Minuten</div><div class="stat-val">${wMin}<small> min</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">GYM</div><div class="stat-val">${wGym}<small> Einh.</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Badminton</div><div class="stat-val">${wBad}<small> Einh.</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Ø Intensität KW</div><div class="stat-val">${wAvgInt}<small> /10</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Compliance KW</div><div class="stat-val">${woche.tage.length>0?Math.round(wDone/woche.tage.length*100):0}<small>%</small></div></div>
   </div>`;
 
-  // Gesamtplan
-  let totalDone = 0, totalAll = 0, totalMin = 0;
-  for (const w of DATA.wochen) {
-    for (const t of w.tage) {
-      totalAll++;
-      if (t.status === 'abgeschlossen') totalDone++;
-      totalMin += t.dauer || 0;
-    }
-  }
-  const compliance = totalAll > 0 ? Math.round((totalDone / totalAll) * 100) : 0;
-
-  html += `<p class="sec-title">Gesamtplan – ${DATA.meta.langzeitplan.titel}</p>
+  // Gesamtstatistik
+  html += `<p class="sec-title">Gesamtübersicht (${DATA.wochen.length} Wochen)</p>
   <div class="stats-grid">
-    <div class="stat-card"><div class="stat-lbl">Abgeschlossen</div><div class="stat-val">${totalDone}<small> / ${totalAll}</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Trainings gesamt</div><div class="stat-val">${totalDone}<small> / ${totalAll}</small></div></div>
     <div class="stat-card"><div class="stat-lbl">Compliance</div><div class="stat-val">${compliance}<small>%</small></div></div>
-    <div class="stat-card"><div class="stat-lbl">Gesamtminuten</div><div class="stat-val">${totalMin}<small> min</small></div></div>
-    <div class="stat-card"><div class="stat-lbl">Wochen geplant</div><div class="stat-val">${DATA.wochen.length}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Gesamtstunden</div><div class="stat-val">${Math.floor(totalMin/60)}<small>h ${totalMin%60}min</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Ø Session</div><div class="stat-val">${avgSessionMin}<small> min</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Ø Intensität</div><div class="stat-val">${avgIntensity}<small> /10</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Akt. Gewicht</div><div class="stat-val">${DATA.meta.gewicht_aktuell||'–'}<small> kg</small></div></div>
+  </div>`;
+
+  // Trainingsverteilung
+  const gymPct = totalDone > 0 ? Math.round(gymDone/totalDone*100) : 0;
+  const badPct = totalDone > 0 ? Math.round(badmintonDone/totalDone*100) : 0;
+  const pausePct = totalDone > 0 ? Math.round(pauseDone/totalDone*100) : 0;
+  html += `<p class="sec-title">Trainingsverteilung</p>
+  <div class="stats-grid">
+    <div class="stat-card wide">
+      <div class="stat-bar-wrap">
+        <div class="stat-bar-row">
+          <span class="stat-bar-lbl">🏋️ GYM</span>
+          <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:${gymPct}%;background:var(--aufw)"></div></div>
+          <span class="stat-bar-val">${gymDone}×</span>
+        </div>
+        <div class="stat-bar-row">
+          <span class="stat-bar-lbl">🏸 Badminton</span>
+          <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:${badPct}%;background:#2563eb"></div></div>
+          <span class="stat-bar-val">${badmintonDone}×</span>
+        </div>
+        <div class="stat-bar-row">
+          <span class="stat-bar-lbl">😴 Pause</span>
+          <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:${pausePct}%;background:#d1d5db"></div></div>
+          <span class="stat-bar-val">${pauseDone}×</span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+
+  // Belastungsrhythmus (Badminton/GYM pro Woche)
+  html += `<p class="sec-title">Wochendurchschnitt</p>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-lbl">Badminton / Woche</div><div class="stat-val">${badmintonPerWeek}</div></div>
+    <div class="stat-card"><div class="stat-lbl">GYM / Woche</div><div class="stat-val">${gymPerWeek}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Badminton-Zeit</div><div class="stat-val">${Math.floor(badmintonMin/60)}<small>h ${badmintonMin%60}min</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">GYM-Zeit</div><div class="stat-val">${Math.floor(gymMin/60)}<small>h ${gymMin%60}min</small></div></div>
+  </div>`;
+
+  // Trainer-Analyse
+  const gymBadRatio = badmintonDone > 0 ? (gymDone/badmintonDone).toFixed(2) : '–';
+  const regenPct = totalDone > 0 ? Math.round((pauseDone/totalDone)*100) : 0;
+  let regenStatus = regenPct < 15 ? '⚠️ Zu wenig' : regenPct > 35 ? '⚠️ Viel' : '✅ Gut';
+  let complianceStatus = compliance >= 85 ? '✅ Sehr gut' : compliance >= 70 ? '🟡 Gut' : '⚠️ Optimierbar';
+  let intensityStatus = parseFloat(avgIntensity) > 7 ? '⚠️ Hoch – Deload prüfen' : parseFloat(avgIntensity) > 5 ? '✅ Optimal' : '🟡 Konservativ';
+
+  html += `<p class="sec-title">Trainer-Analyse</p>
+  <div class="stat-card wide" style="margin-bottom:10px">
+    <div class="trend-row"><span class="trend-lbl">Trainings-Compliance</span><span class="trend-val">${complianceStatus}</span></div>
+    <div class="trend-row"><span class="trend-lbl">Regenerationsanteil</span><span class="trend-val">${regenStatus} (${regenPct}%)</span></div>
+    <div class="trend-row"><span class="trend-lbl">Ø Intensität gesamt</span><span class="trend-val">${intensityStatus}</span></div>
+    <div class="trend-row"><span class="trend-lbl">GYM:Badminton Verhältnis</span><span class="trend-val">${gymBadRatio} : 1</span></div>
+    <div class="trend-row"><span class="trend-lbl">Aktive Wochen</span><span class="trend-val">${wochenMitTraining} von ${DATA.wochen.length}</span></div>
   </div>`;
 
   el.innerHTML = html;
 }
 
-// ═══════════════════════════════
-//  NAVIGATION
-// ═══════════════════════════════
+// ═══ NAVIGATION ═══
 function showSec(id, btn) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  if (btn) {
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
-  // Re-render bei Woche (um aktualisierten Fortschritt zu zeigen)
+  if (btn) { document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
   if (id === 'woche' && DATA) renderWoche();
   if (id === 'stats' && DATA) renderStats();
   if (id === 'archiv' && DATA) renderArchiv();
+  if (id === 'training' && DATA) renderTraining();
 }
 
-// ═══ TOAST ═══
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -668,7 +761,6 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-// ═══ START ═══
 loadData();
 </script>
 </body>
