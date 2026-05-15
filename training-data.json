@@ -1,208 +1,153 @@
 {
   "meta": {
     "athlete": "MyTraining",
-    "version": "1.0",
+    "version": "2.0",
+    "gewicht_aktuell": 82.5,
     "langzeitplan": {
-      "titel": "Langzeitplan Block 1",
-      "start": "2026-05-12",
-      "ende": "2026-06-21",
-      "wochen": 6,
-      "ziel": "Badminton-Leistung + Gewichtsreduktion"
+      "titel": "Langzeitplan 2026 – Badminton & GYM",
+      "start": "2026-01-02",
+      "ende": "2026-05-17",
+      "ziel": "Badminton-Leistung + Gewichtsreduktion ~7kg + funktionale Muskeldefinition"
     }
   },
   "wochen": [
     {
-      "kw": 20,
-      "start": "2026-05-11",
-      "ende": "2026-05-17",
-      "fokus": "Grundlage – Skill & Kraft",
+      "kw": 1, "start": "2026-01-02", "ende": "2026-01-04",
+      "fokus": "Grundlage – Einstieg Jahresbeginn",
       "tage": [
-        {
-          "datum": "2026-05-11",
-          "wochentag": "So",
-          "typ": "gym",
-          "titel": "GYM – Skill-orientiert",
-          "dauer": 85,
-          "intensitaet": 6,
-          "status": "abgeschlossen",
-          "abschluss_pct": 91,
-          "blocks": [
-            {
-              "bereich": "aufwaermen",
-              "label": "Aufwärmen",
-              "inhalt": "Ergometer 8–10 Min · Ziel Z2 (105–120 bpm)\nDynamische Mobilisation 3–5 Min: Hüfte, Sprunggelenk, BWS"
-            },
-            {
-              "bereich": "hauptteil",
-              "label": "Block A – Unterkörper",
-              "uebungen": [
-                { "name": "Reverse Lunge", "info": "kontrolliert absenken", "egym": "", "sxw": "3×8/8", "soll": "22 kg", "notiz": "Beinarbeit", "id": "a1" },
-                { "name": "Step-up Knee Drive", "info": "explosiv, Balance", "egym": "", "sxw": "3×8/8", "soll": "18 kg", "notiz": "Split-Step", "id": "a2" },
-                { "name": "Beinpresse", "info": "EGYM", "egym": "r", "sxw": "3×8", "soll": "80 kg", "notiz": "nicht ans Limit", "id": "a3" },
-                { "name": "Wadenheben", "info": "", "egym": "r", "sxw": "3×15", "soll": "–", "notiz": "volle ROM", "id": "a4" }
-              ]
-            },
-            {
-              "bereich": "hauptteil",
-              "label": "Block B – Oberkörper & Rotation",
-              "uebungen": [
-                { "name": "Latzug", "info": "Schulterblatt aktiv", "egym": "r", "sxw": "3×8", "soll": "75 kg", "notiz": "", "id": "b1" },
-                { "name": "Landmine Press", "info": "Rotation aus Core", "egym": "", "sxw": "3×8/8", "soll": "22 kg", "notiz": "", "id": "b2" },
-                { "name": "Face Pulls", "info": "Pause hinten halten", "egym": "a", "sxw": "3×15", "soll": "27 kg", "notiz": "Schulter", "id": "b3" },
-                { "name": "Cable Chop", "info": "hoch→tief, stab. Hüfte", "egym": "", "sxw": "3×10/10", "soll": "30 kg", "notiz": "Core-Rotation", "id": "b4" }
-              ]
-            },
-            {
-              "bereich": "hauptteil",
-              "label": "Core & Stabilität",
-              "uebungen": [
-                { "name": "Pallof Press", "info": "", "egym": "", "sxw": "3×12/12", "soll": "22 kg", "notiz": "Anti-Rotation", "id": "c1" },
-                { "name": "Dead Bug", "info": "Becken stabil", "egym": "", "sxw": "3×8/8", "soll": "–", "notiz": "", "id": "c2" },
-                { "name": "Farmer Carry", "info": "aufrechte Haltung", "egym": "", "sxw": "3×30m", "soll": "32 kg", "notiz": "je Hand", "id": "c3" }
-              ]
-            },
-            {
-              "bereich": "cooldown",
-              "label": "Cool-Down",
-              "inhalt": "Rad oder Gehen locker · 6–8 Min · Puls <100 bpm\nDehnen 3–4 Min: Hüfte, Schulter, BWS"
-            },
-            {
-              "bereich": "hinweis",
-              "label": "Ernährung & Hinweis",
-              "inhalt": "Vor Training: Leichte KH + Protein · 1–2h vorher\nNach Training: Proteinreich, gemüsereich · keine schnellen KH abends"
-            }
-          ]
-        },
-        {
-          "datum": "2026-05-12",
-          "wochentag": "Mo",
-          "typ": "pause",
-          "titel": "Pause / Regeneration",
-          "dauer": 0,
-          "intensitaet": 0,
-          "status": "abgeschlossen",
-          "abschluss_pct": 100,
-          "blocks": [
-            { "bereich": "hinweis", "label": "Hinweis", "inhalt": "Aktive Regeneration: Spaziergang, Dehnen, viel Wasser trinken." }
-          ]
-        },
-        {
-          "datum": "2026-05-13",
-          "wochentag": "Di",
-          "typ": "badminton",
-          "titel": "Badminton – Traun",
-          "dauer": 130,
-          "intensitaet": 7,
-          "status": "abgeschlossen",
-          "abschluss_pct": 100,
-          "blocks": [
-            { "bereich": "aufwaermen", "label": "Aufwärmen", "inhalt": "Einschlagen 10 Min · Footwork locker · Puls aufbauen Z2" },
-            { "bereich": "hauptteil", "label": "Training", "inhalt": "Einzel-/Doppeltraining · Technik + Spielpraxis\nFokus: Split-Step, Richtungswechsel, Netzspiel" },
-            { "bereich": "cooldown", "label": "Cool-Down", "inhalt": "Ausschlagen 5 Min · Dehnen Oberschenkel, Waden, Schulter" }
-          ]
-        },
-        {
-          "datum": "2026-05-14",
-          "wochentag": "Mi",
-          "typ": "gym",
-          "titel": "GYM – Oberkörper Kraft",
-          "dauer": 70,
-          "intensitaet": 6,
-          "status": "geplant",
-          "abschluss_pct": 0,
-          "blocks": [
-            { "bereich": "aufwaermen", "label": "Aufwärmen", "inhalt": "Ergometer 8 Min · Puls Z2 · Schulter-Mobilisation" },
-            {
-              "bereich": "hauptteil",
-              "label": "Hauptteil – Oberkörper",
-              "uebungen": [
-                { "name": "Rudern sitzend", "info": "Schulterblatt zusammen", "egym": "r", "sxw": "4×8", "soll": "70 kg", "notiz": "", "id": "d1" },
-                { "name": "Schrägbankdrücken KH", "info": "kontrolliert", "egym": "", "sxw": "3×10", "soll": "24 kg", "notiz": "je Hand", "id": "d2" },
-                { "name": "Einarmiges KH-Rudern", "info": "stabiler Core", "egym": "", "sxw": "3×10/10", "soll": "28 kg", "notiz": "", "id": "d3" },
-                { "name": "Schulterdrücken EGYM", "info": "", "egym": "r", "sxw": "3×10", "soll": "45 kg", "notiz": "", "id": "d4" },
-                { "name": "Band Pull-Apart", "info": "Schulter-Prävention", "egym": "", "sxw": "3×15", "soll": "–", "notiz": "", "id": "d5" }
-              ]
-            },
-            { "bereich": "cooldown", "label": "Cool-Down", "inhalt": "Dehnen 5 Min: Brust, Schulter, Trizeps" },
-            { "bereich": "hinweis", "label": "Ernährung", "inhalt": "Vor Training: Protein + KH · Nach Training: Proteinshake + Gemüse" }
-          ]
-        },
-        {
-          "datum": "2026-05-15",
-          "wochentag": "Do",
-          "typ": "pause",
-          "titel": "Pause / Regeneration",
-          "dauer": 0,
-          "intensitaet": 0,
-          "status": "geplant",
-          "abschluss_pct": 0,
-          "blocks": [
-            { "bereich": "hinweis", "label": "Hinweis", "inhalt": "Regenerationstag nach Di-Badminton. Spaziergang, Mobility optional." }
-          ]
-        },
-        {
-          "datum": "2026-05-16",
-          "wochentag": "Fr",
-          "typ": "badminton",
-          "titel": "Badminton – Freitag",
-          "dauer": 120,
-          "intensitaet": 8,
-          "status": "geplant",
-          "abschluss_pct": 0,
-          "blocks": [
-            { "bereich": "aufwaermen", "label": "Aufwärmen", "inhalt": "Einschlagen 10 Min · Dynamic Footwork Drills" },
-            { "bereich": "hauptteil", "label": "Training", "inhalt": "Wettkampfnahes Training · Intensität hoch\nFokus: Ausdauer unter Druck, Smash-Präzision" },
-            { "bereich": "cooldown", "label": "Cool-Down", "inhalt": "Ausschlagen · Dehnen · Eisbad/kalte Dusche optional" }
-          ]
-        },
-        {
-          "datum": "2026-05-17",
-          "wochentag": "Sa",
-          "typ": "gym",
-          "titel": "GYM – Unterkörper & Core",
-          "dauer": 75,
-          "intensitaet": 6,
-          "status": "geplant",
-          "abschluss_pct": 0,
-          "blocks": [
-            { "bereich": "aufwaermen", "label": "Aufwärmen", "inhalt": "Bike 10 Min · Hüft-Mobilisation · Glute Activation" },
-            {
-              "bereich": "hauptteil",
-              "label": "Unterkörper",
-              "uebungen": [
-                { "name": "RDL Kurzhantel", "info": "Hüftscharnierend", "egym": "", "sxw": "4×8", "soll": "32 kg", "notiz": "je Hand", "id": "e1" },
-                { "name": "Bulgarischer Split Squat", "info": "unilateral", "egym": "", "sxw": "3×8/8", "soll": "20 kg", "notiz": "", "id": "e2" },
-                { "name": "Beinpresse", "info": "EGYM", "egym": "r", "sxw": "3×10", "soll": "80 kg", "notiz": "", "id": "e3" },
-                { "name": "Hip Thrust", "info": "Glute-Aktivierung", "egym": "", "sxw": "3×12", "soll": "60 kg", "notiz": "", "id": "e4" }
-              ]
-            },
-            {
-              "bereich": "hauptteil",
-              "label": "Core",
-              "uebungen": [
-                { "name": "Pallof Press", "info": "", "egym": "", "sxw": "3×12/12", "soll": "22 kg", "notiz": "", "id": "f1" },
-                { "name": "Suitcase Carry", "info": "Lateral Stabilität", "egym": "", "sxw": "3×30m", "soll": "28 kg", "notiz": "", "id": "f2" }
-              ]
-            },
-            { "bereich": "cooldown", "label": "Cool-Down", "inhalt": "Foam Rolling 5 Min · Dehnen: Hüftbeuger, Hamstrings, Waden" },
-            { "bereich": "hinweis", "label": "Ernährung", "inhalt": "Proteinreich nach Training · Kein Alkohol am Abend" }
-          ]
-        }
+        {"datum":"2026-01-02","wochentag":"Fr","typ":"gym","titel":"GYM – Oberkörper EGYM","dauer":70,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Z2"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Latzug","info":"EGYM","egym":"r","sxw":"3×10","soll":"65 kg","notiz":"","id":"a1"},{"name":"Rudern sitzend","info":"EGYM","egym":"r","sxw":"3×10","soll":"60 kg","notiz":"","id":"a2"},{"name":"Brustpresse","info":"EGYM","egym":"r","sxw":"3×10","soll":"55 kg","notiz":"","id":"a3"},{"name":"Schulterdrücken","info":"EGYM","egym":"r","sxw":"3×10","soll":"40 kg","notiz":"","id":"a4"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen 5 Min"}]},
+        {"datum":"2026-01-03","wochentag":"Sa","typ":"gym","titel":"GYM – Unterkörper EGYM","dauer":60,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Z2"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×10","soll":"80 kg","notiz":"","id":"b1"},{"name":"Beinbeuger","info":"EGYM","egym":"r","sxw":"3×10","soll":"50 kg","notiz":"","id":"b2"},{"name":"Wadenheben","info":"EGYM","egym":"r","sxw":"3×15","soll":"–","notiz":"","id":"b3"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen Hüfte, Hamstrings"}]},
+        {"datum":"2026-01-04","wochentag":"So","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hinweis","label":"Hinweis","inhalt":"Aktive Regeneration. Mobility optional."}]}
       ]
     },
     {
-      "kw": 21,
-      "start": "2026-05-18",
-      "ende": "2026-05-24",
-      "fokus": "Intensivierung – Ausdauer & Kraft",
+      "kw": 2, "start": "2026-01-05", "ende": "2026-01-11",
+      "fokus": "Badminton-Fokus + Gym-Grundlage",
       "tage": [
-        { "datum": "2026-05-18", "wochentag": "So", "typ": "gym", "titel": "GYM – Ganzköper Skill", "dauer": 80, "intensitaet": 6, "status": "geplant", "abschluss_pct": 0, "blocks": [] },
-        { "datum": "2026-05-19", "wochentag": "Mo", "typ": "pause", "titel": "Pause", "dauer": 0, "intensitaet": 0, "status": "geplant", "abschluss_pct": 0, "blocks": [] },
-        { "datum": "2026-05-20", "wochentag": "Di", "typ": "badminton", "titel": "Badminton – Traun", "dauer": 130, "intensitaet": 8, "status": "geplant", "abschluss_pct": 0, "blocks": [] },
-        { "datum": "2026-05-21", "wochentag": "Mi", "typ": "pause", "titel": "Pause / Regeneration", "dauer": 0, "intensitaet": 0, "status": "geplant", "abschluss_pct": 0, "blocks": [] },
-        { "datum": "2026-05-22", "wochentag": "Do", "typ": "gym", "titel": "GYM – Oberkörper", "dauer": 70, "intensitaet": 6, "status": "geplant", "abschluss_pct": 0, "blocks": [] },
-        { "datum": "2026-05-23", "wochentag": "Fr", "typ": "badminton", "titel": "Badminton – Freitag", "dauer": 120, "intensitaet": 8, "status": "geplant", "abschluss_pct": 0, "blocks": [] },
-        { "datum": "2026-05-24", "wochentag": "Sa", "typ": "gym", "titel": "GYM – Unterkörper", "dauer": 75, "intensitaet": 6, "status": "geplant", "abschluss_pct": 0, "blocks": [] }
+        {"datum":"2026-01-05","wochentag":"Mo","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-06","wochentag":"Di","typ":"badminton","titel":"Badminton + GYM","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen 10 Min"},{"bereich":"hauptteil","label":"Badminton","inhalt":"Technik + Spielpraxis"},{"bereich":"hauptteil","label":"GYM danach","uebungen":[{"name":"Latzug","info":"EGYM","egym":"r","sxw":"2×10","soll":"65 kg","notiz":"nach Badminton reduziert","id":"c1"},{"name":"Face Pulls","info":"Schulter-Präv.","egym":"a","sxw":"2×15","soll":"25 kg","notiz":"","id":"c2"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-07","wochentag":"Mi","typ":"gym","titel":"GYM – Ganzkörper EGYM","dauer":85,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 10 Min · Z2"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×10","soll":"65 kg","notiz":"","id":"d1"},{"name":"Rudern","info":"","egym":"r","sxw":"3×10","soll":"60 kg","notiz":"","id":"d2"},{"name":"Brustpresse","info":"","egym":"r","sxw":"3×10","soll":"55 kg","notiz":"","id":"d3"},{"name":"Beinpresse","info":"","egym":"r","sxw":"3×10","soll":"80 kg","notiz":"","id":"d4"},{"name":"Core Rotation","info":"","egym":"","sxw":"3×12","soll":"–","notiz":"","id":"d5"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen 5 Min"}]},
+        {"datum":"2026-01-08","wochentag":"Do","typ":"badminton","titel":"Badminton","dauer":115,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen 10 Min"},{"bereich":"hauptteil","label":"Training","inhalt":"Einzel · Technik + Spielpraxis"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-09","wochentag":"Fr","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-10","wochentag":"Sa","typ":"badminton","titel":"Badminton","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen"},{"bereich":"hauptteil","label":"Training","inhalt":"Technik + Doppel"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-11","wochentag":"So","typ":"gym","titel":"GYM – Oberkörper","dauer":80,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"70 kg","notiz":"","id":"e1"},{"name":"Rudern","info":"","egym":"r","sxw":"3×8","soll":"65 kg","notiz":"","id":"e2"},{"name":"Schulterdrücken","info":"","egym":"r","sxw":"3×10","soll":"42 kg","notiz":"","id":"e3"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"25 kg","notiz":"","id":"e4"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]}
+      ]
+    },
+    {
+      "kw": 3, "start": "2026-01-12", "ende": "2026-01-18",
+      "fokus": "Skill-Aufbau + Wettkampfvorbereitung",
+      "tage": [
+        {"datum":"2026-01-12","wochentag":"Mo","typ":"gym","titel":"GYM – Oberkörper","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Z2"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"70 kg","notiz":"","id":"f1"},{"name":"Rudern","info":"","egym":"r","sxw":"3×8","soll":"65 kg","notiz":"","id":"f2"},{"name":"Brustpresse","info":"","egym":"r","sxw":"3×8","soll":"60 kg","notiz":"","id":"f3"},{"name":"Schulterdrücken","info":"","egym":"r","sxw":"3×10","soll":"42 kg","notiz":"","id":"f4"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"f5"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-13","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen 10 Min"},{"bereich":"hauptteil","label":"Training","inhalt":"Technik + Spielpraxis · Split-Step-Fokus"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-14","wochentag":"Mi","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-15","wochentag":"Do","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-16","wochentag":"Fr","typ":"badminton","titel":"Badminton – Freitag","dauer":120,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen"},{"bereich":"hauptteil","label":"Training","inhalt":"Spielpraxis intensiv"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-17","wochentag":"Sa","typ":"gym","titel":"GYM – Unterkörper Skill","dauer":80,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Z2 · Hüft-Mobilisation"},{"bereich":"hauptteil","label":"Unterkörper","uebungen":[{"name":"Reverse Lunge","info":"kontrolliert","egym":"","sxw":"3×8/8","soll":"20 kg","notiz":"","id":"g1"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×8","soll":"85 kg","notiz":"","id":"g2"},{"name":"Wadenheben","info":"","egym":"r","sxw":"3×15","soll":"–","notiz":"","id":"g3"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen Hüfte, Hamstrings"}]},
+        {"datum":"2026-01-18","wochentag":"So","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]}
+      ]
+    },
+    {
+      "kw": 4, "start": "2026-01-19", "ende": "2026-01-25",
+      "fokus": "Wettkampfwoche + Skill-Gym",
+      "tage": [
+        {"datum":"2026-01-19","wochentag":"Mo","typ":"gym","titel":"GYM – Oberkörper","dauer":70,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"70 kg","notiz":"","id":"h1"},{"name":"Rudern","info":"","egym":"r","sxw":"3×8","soll":"65 kg","notiz":"","id":"h2"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"h3"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-01-20","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Einzel + Doppel"}]},
+        {"datum":"2026-01-21","wochentag":"Mi","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-22","wochentag":"Do","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-23","wochentag":"Fr","typ":"badminton","titel":"Badminton – Wettkampf","dauer":180,"intensitaet":9,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen · Warm-up Footwork"},{"bereich":"hauptteil","label":"Wettkampf","inhalt":"Meisterschaft · Volle Intensität"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Aktive Erholung · Dehnen"}]},
+        {"datum":"2026-01-24","wochentag":"Sa","typ":"pause","titel":"Pause / Erholung nach Wettkampf","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-25","wochentag":"So","typ":"gym","titel":"GYM – leicht regenerativ","dauer":60,"intensitaet":4,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Regeneration","inhalt":"Leichte EGYM-Einheit · Fokus Mobilisation"}]}
+      ]
+    },
+    {
+      "kw": 5, "start": "2026-01-26", "ende": "2026-02-01",
+      "fokus": "Skill-Fokus Ganzkörper – Cable Chop & Farmer Carry",
+      "tage": [
+        {"datum":"2026-01-26","wochentag":"Mo","typ":"gym","titel":"GYM – Skill Ganzkörper v2","dauer":85,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8–10 Min · Z2\nDynamische Mobilisation: Hüfte, Sprunggelenk, BWS"},{"bereich":"hauptteil","label":"Unterkörper","uebungen":[{"name":"Reverse Lunge","info":"kontrolliert absenken","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"Beinarbeit","id":"i1"},{"name":"Step-up Knee Drive","info":"explosiv","egym":"","sxw":"3×8/8","soll":"18 kg","notiz":"Split-Step","id":"i2"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×8","soll":"85 kg","notiz":"","id":"i3"}]},{"bereich":"hauptteil","label":"Oberkörper & Core","uebungen":[{"name":"Latzug","info":"Schulterblatt aktiv","egym":"r","sxw":"3×8","soll":"72 kg","notiz":"","id":"i4"},{"name":"Cable Chop","info":"hoch→tief, stab. Hüfte","egym":"","sxw":"3×10/10","soll":"28 kg","notiz":"Core-Rotation","id":"i5"},{"name":"Farmer Carry","info":"aufrechte Haltung","egym":"","sxw":"3×30m","soll":"30 kg","notiz":"je Hand","id":"i6"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Rad locker 6 Min · Dehnen"},{"bereich":"hinweis","label":"Ernährung","inhalt":"Vor: KH + Protein · Nach: Proteinreich, kein Alkohol"}]},
+        {"datum":"2026-01-27","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Technik + Spielpraxis"}]},
+        {"datum":"2026-01-28","wochentag":"Mi","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-29","wochentag":"Do","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-01-30","wochentag":"Fr","typ":"badminton","titel":"Badminton – Freitag","dauer":120,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Spielpraxis intensiv"}]},
+        {"datum":"2026-01-31","wochentag":"Sa","typ":"gym","titel":"GYM – Skill Unterkörper v2","dauer":80,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Hüft-Mobilisation"},{"bereich":"hauptteil","label":"Unterkörper","uebungen":[{"name":"RDL Kurzhantel","info":"Hüftscharnierend","egym":"","sxw":"4×8","soll":"30 kg","notiz":"je Hand","id":"j1"},{"name":"Bulg. Split Squat","info":"unilateral","egym":"","sxw":"3×8/8","soll":"18 kg","notiz":"","id":"j2"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×10","soll":"85 kg","notiz":"","id":"j3"},{"name":"Wadenheben","info":"","egym":"r","sxw":"3×15","soll":"–","notiz":"","id":"j4"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen Hüfte, Hamstrings, Waden"}]},
+        {"datum":"2026-02-01","wochentag":"So","typ":"gym","titel":"GYM – Skill Oberkörper v2","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Schulter-Mobilisation"},{"bereich":"hauptteil","label":"Oberkörper","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"72 kg","notiz":"","id":"k1"},{"name":"Landmine Press","info":"Rotation","egym":"","sxw":"3×8/8","soll":"20 kg","notiz":"","id":"k2"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"k3"},{"name":"Pallof Press","info":"","egym":"","sxw":"3×12/12","soll":"20 kg","notiz":"","id":"k4"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen Brust, Schulter"}]}
+      ]
+    },
+    {
+      "kw": 6, "start": "2026-02-02", "ende": "2026-02-08",
+      "fokus": "Knieschonend + Oberkörper/Core-Fokus",
+      "tage": [
+        {"datum":"2026-02-02","wochentag":"Mo","typ":"gym","titel":"GYM – Oberkörper knieschonend","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Schulter-Mobilisation"},{"bereich":"hauptteil","label":"Oberkörper","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"72 kg","notiz":"","id":"l1"},{"name":"Rudern sitzend","info":"","egym":"r","sxw":"3×8","soll":"68 kg","notiz":"","id":"l2"},{"name":"Landmine Press","info":"","egym":"","sxw":"3×8/8","soll":"20 kg","notiz":"","id":"l3"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"l4"},{"name":"Pallof Press","info":"","egym":"","sxw":"3×12/12","soll":"20 kg","notiz":"","id":"l5"}]},{"bereich":"hinweis","label":"Hinweis","inhalt":"Knie schonen – keine kniedomin. Übungen heute"}]},
+        {"datum":"2026-02-03","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Technik + Spielpraxis"}]},
+        {"datum":"2026-02-04","wochentag":"Mi","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-02-05","wochentag":"Do","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-02-06","wochentag":"Fr","typ":"badminton","titel":"Badminton – Freitag","dauer":120,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Spielpraxis"}]},
+        {"datum":"2026-02-07","wochentag":"Sa","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-02-08","wochentag":"So","typ":"gym","titel":"GYM – Oberkörper knieschonend","dauer":70,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Oberkörper","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"72 kg","notiz":"","id":"m1"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"m2"},{"name":"Pallof Press","info":"","egym":"","sxw":"3×12","soll":"20 kg","notiz":"","id":"m3"},{"name":"Dead Bug","info":"","egym":"","sxw":"3×8/8","soll":"–","notiz":"","id":"m4"}]}]}
+      ]
+    },
+    {
+      "kw": 7, "start": "2026-02-09", "ende": "2026-02-15",
+      "fokus": "Wettkampf + strukturiertes GYM",
+      "tage": [
+        {"datum":"2026-02-09","wochentag":"Mo","typ":"gym","titel":"GYM – Oberkörper knieschonend","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Z2"},{"bereich":"hauptteil","label":"Oberkörper","uebungen":[{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"73 kg","notiz":"","id":"n1"},{"name":"Einarm. KH-Rudern","info":"","egym":"","sxw":"3×10/10","soll":"28 kg","notiz":"","id":"n2"},{"name":"Landmine Press","info":"","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"","id":"n3"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"n4"},{"name":"Dead Bug","info":"","egym":"","sxw":"3×8/8","soll":"–","notiz":"","id":"n5"}]}]},
+        {"datum":"2026-02-10","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Technik + Spielpraxis"}]},
+        {"datum":"2026-02-11","wochentag":"Mi","typ":"badminton","titel":"Badminton – Wettkampf","dauer":180,"intensitaet":9,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen · Footwork-Warm-up"},{"bereich":"hauptteil","label":"Wettkampf","inhalt":"Meisterschaft · Volle Intensität · Z3–Z5"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Aktive Erholung"}]},
+        {"datum":"2026-02-12","wochentag":"Do","typ":"pause","titel":"Pause / Erholung","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-02-13","wochentag":"Fr","typ":"gym","titel":"GYM – Skill Ganzkörper","dauer":80,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Mobilisation"},{"bereich":"hauptteil","label":"Ganzkörper","uebungen":[{"name":"Reverse Lunge","info":"","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"","id":"o1"},{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"73 kg","notiz":"","id":"o2"},{"name":"Cable Chop","info":"","egym":"","sxw":"3×10/10","soll":"30 kg","notiz":"","id":"o3"},{"name":"Farmer Carry","info":"","egym":"","sxw":"3×30m","soll":"32 kg","notiz":"","id":"o4"}]}]},
+        {"datum":"2026-02-14","wochentag":"Sa","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-02-15","wochentag":"So","typ":"gym","titel":"GYM – Skill-orientiert strukturiert","dauer":85,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8–10 Min · Z2\nDynamische Mobilisation 3–5 Min: Hüfte, Sprunggelenk, BWS, Schulter"},{"bereich":"hauptteil","label":"Block A – Unterkörper","uebungen":[{"name":"Reverse Lunge","info":"kontrolliert absenken","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"Beinarbeit","id":"p1"},{"name":"Step-up Knee Drive","info":"explosiv, Balance","egym":"","sxw":"3×8/8","soll":"18 kg","notiz":"Split-Step","id":"p2"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×8","soll":"115 kg","notiz":"nicht ans Limit","id":"p3"},{"name":"Wadenheben","info":"","egym":"r","sxw":"3×15","soll":"–","notiz":"volle ROM","id":"p4"}]},{"bereich":"hauptteil","label":"Block B – Oberkörper & Rotation","uebungen":[{"name":"Latzug","info":"Schulterblatt aktiv","egym":"r","sxw":"3×8","soll":"75 kg","notiz":"","id":"p5"},{"name":"Landmine Press","info":"Rotation aus Core","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"","id":"p6"},{"name":"Face Pulls","info":"Pause hinten","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"p7"},{"name":"Cable Chop","info":"hoch→tief","egym":"","sxw":"3×10/10","soll":"30 kg","notiz":"","id":"p8"}]},{"bereich":"hauptteil","label":"Core & Stabilität","uebungen":[{"name":"Pallof Press","info":"","egym":"","sxw":"3×12/12","soll":"22 kg","notiz":"","id":"p9"},{"name":"Dead Bug","info":"Becken stabil","egym":"","sxw":"3×8/8","soll":"–","notiz":"","id":"p10"},{"name":"Farmer Carry","info":"aufrechte Haltung","egym":"","sxw":"3×30m","soll":"34 kg","notiz":"je Hand","id":"p11"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Rad locker 6–8 Min · Puls <100 bpm\nDehnen 3–4 Min: Hüfte, Schulter, BWS"},{"bereich":"hinweis","label":"Ernährung & Hinweis","inhalt":"Vor Training: Leichte KH + Protein · 1–2h vorher\nNach Training: Proteinreich, gemüsereich · keine schnellen KH abends"}]}
+      ]
+    },
+    {
+      "kw": 10, "start": "2026-03-02", "ende": "2026-03-08",
+      "fokus": "Rückkehr nach Urlaub – Wiedereinstieg",
+      "tage": [
+        {"datum":"2026-03-02","wochentag":"Mo","typ":"gym","titel":"GYM – Wiedereinstieg","dauer":86,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer · Z2"},{"bereich":"hauptteil","label":"Hauptteil","inhalt":"GYM-Einheit · moderates Volumen nach Urlaub (Ski Rocca Pietore)"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen"}]},
+        {"datum":"2026-03-03","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":7,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Technik + Spielpraxis"}]},
+        {"datum":"2026-03-04","wochentag":"Mi","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-05","wochentag":"Do","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-06","wochentag":"Fr","typ":"badminton","titel":"Badminton – Freitag","dauer":120,"intensitaet":8,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Spielpraxis intensiv"}]},
+        {"datum":"2026-03-07","wochentag":"Sa","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-08","wochentag":"So","typ":"gym","titel":"GYM – Skill","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Hauptteil","inhalt":"Skill-orientiertes GYM"}]}
+      ]
+    },
+    {
+      "kw": 11, "start": "2026-03-09", "ende": "2026-03-15",
+      "fokus": "Ski-Urlaub Rocca Pietore (Cross-Training)",
+      "tage": [
+        {"datum":"2026-03-09","wochentag":"Mo","typ":"pause","titel":"Anreise Skiurlaub","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-10","wochentag":"Di","typ":"andere","titel":"Skifahren – Rocca Pietore","dauer":373,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Aktivität","inhalt":"Skifahren · 6:13h · 38,21 km · 7.361 m Höhenunterschied · 1.007 kcal\n15 Läufe · Ø 73 bpm"}]},
+        {"datum":"2026-03-11","wochentag":"Mi","typ":"andere","titel":"Skifahren – Tag 2","dauer":300,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Aktivität","inhalt":"Skifahren · Rocca Pietore"}]},
+        {"datum":"2026-03-12","wochentag":"Do","typ":"andere","titel":"Skifahren – Tag 3","dauer":300,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Aktivität","inhalt":"Skifahren · Rocca Pietore"}]},
+        {"datum":"2026-03-13","wochentag":"Fr","typ":"andere","titel":"Skifahren – Tag 4","dauer":300,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-14","wochentag":"Sa","typ":"andere","titel":"Skifahren – Tag 5","dauer":300,"intensitaet":5,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-15","wochentag":"So","typ":"pause","titel":"Rückreise / Erholung","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]}
+      ]
+    },
+    {
+      "kw": 13, "start": "2026-03-23", "ende": "2026-03-29",
+      "fokus": "KW13 – Ausgewogen, GYM + Badminton",
+      "tage": [
+        {"datum":"2026-03-23","wochentag":"Mo","typ":"gym","titel":"GYM – Skill-orientiert","dauer":80,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Z2"},{"bereich":"hauptteil","label":"Hauptteil","uebungen":[{"name":"Reverse Lunge","info":"","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"","id":"q1"},{"name":"Latzug","info":"","egym":"r","sxw":"3×8","soll":"75 kg","notiz":"","id":"q2"},{"name":"Cable Chop","info":"","egym":"","sxw":"3×10/10","soll":"30 kg","notiz":"","id":"q3"},{"name":"Face Pulls","info":"","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"","id":"q4"},{"name":"Farmer Carry","info":"","egym":"","sxw":"3×30m","soll":"32 kg","notiz":"","id":"q5"}]},{"bereich":"hinweis","label":"Aktuelle Erkenntnisse","inhalt":"KW13: Training ausgewogen · leichtes Ziehen rechtes Knie + Wade · Gewicht: 82,5 kg"}]},
+        {"datum":"2026-03-24","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":8,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Einzel · Technik + Spielpraxis"}]},
+        {"datum":"2026-03-25","wochentag":"Mi","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-26","wochentag":"Do","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]},
+        {"datum":"2026-03-27","wochentag":"Fr","typ":"badminton","titel":"Badminton – Freitag","dauer":120,"intensitaet":8,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Training","inhalt":"Spielpraxis intensiv"}]},
+        {"datum":"2026-03-28","wochentag":"Sa","typ":"gym","titel":"GYM – Unterkörper","dauer":75,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hauptteil","label":"Unterkörper","uebungen":[{"name":"RDL KH","info":"","egym":"","sxw":"4×8","soll":"32 kg","notiz":"je Hand","id":"r1"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×8","soll":"80 kg","notiz":"","id":"r2"},{"name":"Pallof Press","info":"","egym":"","sxw":"3×12","soll":"22 kg","notiz":"","id":"r3"}]}]},
+        {"datum":"2026-03-29","wochentag":"So","typ":"pause","titel":"Pause","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[]}
+      ]
+    },
+    {
+      "kw": 20, "start": "2026-05-11", "ende": "2026-05-17",
+      "fokus": "Skill-orientiert – Badminton-Übertrag + Kraft",
+      "tage": [
+        {"datum":"2026-05-11","wochentag":"Mo","typ":"gym","titel":"GYM – Skill-orientiert","dauer":85,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":91,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8–10 Min · Ziel Z2 (105–120 bpm)\nDynamische Mobilisation 3–5 Min: Hüfte, Sprunggelenk, BWS, Schulter"},{"bereich":"hauptteil","label":"Block A – Unterkörper","uebungen":[{"name":"Reverse Lunge","info":"kontrolliert absenken","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"Beinarbeit","id":"s1"},{"name":"Step-up Knee Drive","info":"explosiv, Balance","egym":"","sxw":"3×8/8","soll":"18 kg","notiz":"Split-Step","id":"s2"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×8","soll":"80 kg","notiz":"nicht ans Limit","id":"s3"},{"name":"Wadenheben","info":"","egym":"r","sxw":"3×15","soll":"–","notiz":"volle ROM","id":"s4"}]},{"bereich":"hauptteil","label":"Block B – Oberkörper & Rotation","uebungen":[{"name":"Latzug","info":"Schulterblatt aktiv","egym":"r","sxw":"3×8","soll":"75 kg","notiz":"","id":"s5"},{"name":"Landmine Press","info":"Rotation aus Core","egym":"","sxw":"3×8/8","soll":"22 kg","notiz":"","id":"s6"},{"name":"Face Pulls","info":"Pause hinten","egym":"a","sxw":"3×15","soll":"27 kg","notiz":"Schulter","id":"s7"},{"name":"Cable Chop","info":"hoch→tief, stab. Hüfte","egym":"","sxw":"3×10/10","soll":"30 kg","notiz":"Core-Rotation","id":"s8"}]},{"bereich":"hauptteil","label":"Core & Stabilität","uebungen":[{"name":"Pallof Press","info":"","egym":"","sxw":"3×12/12","soll":"22 kg","notiz":"Anti-Rotation","id":"s9"},{"name":"Dead Bug","info":"Becken stabil","egym":"","sxw":"3×8/8","soll":"–","notiz":"","id":"s10"},{"name":"Farmer Carry","info":"aufrechte Haltung","egym":"","sxw":"3×30m","soll":"32 kg","notiz":"je Hand","id":"s11"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Rad oder Gehen locker · 6–8 Min · Puls <100 bpm\nDehnen 3–4 Min: Hüfte, Schulter, BWS"},{"bereich":"hinweis","label":"Ernährung & Hinweis","inhalt":"Vor Training: Leichte KH + Protein · 1–2h vorher\nNach Training: Proteinreich, gemüsereich · keine schnellen KH abends"}]},
+        {"datum":"2026-05-12","wochentag":"Di","typ":"badminton","titel":"Badminton – Traun","dauer":130,"intensitaet":8,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen 10 Min · Footwork locker"},{"bereich":"hauptteil","label":"Training","inhalt":"Einzel · Technik + Spielpraxis\nFokus: Split-Step, Richtungswechsel"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Ausschlagen · Dehnen"}]},
+        {"datum":"2026-05-13","wochentag":"Mi","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"abgeschlossen","abschluss_pct":100,"blocks":[{"bereich":"hinweis","label":"Hinweis","inhalt":"Erholungstag nach Di-Badminton. Mobility optional."}]},
+        {"datum":"2026-05-14","wochentag":"Do","typ":"gym","titel":"GYM – Oberkörper Kraft","dauer":70,"intensitaet":6,"status":"abgeschlossen","abschluss_pct":85,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Ergometer 8 Min · Schulter-Mobilisation"},{"bereich":"hauptteil","label":"Oberkörper","uebungen":[{"name":"Rudern sitzend","info":"Schulterblatt aktiv","egym":"r","sxw":"4×8","soll":"70 kg","notiz":"","id":"t1"},{"name":"Schrägbank KH","info":"kontrolliert","egym":"","sxw":"3×10","soll":"24 kg","notiz":"je Hand","id":"t2"},{"name":"Einarm. KH-Rudern","info":"stabiler Core","egym":"","sxw":"3×10/10","soll":"28 kg","notiz":"","id":"t3"},{"name":"Schulterdrücken","info":"EGYM","egym":"r","sxw":"3×10","soll":"45 kg","notiz":"","id":"t4"},{"name":"Band Pull-Apart","info":"Schulter-Prävention","egym":"","sxw":"3×15","soll":"–","notiz":"","id":"t5"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Dehnen 5 Min: Brust, Schulter, Trizeps"}]},
+        {"datum":"2026-05-15","wochentag":"Fr","typ":"pause","titel":"Pause / Regeneration","dauer":0,"intensitaet":0,"status":"geplant","abschluss_pct":0,"blocks":[{"bereich":"hinweis","label":"Hinweis","inhalt":"Heutiger Tag: Regeneration. Mobility/Spaziergang optional."}]},
+        {"datum":"2026-05-16","wochentag":"Sa","typ":"badminton","titel":"Badminton – Freitag/Samstag","dauer":120,"intensitaet":8,"status":"geplant","abschluss_pct":0,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Einschlagen 10 Min · Dynamic Footwork Drills"},{"bereich":"hauptteil","label":"Training","inhalt":"Wettkampfnahes Training · Intensität hoch\nFokus: Ausdauer unter Druck, Smash-Präzision"},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Ausschlagen · Dehnen"}]},
+        {"datum":"2026-05-17","wochentag":"So","typ":"gym","titel":"GYM – Unterkörper & Core","dauer":75,"intensitaet":6,"status":"geplant","abschluss_pct":0,"blocks":[{"bereich":"aufwaermen","label":"Aufwärmen","inhalt":"Bike 10 Min · Hüft-Mobilisation · Glute Activation"},{"bereich":"hauptteil","label":"Unterkörper","uebungen":[{"name":"RDL Kurzhantel","info":"Hüftscharnierend","egym":"","sxw":"4×8","soll":"32 kg","notiz":"je Hand","id":"u1"},{"name":"Bulg. Split Squat","info":"unilateral","egym":"","sxw":"3×8/8","soll":"20 kg","notiz":"","id":"u2"},{"name":"Beinpresse","info":"EGYM","egym":"r","sxw":"3×10","soll":"80 kg","notiz":"","id":"u3"},{"name":"Hip Thrust","info":"Glute-Aktivierung","egym":"","sxw":"3×12","soll":"60 kg","notiz":"","id":"u4"}]},{"bereich":"hauptteil","label":"Core","uebungen":[{"name":"Pallof Press","info":"","egym":"","sxw":"3×12/12","soll":"22 kg","notiz":"","id":"u5"},{"name":"Suitcase Carry","info":"Lateral Stabilität","egym":"","sxw":"3×30m","soll":"28 kg","notiz":"","id":"u6"}]},{"bereich":"cooldown","label":"Cool-Down","inhalt":"Foam Rolling 5 Min · Dehnen: Hüftbeuger, Hamstrings, Waden"},{"bereich":"hinweis","label":"Ernährung","inhalt":"Proteinreich nach Training · Kein Alkohol am Abend"}]}
       ]
     }
   ]
