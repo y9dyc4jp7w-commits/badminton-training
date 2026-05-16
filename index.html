@@ -808,16 +808,7 @@ function renderStats(){
   });
   html+=`<div style="font-size:9px;color:var(--muted);margin-top:8px">Badminton : GYM = <strong style="color:${rCol}">${ratio}:1</strong> · Ziel: 1.5–3:1</div></div>`;
 
-  // ── Gewicht ──
-  if(META&&META.gewicht_aktuell){
-    const gew=META.gewicht_aktuell;
-    const ziel=79;
-    const diff=Math.round((gew-ziel)*10)/10;
-    html+=`<div class="stats-grid">
-      <div class="stat-card"><div class="stat-lbl">Gewicht aktuell</div><div class="stat-val">${gew}<small> kg</small></div><div class="stat-trend t-warn">Ziel: ${ziel} kg</div></div>
-      <div class="stat-card"><div class="stat-lbl">Bis Ziel</div><div class="stat-val">${diff}<small> kg</small></div><div class="stat-trend t-neu">~${Math.ceil(diff/0.5)} Wochen</div></div>
-    </div>`;
-  }
+
 
   // ── Trainer-Insights ──
   html+=`<div class="stat-wide"><div class="stat-wide-title">Trainer-Insights</div>`;
@@ -832,7 +823,7 @@ function renderStats(){
   else insights.push({i:'⏱️',t:`Ø <strong>${avgHW}h/Woche</strong> – solider Umfang. Qualität vor Quantität beibehalten.`});
   if(avgIB>6.5)insights.push({i:'🏸',t:`Badminton Ø-Intensität <strong>${avgIB}/10</strong> – hoch. Mehr moderate Technik-Einheiten (Z2) für bessere Regeneration.`});
   else insights.push({i:'🏸',t:`Badminton Ø-Intensität <strong>${avgIB}/10</strong> – gut ausbalanciert. Gelegentlich Z4-Intervalle für Wettkampfhärte ergänzen.`});
-  insights.push({i:'⚖️',t:`<strong>Badminton:GYM = ${ratio}:1</strong> (Ziel 1.5–3:1). ${ratio<1.5?'Mehr Badminton oder weniger GYM.':ratio>3?'GYM-Anteil erhöhen für mehr Kraft.':'Optimale Balance.'}`});
+  insights.push({i:'⚖️',t:`<strong>Badminton:GYM = ${ratio}:1</strong> (Ziel 1.5–3:1). ${ratio<1.5?'Mehr Badminton oder weniger GYM.':ratio>3?'GYM-Anteil erhöhen für mehr Kraft.':'Optimale Balance.'} `});
   insights.forEach(ins=>html+=`<div class="insight"><div class="insight-icon">${ins.i}</div><div class="insight-text">${ins.t}</div></div>`);
   html+='</div>';
 
