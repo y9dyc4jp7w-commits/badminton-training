@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MyBadmintonPlan">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="apple-touch-icon" href="assets/icons/icon.png">
+<title>MyBadmintonPlan</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0d;--s1:#141414;--s2:#1a1a1a;--s3:#222;--s4:#2a2a2a;
+  --accent:#e8ff47;--gym:#e8690a;--bad:#3b82f6;--cool:#4ade80;
+  --pause:#555;--andere:#8b5cf6;
+  --muted:#555;--text:#bbb;--white:#fff;
+  --radius:12px;--radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:'Space Grotesk',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:14px;overflow-x:hidden}
+
+/* ── HEADER ── */
+.hdr{background:var(--bg);border-bottom:1px solid var(--s2);padding:12px 16px 0;position:sticky;top:0;z-index:200}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-icon{width:26px;height:26px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--white);letter-spacing:.5px}
+.logo-text em{color:var(--accent);font-style:normal}
+.hdr-date{font-size:10px;color:var(--muted);font-weight:500}
+.nav{display:flex;gap:3px;padding-bottom:1px}
+.nb{flex:1;padding:8px 3px;background:none;border:none;border-radius:var(--radius-sm) var(--radius-sm) 0 0;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s}
+.nb.a{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ── CONTENT ── */
+.content{padding:12px;padding-bottom:60px;min-height:calc(100vh - 90px)}
+.sec{display:none}.sec.active{display:block}
+.sec-title{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:16px 0 10px;display:flex;align-items:center;gap:8px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--s2)}
+
+/* ── TRAINING HEADER BANNER ── */
+.training-banner{background:var(--s1);border:1px solid var(--s2);border-radius:var(--radius);padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.banner-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.banner-dot.today{background:var(--accent);animation:pulse 1.8s infinite}
+.banner-dot.other{background:var(--muted)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.banner-text{flex:1;font-size:11px;color:var(--muted)}
+.banner-text strong{color:var(--white);font-weight:600}
+.banner-back{background:none;border:1px solid var(--s3);border-radius:6px;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:10px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+.banner-back:active{background:var(--s2)}
+
+/* ── 7-TAGE STRIP ── */
+.day-strip{display:flex;gap:4px;margin-bottom:12px}
+.day-cell{flex:1;background:var(--s1);border-radius:var(--radius-sm);padding:7px 2px;text-align:center;border:1px solid var(--s2);cursor:pointer;transition:border-color .15s;position:relative}
+.day-cell.today{border-color:rgba(232,255,71,.3)}
+.day-cell.selected{background:var(--accent);border-color:var(--accent)}
+.day-cell.selected .dc-wd,.day-cell.selected .dc-d{color:var(--bg)}
+.dc-wd{font-size:8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.dc-d{font-size:15px;font-weight:700;color:var(--s4);line-height:1.1;margin-top:1px}
+.day-cell:not(.selected) .dc-d{color:#666}
+.dc-dot{width:4px;height:4px;border-radius:50%;background:var(--s3);margin:3px auto 0}
+.dc-dot.gym{background:var(--gym)}.dc-dot.badminton{background:var(--bad)}
+.dc-dot.pause{background:var(--s3)}.dc-dot.andere{background:var(--andere)}
+.dc-dot.done{background:var(--cool)}
+.dc-pct{font-size:7px;color:var(--cool);margin-top:1px;font-weight:600;line-height:1}
+
+/* ── WOCHE NAVIGATOR ── */
+.week-nav{display:flex;align-items:center;justify-content:space-between;background:var(--s1);border:1px solid var(--s2);border-radius:var(--radius);padding:10px 14px;margin-bottom:12px}
+.wnav-btn{background:none;border:1px solid var(--s3);border-radius:6px;color:var(--muted);font-size:1rem;font-weight:700;padding:4px 12px;cursor:pointer;transition:all .15s;font-family:'Barlow Condensed',sans-serif}
+.wnav-btn:not(:disabled):active{background:var(--s2);color:var(--accent)}
+.wnav-btn:disabled{opacity:.25;cursor:default}
+.wnav-info{text-align:center}
+.wnav-kw{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--white);letter-spacing:.5px}
+.wnav-fokus{font-size:10px;color:var(--muted);margin-top:2px}
+.wnav-label{font-size:9px;color:var(--accent);font-weight:600;margin-top:1px}
+
+/* ── PLAN CARD ── */
+.plan-card{background:var(--s1);border-radius:var(--radius);overflow:hidden;border:1px solid var(--s2);margin-bottom:10px}
+.pc-hdr{padding:14px 16px;border-bottom:1px solid var(--s2);display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.pc-left{}
+.pc-kw{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
+.pc-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--white);line-height:1;letter-spacing:.3px}
+.pc-badge{display:inline-flex;align-items:center;gap:4px;margin-top:5px;background:var(--s2);border:1px solid var(--s3);border-radius:5px;padding:3px 8px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.pc-badge.gym{color:var(--gym)}.pc-badge.gym .pc-bdot{background:var(--gym)}
+.pc-badge.badminton{color:var(--bad)}.pc-badge.badminton .pc-bdot{background:var(--bad)}
+.pc-badge.pause{color:var(--muted)}.pc-badge.pause .pc-bdot{background:var(--muted)}
+.pc-badge.andere{color:var(--andere)}.pc-badge.andere .pc-bdot{background:var(--andere)}
+.pc-bdot{width:5px;height:5px;border-radius:50%}
+.ibar-group{display:flex;gap:2px;align-items:flex-end;flex-shrink:0}
+.ib{width:5px;border-radius:2px;background:var(--s3)}
+.ib.lv1,.ib.lv2{background:#4ade80}
+.ib.lv3,.ib.lv4,.ib.lv5{background:#fbbf24}
+.ib.lv6,.ib.lv7{background:#f97316}
+.ib.lv8,.ib.lv9,.ib.lv10{background:#ef4444}
+
+/* ── BEREICH ── */
+.bh{display:flex;align-items:center;gap:6px;padding:8px 16px;background:#111;border-top:1px solid var(--s2);border-bottom:1px solid var(--s2)}
+.bstripe{width:2px;height:12px;border-radius:1px;flex-shrink:0}
+.blabel{font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px}
+.bh.aufw .bstripe{background:var(--gym)}.bh.aufw .blabel{color:rgba(232,105,10,.8)}
+.bh.haupt .bstripe{background:var(--accent)}.bh.haupt .blabel{color:rgba(232,255,71,.6)}
+.bh.cool .bstripe{background:var(--cool)}.bh.cool .blabel{color:rgba(74,222,128,.6)}
+.bh.hint .bstripe{background:#8b5cf6}.bh.hint .blabel{color:rgba(167,139,250,.6)}
+.info-txt{padding:10px 16px 12px;font-size:12px;line-height:1.6;white-space:pre-line}
+.info-txt.aufw{color:rgba(232,105,10,.7)}
+.info-txt.cool{color:rgba(74,222,128,.6)}
+.info-txt.hint{color:rgba(167,139,250,.6)}
+.info-txt.haupt{color:var(--text)}
+
+/* ── TABELLE ── */
+.ueb-section{border-top:1px solid var(--s2)}
+.urow{display:flex;align-items:center;padding:9px 16px;gap:8px;border-bottom:1px solid #191919}
+.urow:last-child{border-bottom:none}
+.unum{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--s4);min-width:20px;line-height:1}
+.uinfo{flex:1;min-width:0}
+.uname{font-size:12px;font-weight:500;color:var(--text);line-height:1.2}
+.udetail{font-size:9px;color:var(--muted);margin-top:2px}
+.usxw{font-size:10px;font-weight:600;color:var(--muted);min-width:34px;text-align:center;flex-shrink:0}
+.ist-w{flex-shrink:0}
+.ist-num{width:48px;padding:5px 2px;background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;color:var(--accent);text-align:center;-webkit-appearance:none}
+.ist-num::placeholder{color:rgba(232,255,71,.18);font-size:9px}
+.ist-num:focus{outline:none;border-color:rgba(232,255,71,.4);background:rgba(232,255,71,.09)}
+.ist-num.filled{background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.3);color:var(--cool)}
+.ist-free{width:48px;padding:5px 2px;background:var(--s1);border:1px dashed var(--s3);border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:10px;color:var(--text);text-align:center;-webkit-appearance:none}
+.ist-free::placeholder{color:var(--s3);font-size:9px}
+.ist-free:focus{outline:none;border-color:var(--s4)}
+.ist-free.filled{border-style:solid;border-color:rgba(74,222,128,.2);color:var(--cool)}
+.egym-b{display:inline-block;background:rgba(232,255,71,.07);color:rgba(232,255,71,.5);border-radius:3px;padding:1px 5px;font-size:9px;font-weight:700;margin-left:3px}
+
+/* ── FORTSCHRITT ── */
+.prog-wrap{padding:10px 16px 12px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--s2)}
+.prog-label{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;min-width:65px}
+.prog-track{flex:1;height:2px;background:var(--s2);border-radius:1px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:1px;transition:width .3s}
+.prog-pct{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--accent);min-width:42px;text-align:right;line-height:1}
+
+/* ── SAVE BTN ── */
+.save-btn{width:calc(100% - 32px);margin:0 16px 14px;padding:13px;background:transparent;color:var(--accent);border:1px solid rgba(232,255,71,.3);border-radius:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .15s}
+.save-btn:active{background:rgba(232,255,71,.08)}
+
+/* ── PAUSE CARD ── */
+.pause-card{background:var(--s1);border-radius:var(--radius);overflow:hidden;border:1px solid var(--s2);margin-bottom:10px}
+.pause-hdr{padding:14px 16px;border-bottom:1px solid var(--s2)}
+.pause-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#888;line-height:1}
+.pause-sub{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ── ARCHIV ── */
+.arch-list{display:flex;flex-direction:column;gap:6px}
+.arch-card{background:var(--s1);border-radius:var(--radius);border:1px solid var(--s2);padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color .15s}
+.arch-card:active{border-color:var(--s4)}
+.arch-date{background:var(--s2);border-radius:var(--radius-sm);padding:7px 9px;text-align:center;min-width:42px;flex-shrink:0}
+.arch-day{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;line-height:1;color:var(--accent)}
+.arch-mon{font-size:8px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}
+.arch-info{flex:1;min-width:0}
+.arch-name{font-size:12px;font-weight:500;color:var(--white);line-height:1.3}
+.arch-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.arch-pct{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-align:right;min-width:38px;flex-shrink:0}
+.arch-pct small{display:block;font-size:8px;color:var(--muted);font-weight:400;font-family:'Space Grotesk',sans-serif}
+
+/* ── TYP BADGE KLEIN ── */
+.tbadge{font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.5px;text-transform:uppercase;margin-left:5px}
+.tb-gym{background:rgba(232,105,10,.12);color:var(--gym)}
+.tb-badminton{background:rgba(59,130,246,.12);color:var(--bad)}
+.tb-pause{background:rgba(255,255,255,.05);color:var(--muted)}
+.tb-andere{background:rgba(139,92,246,.12);color:var(--andere)}
+
+/* ── STATS ── */
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.stat-card{background:var(--s1);border-radius:var(--radius);border:1px solid var(--s2);padding:14px}
+.stat-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--white);line-height:1}
+.stat-val small{font-size:13px;color:var(--muted);font-weight:400;font-family:'Space Grotesk',sans-serif}
+.stat-trend{font-size:10px;margin-top:4px;font-weight:500}
+.t-up{color:var(--cool)}.t-neu{color:var(--muted)}.t-warn{color:var(--gym)}
+.stat-wide{background:var(--s1);border:1px solid var(--s2);border-radius:var(--radius);padding:14px;margin-bottom:10px}
+.stat-wide-title{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:12px}
+.ibar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ibar-lbl{font-size:10px;color:var(--muted);min-width:110px}
+.ibar-bg{flex:1;height:6px;background:var(--s2);border-radius:3px;overflow:hidden}
+.ibar-fill{height:100%;border-radius:3px}
+.ibar-val{font-size:10px;font-weight:600;min-width:24px;text-align:right}
+.insight{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--s2)}
+.insight:last-child{border-bottom:none}
+.insight-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.insight-text{font-size:11px;line-height:1.5;color:var(--text)}
+.insight-text strong{color:var(--white)}
+
+/* ── LANGZEITPLAN ── */
+.lz-hdr-card{background:var(--s1);border:1px solid var(--s2);border-radius:var(--radius);padding:14px;margin-bottom:12px}
+.lz-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:3px}
+.lz-sub{font-size:10px;color:var(--muted);line-height:1.5}
+.lz-card{background:var(--s1);border:1px solid var(--s2);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .15s}
+.lz-card.current{border-color:rgba(232,255,71,.25)}
+.lz-card:active{border-color:var(--s4)}
+.lz-kw{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:3px;display:flex;align-items:center;gap:8px}
+.lz-current-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.lz-fokus{font-size:12px;font-weight:500;color:var(--white);margin-bottom:8px}
+.lz-days{display:flex;gap:3px}
+.lz-day{flex:1;height:24px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;cursor:pointer;transition:opacity .15s}
+.lz-day:active{opacity:.7}
+.lz-day.gym{background:rgba(232,105,10,.2);color:var(--gym)}
+.lz-day.badminton{background:rgba(59,130,246,.2);color:var(--bad)}
+.lz-day.pause{background:var(--s2);color:var(--muted)}
+.lz-day.andere{background:rgba(139,92,246,.15);color:var(--andere)}
+.lz-day.done{opacity:.5}
+.lz-prog{font-size:9px;color:var(--muted);margin-top:7px}
+.lz-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.lz-leg-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--muted)}
+.lz-leg-dot{width:8px;height:8px;border-radius:2px}
+
+/* ── LOADING / EMPTY ── */
+.loading{text-align:center;padding:48px 20px;color:var(--muted);font-size:12px;line-height:1.8}
+.loading-spin{font-size:24px;display:block;margin-bottom:8px;animation:spin 1.5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{text-align:center;padding:32px 20px;color:var(--muted);font-size:12px}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--s1);color:var(--accent);border:1px solid rgba(232,255,71,.25);padding:10px 20px;border-radius:50px;font-size:12px;font-weight:600;z-index:999;transition:transform .25s ease;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ── SAFE AREA ── */
+@supports(padding-bottom:env(safe-area-inset-bottom)){
+  .content{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="logo">
+      <div class="logo-icon">🏸</div>
+      <div class="logo-text">My<em>Badminton</em>Plan</div>
+    </div>
+    <span class="hdr-date" id="hdrDate"></span>
+  </div>
+  <nav class="nav">
+    <button class="nb a" onclick="showSec('training',this)">Training</button>
+    <button class="nb"   onclick="showSec('woche',this)">Woche</button>
+    <button class="nb"   onclick="showSec('plan',this)">Plan</button>
+    <button class="nb"   onclick="showSec('archiv',this)">Archiv</button>
+    <button class="nb"   onclick="showSec('stats',this)">Stats</button>
+  </nav>
+</div>
+
+<div class="content">
+  <section id="training" class="sec active">
+    <div id="trainingContent"><div class="loading"><span class="loading-spin">⟳</span>Lade Trainingsdaten…</div></div>
+  </section>
+  <section id="woche" class="sec">
+    <div id="wocheContent"><div class="loading"><span class="loading-spin">⟳</span>Lade Wochenplan…</div></div>
+  </section>
+  <section id="plan" class="sec">
+    <div id="planContent"><div class="loading"><span class="loading-spin">⟳</span>Lade Langzeitplan…</div></div>
+  </section>
+  <section id="archiv" class="sec">
+    <div id="archivContent"><div class="loading"><span class="loading-spin">⟳</span>Lade Archiv…</div></div>
+  </section>
+  <section id="stats" class="sec">
+    <div id="statsContent"><div class="loading"><span class="loading-spin">⟳</span>Lade Stats…</div></div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+//  KONFIGURATION
+// ══════════════════════════════════════════
+const DATA_INDEX = 'data/index.json';
+
+// ══════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════
+let META = null;
+let ALL_WOCHEN = [];
+let selectedDate = todayStr();
+let weekIdx = 0; // 0 = neueste (reversed)
+
+const DAYS  = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+const MONTHS= ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const MONS  = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+
+function todayStr(){return new Date().toISOString().split('T')[0]}
+
+function fmtDate(s){
+  const d=new Date(s+'T12:00:00');
+  return DAYS[d.getDay()]+', '+d.getDate()+'. '+MONTHS[d.getMonth()]+' '+d.getFullYear();
+}
+function fmtShort(s){
+  const d=new Date(s+'T12:00:00');
+  return d.getDate()+'. '+MONS[d.getMonth()];
+}
+
+// ══════════════════════════════════════════
+//  HEADER DATUM
+// ══════════════════════════════════════════
+(()=>{
+  const d=new Date();
+  document.getElementById('hdrDate').textContent=
+    DAYS[d.getDay()]+' '+d.getDate()+'. '+MONS[d.getMonth()]+' '+d.getFullYear();
+})();
+
+// ══════════════════════════════════════════
+//  DATA LOADING – monatliche JSONs
+// ══════════════════════════════════════════
+async function loadData(){
+  try{
+    const idxRes = await fetch(DATA_INDEX+'?v='+Date.now());
+    const idx    = await idxRes.json();
+    META = idx.meta;
+
+    // Alle Monatsdateien parallel laden
+    const promises = idx.monate.map(m=>
+      fetch(m.datei+'?v='+Date.now()).then(r=>r.json())
+    );
+    const monatsDaten = await Promise.all(promises);
+
+    // Alle Wochen sammeln und chronologisch sortieren
+    monatsDaten.forEach(md=>{
+      md.wochen.forEach(w=>ALL_WOCHEN.push(w));
+    });
+    ALL_WOCHEN.sort((a,b)=>a.start.localeCompare(b.start));
+
+    // Für Anzeige umkehren (neueste oben) – separates Array
+    // weekIdx 0 = neueste Woche
+    // Finde aktuelle Woche
+    const today = todayStr();
+    const revW  = [...ALL_WOCHEN].reverse();
+    weekIdx = 0;
+    for(let i=0;i<revW.length;i++){
+      if(today>=revW[i].start && today<=revW[i].ende){weekIdx=i;break;}
+    }
+
+    renderAll();
+  }catch(e){
+    console.error(e);
+    document.querySelectorAll('.loading').forEach(el=>{
+      el.innerHTML='⚠️ Daten konnten nicht geladen werden.<br><small>data/index.json prüfen</small>';
+    });
+  }
+}
+
+function revWochen(){return [...ALL_WOCHEN].reverse()}
+
+function findTag(dateStr){
+  for(const w of ALL_WOCHEN)
+    for(const t of w.tage)
+      if(t.datum===dateStr)return t;
+  return null;
+}
+
+function findWeekIdxFor(dateStr){
+  const rw=revWochen();
+  for(let i=0;i<rw.length;i++)
+    if(dateStr>=rw[i].start && dateStr<=rw[i].ende)return i;
+  return 0;
+}
+
+function renderAll(){
+  renderTraining();
+  renderWoche();
+  renderPlan();
+  renderArchiv();
+  renderStats();
+}
+
+// ══════════════════════════════════════════
+//  TRAINING
+// ══════════════════════════════════════════
+function renderTraining(){
+  const el=document.getElementById('trainingContent');
+  const tag=findTag(selectedDate);
+  const today=todayStr();
+  const isToday=selectedDate===today;
+
+  let html='';
+  // Banner
+  const selD=new Date(selectedDate+'T12:00:00');
+  const bannerTxt=isToday
+    ? '<strong>Heute</strong> · '+fmtDate(selectedDate)
+    : '<strong>'+DAYS[selD.getDay()]+', '+selD.getDate()+'. '+MONS[selD.getMonth()]+'</strong> · Ausgewählter Tag';
+  html+=`<div class="training-banner">
+    <div class="banner-dot ${isToday?'today':'other'}"></div>
+    <div class="banner-text">${bannerTxt}</div>
+    ${!isToday?`<button class="banner-back" onclick="jumpToday()">→ Heute</button>`:''}
+  </div>`;
+
+  if(!tag){html+='<div class="empty">Kein Trainingsplan für dieses Datum.</div>';el.innerHTML=html;return;}
+  html+=buildTagesplan(tag);
+  el.innerHTML=html;
+  restoreIst(tag);
+  updateProgress(tag);
+}
+
+function jumpToday(){
+  selectedDate=todayStr();
+  weekIdx=findWeekIdxFor(selectedDate);
+  renderTraining();
+  renderWoche();
+}
+
+// ══════════════════════════════════════════
+//  TAGESPLAN BAUEN
+// ══════════════════════════════════════════
+function buildTagesplan(tag){
+  if(tag.typ==='pause')return buildPauseCard(tag);
+  let html='<div class="plan-card">';
+  html+=buildPlanHeader(tag);
+  for(const b of(tag.blocks||[]))html+=buildBlock(b,tag.datum);
+  if(countUeb(tag)>0){
+    html+=`<div class="prog-wrap">
+      <div class="prog-label">Abschluss</div>
+      <div class="prog-track"><div class="prog-fill" id="pf_${tag.datum}" style="width:0%"></div></div>
+      <div class="prog-pct" id="pl_${tag.datum}">0%</div>
+    </div>`;
+  }
+  html+=`<button class="save-btn" onclick="saveWorkout('${tag.datum}')">✓ Abschliessen & Speichern</button>`;
+  html+='</div>';
+  return html;
+}
+
+function buildPlanHeader(tag){
+  const lvl=tag.intensitaet||0;
+  const bars=Array.from({length:10},(_,i)=>{
+    const h=8+(i*4); // Höhe von unten nach oben
+    const lv=i+1<=lvl?' lv'+(i+1):'';
+    return `<div class="ib${lv}" style="height:${h}px"></div>`;
+  });
+  return `<div class="pc-hdr">
+    <div class="pc-left">
+      <div class="pc-kw">${fmtDate(tag.datum)}</div>
+      <div class="pc-title">${tag.titel.replace(' – ','<br>')}</div>
+      <div class="pc-badge ${tag.typ}"><span class="pc-bdot"></span>${tag.typ.toUpperCase()}${tag.dauer?' · '+tag.dauer+' Min':''}</div>
+    </div>
+    <div class="ibar-group">${bars.join('')}</div>
+  </div>`;
+}
+
+function buildBlock(block,datum){
+  let html='';
+  const bhC={aufwaermen:'aufw',hauptteil:'haupt',cooldown:'cool',hinweis:'hint'}[block.bereich]||'haupt';
+  html+=`<div class="bh ${bhC}"><div class="bstripe"></div><div class="blabel">${block.label}</div></div>`;
+  if(block.inhalt){
+    html+=`<div class="info-txt ${bhC}">${block.inhalt}</div>`;
+  }
+  if(block.uebungen&&block.uebungen.length){
+    html+=`<div class="ueb-section">`;
+    block.uebungen.forEach((u,idx)=>{
+      const hasSoll=u.soll&&u.soll.trim()!==''&&u.soll.trim()!=='–';
+      const istId=datum+'_'+u.id;
+      const egymBadge=u.egym?`<span class="egym-b">${u.egym.toUpperCase()}</span>`:'';
+      const detail=[u.info,egymBadge,u.notiz&&u.notiz!==''?'· '+u.notiz:''].filter(x=>x&&x!=='').join(' ');
+      let istField='';
+      if(hasSoll){
+        istField=`<input class="ist-num" type="number" inputmode="decimal" placeholder="${u.soll}" data-key="${istId}" data-datum="${datum}" data-req="1" oninput="onIst(this)" id="ist_${istId}">`;
+      } else if(u.soll==='–'){
+        istField=`<input class="ist-free" type="text" placeholder="frei" data-key="${istId}" data-datum="${datum}" data-req="0" oninput="onIstFree(this)" id="ist_${istId}">`;
+      } else {
+        istField=`<span style="font-size:9px;color:var(--s4)">–</span>`;
+      }
+      html+=`<div class="urow">
+        <div class="unum">${String(idx+1).padStart(2,'0')}</div>
+        <div class="uinfo">
+          <div class="uname">${u.name}</div>
+          ${detail?`<div class="udetail">${detail} · ${u.sxw}${hasSoll?' · SOLL '+u.soll:''}</div>`:`<div class="udetail">${u.sxw}</div>`}
+        </div>
+        <div class="ist-w">${istField}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  return html;
+}
+
+function buildPauseCard(tag){
+  let html=`<div class="pause-card"><div class="pause-hdr">
+    <div style="font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px">${fmtDate(tag.datum)}</div>
+    <div class="pause-title">${tag.titel}</div>
+    <div class="pause-sub"><span class="tbadge tb-pause">Pause</span></div>
+  </div>`;
+  for(const b of(tag.blocks||[]))html+=buildBlock(b,tag.datum);
+  html+='</div>';
+  return html;
+}
+
+function countUeb(tag){
+  let n=0;
+  for(const b of(tag.blocks||[]))
+    if(b.uebungen)n+=b.uebungen.filter(u=>u.soll&&u.soll!=='–').length;
+  return n;
+}
+
+// ══════════════════════════════════════════
+//  IST FELDER
+// ══════════════════════════════════════════
+function onIst(inp){
+  inp.classList.toggle('filled',inp.value.trim()!=='');
+  updateProgress(findTag(inp.dataset.datum));
+  try{localStorage.setItem('ist_'+inp.dataset.key,inp.value);}catch(e){}
+}
+function onIstFree(inp){
+  inp.classList.toggle('filled',inp.value.trim()!=='');
+  try{localStorage.setItem('ist_'+inp.dataset.key,inp.value);}catch(e){}
+}
+
+function restoreIst(tag){
+  setTimeout(()=>buildIntBars('ibars_'+tag.datum,tag.intensitaet||0),0);
+  for(const b of(tag.blocks||[]))
+    for(const u of(b.uebungen||[])){
+      const key=tag.datum+'_'+u.id;
+      try{
+        const v=localStorage.getItem('ist_'+key);
+        const el=document.getElementById('ist_'+key);
+        if(v&&el){el.value=v;el.classList.add('filled');}
+      }catch(e){}
+    }
+}
+
+function buildIntBars(id,level){
+  const el=document.getElementById(id);if(!el)return;el.innerHTML='';
+  for(let i=10;i>=1;i--){
+    const b=document.createElement('div');
+    b.className='ib'+(i<=level?' lv'+i:'');
+    b.style.height=(8+(i-1)*4)+'px';
+    el.appendChild(b);
+  }
+}
+
+function updateProgress(tag){
+  if(!tag)return;
+  const total=countUeb(tag);if(!total)return;
+  const filled=document.querySelectorAll(`[data-datum="${tag.datum}"][data-req="1"].filled`).length;
+  const pct=Math.round(filled/total*100);
+  const pf=document.getElementById('pf_'+tag.datum);
+  const pl=document.getElementById('pl_'+tag.datum);
+  if(pf)pf.style.width=pct+'%';
+  if(pl)pl.textContent=pct+'%';
+}
+
+function saveWorkout(datum){
+  const pl=document.getElementById('pl_'+datum);
+  const pct=pl?pl.textContent:'–';
+  showToast('Gespeichert · '+pct+' ✓');
+  setTimeout(()=>{showSec('archiv');renderArchiv();},1500);
+}
+
+// ══════════════════════════════════════════
+//  WOCHE
+// ══════════════════════════════════════════
+function renderWoche(){
+  const el=document.getElementById('wocheContent');
+  const rw=revWochen();
+  if(!rw.length)return;
+  const w=rw[weekIdx];
+  const today=todayStr();
+  const isCurW=today>=w.start&&today<=w.ende;
+  const isNewest=weekIdx===0;
+  const isOldest=weekIdx===rw.length-1;
+
+  let html=`<div class="week-nav">
+    <button class="wnav-btn" ${isNewest?'disabled':''} onclick="changeWeek(-1)">‹</button>
+    <div class="wnav-info">
+      <div class="wnav-kw">KW ${w.kw} · ${fmtShort(w.start)} – ${fmtShort(w.ende)}</div>
+      <div class="wnav-fokus">${w.fokus}</div>
+      ${isCurW?'<div class="wnav-label">📍 Aktuelle Woche</div>':''}
+    </div>
+    <button class="wnav-btn" ${isOldest?'disabled':''} onclick="changeWeek(1)">›</button>
+  </div>`;
+
+  // 7-Tage-Strip
+  html+='<div class="day-strip">';
+  for(const tag of w.tage){
+    const d=new Date(tag.datum+'T12:00:00');
+    const isSel=tag.datum===selectedDate;
+    const isT=tag.datum===today;
+    let cls='day-cell';
+    if(isT)cls+=' today';
+    if(isSel)cls+=' selected';
+    let dotC=tag.typ;if(tag.status==='abgeschlossen')dotC='done';
+    html+=`<div class="${cls}" onclick="selectDay('${tag.datum}')">
+      <div class="dc-wd">${DAYS[d.getDay()]}</div>
+      <div class="dc-d">${d.getDate()}</div>
+      <div class="dc-dot ${dotC}"></div>
+      ${tag.status==='abgeschlossen'&&tag.abschluss_pct>0?`<div class="dc-pct">${tag.abschluss_pct}%</div>`:''}
+    </div>`;
+  }
+  html+='</div>';
+
+  // Tagesplan des gewählten Tags
+  const selInW=w.tage.find(t=>t.datum===selectedDate);
+  const showTag=selInW||w.tage[0];
+  if(!selInW)selectedDate=w.tage[0].datum;
+  html+=buildTagesplan(showTag);
+
+  el.innerHTML=html;
+  const t=findTag(selectedDate);
+  if(t){restoreIst(t);updateProgress(t);}
+}
+
+function changeWeek(dir){
+  const rw=revWochen();
+  const ni=weekIdx+dir;
+  if(ni<0||ni>=rw.length)return;
+  weekIdx=ni;
+  selectedDate=rw[weekIdx].tage[0].datum;
+  renderWoche();
+}
+
+function selectDay(datum){
+  selectedDate=datum;
+  renderTraining();
+  renderWoche();
+}
+
+// ══════════════════════════════════════════
+//  PLAN (Langzeitplan)
+// ══════════════════════════════════════════
+function renderPlan(){
+  const el=document.getElementById('planContent');
+  if(!META)return;
+  const lz=META.langzeitplan;
+  const today=todayStr();
+
+  let html=`<div class="lz-hdr-card">
+    <div class="lz-title">${lz.titel}</div>
+    <div class="lz-sub">${fmtShort(lz.start)} – ${fmtShort(lz.ende)}<br>${lz.ziel}</div>
+  </div>`;
+
+  html+='<p class="sec-title">Wochenübersicht</p>';
+
+  // Chronologisch anzeigen (älteste zuerst im Plan)
+  for(const w of ALL_WOCHEN){
+    const isCur=today>=w.start&&today<=w.ende;
+    const done=w.tage.filter(t=>t.status==='abgeschlossen').length;
+    const total=w.tage.length;
+    html+=`<div class="lz-card ${isCur?'current':''}" onclick="goToWeek('${w.start}')">
+      <div class="lz-kw">
+        ${isCur?'<span class="lz-current-dot"></span>':''}
+        KW ${w.kw} · ${fmtShort(w.start)} – ${fmtShort(w.ende)}
+        ${isCur?'<span style="color:var(--accent);font-size:9px">● Jetzt</span>':''}
+      </div>
+      <div class="lz-fokus">${w.fokus}</div>
+      <div class="lz-days">`;
+    for(const tag of w.tage){
+      const d=new Date(tag.datum+'T12:00:00');
+      html+=`<div class="lz-day ${tag.typ}${tag.status==='abgeschlossen'?' done':''}" onclick="event.stopPropagation();goToDate('${tag.datum}')" title="${tag.titel}">${DAYS[d.getDay()]}</div>`;
+    }
+    html+=`</div>
+      <div class="lz-prog">${done}/${total} abgeschlossen${done===total&&total>0?' · ✓':''}</div>
+    </div>`;
+  }
+
+  html+=`<div class="lz-legend">
+    <div class="lz-leg-item"><div class="lz-leg-dot" style="background:rgba(232,105,10,.4)"></div>GYM</div>
+    <div class="lz-leg-item"><div class="lz-leg-dot" style="background:rgba(59,130,246,.4)"></div>Badminton</div>
+    <div class="lz-leg-item"><div class="lz-leg-dot" style="background:var(--s3)"></div>Pause</div>
+    <div class="lz-leg-item"><div class="lz-leg-dot" style="background:rgba(139,92,246,.4)"></div>Andere</div>
+  </div>`;
+
+  el.innerHTML=html;
+}
+
+function goToDate(datum){
+  selectedDate=datum;
+  weekIdx=findWeekIdxFor(datum);
+  renderTraining();renderWoche();
+  showSec('training');
+  document.querySelectorAll('.nb').forEach((b,i)=>b.classList.toggle('a',i===0));
+}
+
+function goToWeek(start){
+  const rw=revWochen();
+  for(let i=0;i<rw.length;i++){
+    if(rw[i].start===start){weekIdx=i;break;}
+  }
+  selectedDate=revWochen()[weekIdx].tage[0].datum;
+  renderWoche();
+  showSec('woche');
+  document.querySelectorAll('.nb').forEach((b,i)=>b.classList.toggle('a',i===1));
+}
+
+// ══════════════════════════════════════════
+//  ARCHIV
+// ══════════════════════════════════════════
+function renderArchiv(){
+  const el=document.getElementById('archivContent');
+  const done=[];
+  for(const w of ALL_WOCHEN)
+    for(const t of w.tage)
+      if(t.status==='abgeschlossen')done.push(t);
+  done.reverse(); // neueste zuerst
+
+  if(!done.length){el.innerHTML='<div class="empty">Noch keine abgeschlossenen Trainings.</div>';return;}
+
+  let html='<p class="sec-title">Abgeschlossene Trainings</p><div class="arch-list">';
+  for(const t of done){
+    const d=new Date(t.datum+'T12:00:00');
+    const pctCol=t.abschluss_pct>=90?'var(--cool)':t.abschluss_pct>=70?'var(--gym)':'var(--muted)';
+    html+=`<div class="arch-card" onclick="goToDate('${t.datum}')">
+      <div class="arch-date">
+        <div class="arch-day">${d.getDate()}</div>
+        <div class="arch-mon">${MONS[d.getMonth()]}</div>
+      </div>
+      <div class="arch-info">
+        <div class="arch-name">${t.titel}<span class="tbadge tb-${t.typ}">${t.typ.toUpperCase()}</span></div>
+        <div class="arch-sub">${t.dauer?t.dauer+' Min':'Pause'} · KW ${findKW(t.datum)}</div>
+      </div>
+      <div class="arch-pct" style="color:${pctCol}">${t.abschluss_pct}%<small>Abschluss</small></div>
+    </div>`;
+  }
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+function findKW(datum){
+  for(const w of ALL_WOCHEN)
+    for(const t of w.tage)
+      if(t.datum===datum)return w.kw;
+  return '–';
+}
+
+// ══════════════════════════════════════════
+//  STATS – erweitert
+// ══════════════════════════════════════════
+function renderStats(){
+  const el=document.getElementById('statsContent');
+  const allT=ALL_WOCHEN.flatMap(w=>w.tage);
+  const done=allT.filter(t=>t.status==='abgeschlossen');
+  const gymD=done.filter(t=>t.typ==='gym');
+  const badD=done.filter(t=>t.typ==='badminton');
+  const pauseD=done.filter(t=>t.typ==='pause');
+  const totalMin=done.reduce((s,t)=>s+(t.dauer||0),0);
+  const gymMin=gymD.reduce((s,t)=>s+(t.dauer||0),0);
+  const badMin=badD.reduce((s,t)=>s+(t.dauer||0),0);
+  const compliance=allT.length?Math.round(done.length/allT.length*100):0;
+  const avgIG=gymD.length?Math.round(gymD.reduce((s,t)=>s+(t.intensitaet||0),0)/gymD.length*10)/10:0;
+  const avgIB=badD.length?Math.round(badD.reduce((s,t)=>s+(t.intensitaet||0),0)/badD.length*10)/10:0;
+  const nWeeks=ALL_WOCHEN.length||1;
+  const avgHW=Math.round(totalMin/nWeeks/60*10)/10;
+
+  // Aktuelle Woche
+  const rw=revWochen();
+  const curW=rw[weekIdx]||rw[0];
+  const curDone=curW.tage.filter(t=>t.status==='abgeschlossen').length;
+  const curMin=curW.tage.reduce((s,t)=>s+(t.dauer||0),0);
+
+  // Letzte 4 Wochen
+  const l4=rw.slice(0,4);
+  const l4T=l4.flatMap(w=>w.tage);
+  const l4D=l4T.filter(t=>t.status==='abgeschlossen');
+
+  let html='';
+
+  // ── Aktuelle Woche ──
+  html+=`<p class="sec-title">KW ${curW.kw} – ${curW.fokus}</p>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-lbl">Erledigt</div><div class="stat-val">${curDone}<small> / ${curW.tage.length}</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Geplante Min</div><div class="stat-val">${curMin}<small> min</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">GYM</div><div class="stat-val">${curW.tage.filter(t=>t.typ==='gym').length}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Badminton</div><div class="stat-val">${curW.tage.filter(t=>t.typ==='badminton').length}</div></div>
+  </div>`;
+
+  // ── Letzte 4 Wochen ──
+  const l4Bad=l4D.filter(t=>t.typ==='badminton');
+  const l4Gym=l4D.filter(t=>t.typ==='gym');
+  const l4Min=l4D.reduce((s,t)=>s+(t.dauer||0),0);
+  html+=`<p class="sec-title">Letzte 4 Wochen</p>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-lbl">Badminton</div><div class="stat-val">${l4Bad.length}</div><div class="stat-trend t-neu">Ø ${Math.round(l4Bad.length/4*10)/10} / Woche</div></div>
+    <div class="stat-card"><div class="stat-lbl">GYM</div><div class="stat-val">${l4Gym.length}</div><div class="stat-trend t-neu">Ø ${Math.round(l4Gym.length/4*10)/10} / Woche</div></div>
+    <div class="stat-card"><div class="stat-lbl">Trainingsmin</div><div class="stat-val">${l4Min}<small> min</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Compliance</div><div class="stat-val">${l4T.length?Math.round(l4D.length/l4T.length*100):0}<small>%</small></div></div>
+  </div>`;
+
+  // ── Gesamt ──
+  html+=`<p class="sec-title">Gesamtübersicht</p>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-lbl">Trainings</div><div class="stat-val">${done.length}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Stunden</div><div class="stat-val">${Math.floor(totalMin/60)}<small>h ${totalMin%60}'</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">GYM</div><div class="stat-val">${gymD.length}<small> (${Math.round(gymMin/60)}h)</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Badminton</div><div class="stat-val">${badD.length}<small> (${Math.round(badMin/60)}h)</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Compliance</div><div class="stat-val">${compliance}<small>%</small></div></div>
+    <div class="stat-card"><div class="stat-lbl">Ø h / Woche</div><div class="stat-val">${avgHW}<small>h</small></div></div>
+  </div>`;
+
+  // ── Intensitätsverteilung ──
+  const iBuckets={leicht:0,maessig:0,schwer:0,sehr:0};
+  done.forEach(t=>{const i=t.intensitaet||0;if(i<=2)iBuckets.leicht++;else if(i<=5)iBuckets.maessig++;else if(i<=7)iBuckets.schwer++;else iBuckets.sehr++;});
+  const iT=done.length||1;
+  html+=`<div class="stat-wide"><div class="stat-wide-title">Intensitätsverteilung</div>`;
+  [{l:'Leicht (1–2)',v:iBuckets.leicht,c:'#4ade80'},{l:'Mäßig (3–5)',v:iBuckets.maessig,c:'#fbbf24'},{l:'Schwer (6–7)',v:iBuckets.schwer,c:'#f97316'},{l:'Sehr schwer (8–10)',v:iBuckets.sehr,c:'#ef4444'}].forEach(d=>{
+    const pct=Math.round(d.v/iT*100);
+    html+=`<div class="ibar-row"><div class="ibar-lbl">${d.l}</div><div class="ibar-bg"><div class="ibar-fill" style="width:${pct}%;background:${d.c}"></div></div><div class="ibar-val" style="color:${d.c}">${d.v}</div></div>`;
+  });
+  html+=`<div style="font-size:9px;color:var(--muted);margin-top:8px">Ø GYM: <strong style="color:var(--white)">${avgIG}</strong> · Ø Badminton: <strong style="color:var(--white)">${avgIB}</strong></div></div>`;
+
+  // ── Balance ──
+  const bT=done.length||1;
+  const ratio=gymD.length?Math.round(badD.length/gymD.length*10)/10:0;
+  const rCol=ratio>=1.5&&ratio<=3?'var(--cool)':'var(--gym)';
+  html+=`<div class="stat-wide"><div class="stat-wide-title">Trainingsbalance</div>`;
+  [{l:'Badminton',v:badD.length,c:'var(--bad)'},{l:'GYM',v:gymD.length,c:'var(--gym)'},{l:'Pause / Regen.',v:pauseD.length,c:'var(--muted)'}].forEach(d=>{
+    const pct=Math.round(d.v/bT*100);
+    html+=`<div class="ibar-row"><div class="ibar-lbl">${d.l}</div><div class="ibar-bg"><div class="ibar-fill" style="width:${pct}%;background:${d.c}"></div></div><div class="ibar-val" style="color:${d.c}">${pct}%</div></div>`;
+  });
+  html+=`<div style="font-size:9px;color:var(--muted);margin-top:8px">Badminton : GYM = <strong style="color:${rCol}">${ratio}:1</strong> · Ziel: 1.5–3:1</div></div>`;
+
+  // ── Gewicht ──
+  if(META&&META.gewicht_aktuell){
+    const gew=META.gewicht_aktuell;
+    const ziel=79;
+    const diff=Math.round((gew-ziel)*10)/10;
+    html+=`<div class="stats-grid">
+      <div class="stat-card"><div class="stat-lbl">Gewicht aktuell</div><div class="stat-val">${gew}<small> kg</small></div><div class="stat-trend t-warn">Ziel: ${ziel} kg</div></div>
+      <div class="stat-card"><div class="stat-lbl">Bis Ziel</div><div class="stat-val">${diff}<small> kg</small></div><div class="stat-trend t-neu">~${Math.ceil(diff/0.5)} Wochen</div></div>
+    </div>`;
+  }
+
+  // ── Trainer-Insights ──
+  html+=`<div class="stat-wide"><div class="stat-wide-title">Trainer-Insights</div>`;
+  const insights=[];
+  const gpmW=gymD.length/nWeeks;
+  if(gpmW<1.5)insights.push({i:'💪',t:`Ø <strong>${Math.round(gpmW*10)/10} GYM/Woche</strong> – Ziel sind 2–3 Einheiten für optimale Badminton-Athletik.`});
+  else insights.push({i:'💪',t:`Ø <strong>${Math.round(gpmW*10)/10} GYM/Woche</strong> – sehr gut, im Zielbereich.`});
+  if(compliance>=80)insights.push({i:'🎯',t:`<strong>${compliance}% Compliance</strong> – ausgezeichnete Trainingsdisziplin. Konstanz ist entscheidend.`});
+  else insights.push({i:'🎯',t:`<strong>${compliance}% Compliance</strong> – noch Luft nach oben. Regelmäßigkeit schlägt Intensität langfristig.`});
+  insights.push({i:'🔄',t:`<strong>Di Traun-Muster</strong>: ${badD.filter(t=>t.intensitaet>=7).length} SCHWER(7+)-Einheiten absolviert. Erholungstag danach konsequent einhalten.`});
+  if(avgHW>=4)insights.push({i:'⏱️',t:`Ø <strong>${avgHW}h/Woche</strong> – hoher Umfang. Schlaf (7h+) und Ernährung sind jetzt der limitierende Faktor.`});
+  else insights.push({i:'⏱️',t:`Ø <strong>${avgHW}h/Woche</strong> – solider Umfang. Qualität vor Quantität beibehalten.`});
+  if(avgIB>6.5)insights.push({i:'🏸',t:`Badminton Ø-Intensität <strong>${avgIB}/10</strong> – hoch. Mehr moderate Technik-Einheiten (Z2) für bessere Regeneration.`});
+  else insights.push({i:'🏸',t:`Badminton Ø-Intensität <strong>${avgIB}/10</strong> – gut ausbalanciert. Gelegentlich Z4-Intervalle für Wettkampfhärte ergänzen.`});
+  insights.push({i:'⚖️',t:`<strong>Badminton:GYM = ${ratio}:1</strong> (Ziel 1.5–3:1). ${ratio<1.5?'Mehr Badminton oder weniger GYM.':ratio>3?'GYM-Anteil erhöhen für mehr Kraft.':'Optimale Balance.'}`});
+  insights.forEach(ins=>html+=`<div class="insight"><div class="insight-icon">${ins.i}</div><div class="insight-text">${ins.t}</div></div>`);
+  html+='</div>';
+
+  el.innerHTML=html;
+}
+
+// ══════════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════════
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(btn){
+    document.querySelectorAll('.nb').forEach(b=>b.classList.remove('a'));
+    btn.classList.add('a');
+  }
+  if(id==='woche'&&ALL_WOCHEN.length)renderWoche();
+  if(id==='stats'&&ALL_WOCHEN.length)renderStats();
+  if(id==='archiv'&&ALL_WOCHEN.length)renderArchiv();
+  if(id==='training'&&ALL_WOCHEN.length)renderTraining();
+  if(id==='plan'&&ALL_WOCHEN.length)renderPlan();
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// ══════════════════════════════════════════
+//  START
+// ══════════════════════════════════════════
+loadData();
+</script>
+</body>
+</html>

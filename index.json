@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "athlete": "MyTraining",
+    "version": "3.0",
+    "gewicht_aktuell": 82.5,
+    "langzeitplan": {
+      "titel": "Langzeitplan 2026 – Badminton & GYM (KW1–KW26)",
+      "start": "2026-01-02",
+      "ende": "2026-06-28",
+      "ziel": "Badminton-Leistung + Gewichtsreduktion ~7kg + funktionale Muskeldefinition"
+    }
+  },
+  "monate": [
+    {
+      "monat": "2026-01",
+      "monat_name": "Januar 2026",
+      "datei": "data/months/training_2026-01.json",
+      "kws": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tage_gesamt": 31
+    },
+    {
+      "monat": "2026-02",
+      "monat_name": "Februar 2026",
+      "datei": "data/months/training_2026-02.json",
+      "kws": [
+        6,
+        7
+      ],
+      "tage_gesamt": 14
+    },
+    {
+      "monat": "2026-03",
+      "monat_name": "März 2026",
+      "datei": "data/months/training_2026-03.json",
+      "kws": [
+        10,
+        11,
+        13,
+        14
+      ],
+      "tage_gesamt": 28
+    },
+    {
+      "monat": "2026-04",
+      "monat_name": "April 2026",
+      "datei": "data/months/training_2026-04.json",
+      "kws": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "tage_gesamt": 28
+    },
+    {
+      "monat": "2026-05",
+      "monat_name": "Mai 2026",
+      "datei": "data/months/training_2026-05.json",
+      "kws": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "tage_gesamt": 28
+    },
+    {
+      "monat": "2026-06",
+      "monat_name": "Juni 2026",
+      "datei": "data/months/training_2026-06.json",
+      "kws": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "tage_gesamt": 28
+    }
+  ]
+}

@@ -1,0 +1,624 @@
+{
+  "meta": {
+    "monat": "2026-03",
+    "monat_name": "März 2026",
+    "version": "1.0"
+  },
+  "wochen": [
+    {
+      "kw": 10,
+      "start": "2026-03-02",
+      "ende": "2026-03-08",
+      "fokus": "Rückkehr nach Skiurlaub",
+      "tage": [
+        {
+          "datum": "2026-03-02",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM – Wiedereinstieg",
+          "dauer": 86,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Hauptteil",
+              "inhalt": "GYM nach Skiurlaub · moderates Volumen · Ø 91 BPM · Mäßig (6)"
+            }
+          ]
+        },
+        {
+          "datum": "2026-03-03",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-04",
+          "wochentag": "Mi",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-05",
+          "wochentag": "Do",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-06",
+          "wochentag": "Fr",
+          "typ": "badminton",
+          "titel": "Badminton – Freitag",
+          "dauer": 120,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-07",
+          "wochentag": "Sa",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-08",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Skill",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        }
+      ]
+    },
+    {
+      "kw": 11,
+      "start": "2026-03-09",
+      "ende": "2026-03-15",
+      "fokus": "Skiurlaub Rocca Pietore",
+      "tage": [
+        {
+          "datum": "2026-03-09",
+          "wochentag": "Mo",
+          "typ": "pause",
+          "titel": "Anreise Skiurlaub",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-10",
+          "wochentag": "Di",
+          "typ": "andere",
+          "titel": "Skifahren – Rocca Pietore",
+          "dauer": 373,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Aktivität",
+              "inhalt": "6:13h · 38,21 km · 7.361 m Höhenunterschied · 15 Läufe · 1.007 kcal · Ø 73 bpm"
+            }
+          ]
+        },
+        {
+          "datum": "2026-03-11",
+          "wochentag": "Mi",
+          "typ": "andere",
+          "titel": "Skifahren – Tag 2",
+          "dauer": 300,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-12",
+          "wochentag": "Do",
+          "typ": "andere",
+          "titel": "Skifahren – Tag 3",
+          "dauer": 300,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-13",
+          "wochentag": "Fr",
+          "typ": "andere",
+          "titel": "Skifahren – Tag 4",
+          "dauer": 300,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-14",
+          "wochentag": "Sa",
+          "typ": "badminton",
+          "titel": "Badminton – Enns (Turnier)",
+          "dauer": 485,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Turnier",
+              "inhalt": "8:05h · 3.013 kcal · Ø 110 bpm · Schwer (8) · Enns"
+            }
+          ]
+        },
+        {
+          "datum": "2026-03-15",
+          "wochentag": "So",
+          "typ": "pause",
+          "titel": "Rückreise / Erholung",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        }
+      ]
+    },
+    {
+      "kw": 13,
+      "start": "2026-03-23",
+      "ende": "2026-03-29",
+      "fokus": "KW13 – ausgewogen, Gewicht 82,5 kg",
+      "tage": [
+        {
+          "datum": "2026-03-23",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM – Skill-orientiert",
+          "dauer": 80,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Z2"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Hauptteil",
+              "uebungen": [
+                {
+                  "name": "Reverse Lunge",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw13_a1"
+                },
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw13_a2"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "kw13_a3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw13_a4"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "",
+                  "id": "kw13_a5"
+                }
+              ]
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Erkenntnisse KW13",
+              "inhalt": "Training ausgewogen · leichtes Ziehen rechtes Knie + Wade · Gewicht: 82,5 kg"
+            }
+          ]
+        },
+        {
+          "datum": "2026-03-24",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-25",
+          "wochentag": "Mi",
+          "typ": "badminton",
+          "titel": "Badminton – Mittwoch",
+          "dauer": 90,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-26",
+          "wochentag": "Do",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-27",
+          "wochentag": "Fr",
+          "typ": "badminton",
+          "titel": "Badminton – Freitag",
+          "dauer": 120,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-28",
+          "wochentag": "Sa",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper + Core",
+          "dauer": 90,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper + Core",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw13_b1"
+                },
+                {
+                  "name": "Einarm. KH-Rudern",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "28 kg",
+                  "notiz": "",
+                  "id": "kw13_b2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw13_b3"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw13_b4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "datum": "2026-03-29",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Unterkörper",
+          "dauer": 90,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Unterkörper",
+              "uebungen": [
+                {
+                  "name": "RDL KH",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "4×8",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "kw13_c1"
+                },
+                {
+                  "name": "Beinpresse",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "80 kg",
+                  "notiz": "",
+                  "id": "kw13_c2"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw13_c3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kw": 14,
+      "start": "2026-03-30",
+      "ende": "2026-04-05",
+      "fokus": "Grundlage – Skill & Kraft",
+      "tage": [
+        {
+          "datum": "2026-03-30",
+          "wochentag": "Mo",
+          "typ": "pause",
+          "titel": "Pause / Regeneration",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-03-31",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Technik + Spielpraxis · SCHWER (8)"
+            }
+          ]
+        },
+        {
+          "datum": "2026-04-01",
+          "wochentag": "Mi",
+          "typ": "pause",
+          "titel": "Pause / Regeneration",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Erholungstag nach Di Traun SCHWER (8)"
+            }
+          ]
+        },
+        {
+          "datum": "2026-04-02",
+          "wochentag": "Do",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper + Core",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Z2"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper + Core",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw14_a1"
+                },
+                {
+                  "name": "Rudern sitzend",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "68 kg",
+                  "notiz": "",
+                  "id": "kw14_a2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw14_a3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw14_a4"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "kw14_a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "datum": "2026-04-03",
+          "wochentag": "Fr",
+          "typ": "badminton",
+          "titel": "Badminton – Freitag",
+          "dauer": 120,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-04-04",
+          "wochentag": "Sa",
+          "typ": "gym",
+          "titel": "GYM – Unterkörper + Core",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Unterkörper",
+              "uebungen": [
+                {
+                  "name": "RDL KH",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "4×8",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "kw14_b1"
+                },
+                {
+                  "name": "Bulg. Split Squat",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "20 kg",
+                  "notiz": "",
+                  "id": "kw14_b2"
+                },
+                {
+                  "name": "Beinpresse",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "80 kg",
+                  "notiz": "",
+                  "id": "kw14_b3"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw14_b4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "datum": "2026-04-05",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Mobilität + Core",
+          "dauer": 60,
+          "intensitaet": 4,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Mobilität + Core",
+              "inhalt": "World Greatest Stretch · Bird Dog · Dead Bug · Foam Roller · Dehnen"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

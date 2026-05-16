@@ -1,0 +1,1312 @@
+{
+  "meta": {
+    "monat": "2026-05",
+    "monat_name": "Mai 2026",
+    "version": "1.0"
+  },
+  "wochen": [
+    {
+      "kw": 19,
+      "start": "2026-05-04",
+      "ende": "2026-05-10",
+      "fokus": "Badminton-Woche + Gartenarbeit",
+      "tage": [
+        {
+          "datum": "2026-05-04",
+          "wochentag": "Mo",
+          "typ": "badminton",
+          "titel": "Badminton – Montag",
+          "dauer": 120,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Badminton · Mo-Einheit"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-05",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 8,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "SCHWER (8) · Traun"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-06",
+          "wochentag": "Mi",
+          "typ": "pause",
+          "titel": "Pause / Regeneration",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Erholungstag nach Mo+Di Badminton"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-07",
+          "wochentag": "Do",
+          "typ": "andere",
+          "titel": "Basketball",
+          "dauer": 70,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Basketball",
+              "inhalt": "Koordination · variable Belastung"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-08",
+          "wochentag": "Fr",
+          "typ": "pause",
+          "titel": "Pause (Gartenarbeit – Schaufeln)",
+          "dauer": 120,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Gartenarbeit Schaufeln · Rücken + Beine stark beansprucht → kein GYM"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-09",
+          "wochentag": "Sa",
+          "typ": "pause",
+          "titel": "Pause (Gartenarbeit – Schaufeln)",
+          "dauer": 120,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Gartenarbeit Schaufeln · Rücken + Beine · Erholung wichtig"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-10",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper + Core",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Z2 · Schulter-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper (Beine schonen nach Schaufelarbeit)",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw19_a1"
+                },
+                {
+                  "name": "Einarm. KH-Rudern",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "28 kg",
+                  "notiz": "",
+                  "id": "kw19_a2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw19_a3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw19_a4"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw19_a5"
+                }
+              ]
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Beine + Rücken nach Fr/Sa Schaufeln schonen · Mäßig Ziel · kein Unterkörper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kw": 20,
+      "start": "2026-05-11",
+      "ende": "2026-05-17",
+      "fokus": "Skill-orientiert – Badminton + Kraft",
+      "tage": [
+        {
+          "datum": "2026-05-11",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM – Unterkörper Skill",
+          "dauer": 85,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 91,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8–10 Min · Z2 (105–120 bpm)\nDynamische Mobilisation 3–5 Min: Hüfte, Sprunggelenk, BWS, Schulter"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block A – Unterkörper",
+              "uebungen": [
+                {
+                  "name": "Reverse Lunge",
+                  "info": "kontrolliert absenken",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "Beinarbeit",
+                  "id": "kw20_a1"
+                },
+                {
+                  "name": "Step-up Knee Drive",
+                  "info": "explosiv, Balance",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "18 kg",
+                  "notiz": "Split-Step",
+                  "id": "kw20_a2"
+                },
+                {
+                  "name": "Beinpresse",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "80 kg",
+                  "notiz": "nicht ans Limit",
+                  "id": "kw20_a3"
+                },
+                {
+                  "name": "Wadenheben",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×15",
+                  "soll": "–",
+                  "notiz": "volle ROM",
+                  "id": "kw20_a4"
+                }
+              ]
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block B – Oberkörper & Rotation",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "Schulterblatt aktiv",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw20_a5"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "Rotation aus Core",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw20_a6"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "Pause hinten",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "Schulter",
+                  "id": "kw20_a7"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "hoch→tief, stab. Hüfte",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "Core-Rotation",
+                  "id": "kw20_a8"
+                }
+              ]
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Core & Stabilität",
+              "uebungen": [
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "Anti-Rotation",
+                  "id": "kw20_a9"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "Becken stabil",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw20_a10"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "aufrechte Haltung",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "kw20_a11"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Rad locker 6–8 Min · Puls <100 bpm\nDehnen 3–4 Min: Hüfte, Schulter, BWS"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung",
+              "inhalt": "Vor: Leichte KH + Protein · 1–2h vorher\nNach: Proteinreich, gemüsereich · keine schnellen KH abends"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-12",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min · Footwork locker · Puls aufbauen Z2"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Einzel · Technik + Spielpraxis · MÄSSIG (5) ← Wendepunkt: erstmals Mäßig statt Schwer!\nSplit-Step, Richtungswechsel, Netzspiel"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Ausschlagen · Dehnen Oberschenkel, Waden, Schulter"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-13",
+          "wochentag": "Mi",
+          "typ": "badminton",
+          "titel": "Badminton – Mittwoch Enns",
+          "dauer": 130,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Badminton Enns · Technik + Spielpraxis"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Dehnen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-14",
+          "wochentag": "Do",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper knieschonend",
+          "dauer": 70,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 85,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Schulter-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper",
+              "uebungen": [
+                {
+                  "name": "Rudern sitzend",
+                  "info": "Schulterblatt aktiv",
+                  "egym": "r",
+                  "sxw": "4×8",
+                  "soll": "70 kg",
+                  "notiz": "",
+                  "id": "kw20_b1"
+                },
+                {
+                  "name": "Schrägbank KH",
+                  "info": "kontrolliert",
+                  "egym": "",
+                  "sxw": "3×10",
+                  "soll": "24 kg",
+                  "notiz": "je Hand",
+                  "id": "kw20_b2"
+                },
+                {
+                  "name": "Einarm. KH-Rudern",
+                  "info": "stabiler Core",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "28 kg",
+                  "notiz": "",
+                  "id": "kw20_b3"
+                },
+                {
+                  "name": "Schulterdrücken",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×10",
+                  "soll": "45 kg",
+                  "notiz": "",
+                  "id": "kw20_b4"
+                },
+                {
+                  "name": "Band Pull-Apart",
+                  "info": "Schulter-Prävention",
+                  "egym": "",
+                  "sxw": "3×15",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw20_b5"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Dehnen 5 Min: Brust, Schulter, Trizeps"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-15",
+          "wochentag": "Fr",
+          "typ": "badminton",
+          "titel": "Badminton – Intensivtraining",
+          "dauer": 120,
+          "intensitaet": 8,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min · Dynamic Footwork Drills · Puls Z2 aufbauen"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block 1 – Multiball-Drills",
+              "inhalt": "Multiball Grundschläge · Clear / Drop / Smash · je 10 Min\nFokus: saubere Technik, Treffpunkt optimal"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block 2 – 6-Punkt-Footwork",
+              "inhalt": "6-Punkt-Footwork-Schema · 3×6 Min mit 2 Min Pause\nFokus: Split-Step Timing, schnelle Richtungswechsel"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block 3 – Matchplay 11 Punkte",
+              "inhalt": "Matches bis 11 Punkte · 3–4 Sätze · volle Intensität\nFokus: Taktik unter Druck, Durchhalten Z4"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block 4 – Technik unter Ermüdung",
+              "inhalt": "Netzspiel + Serve-Receive · 15 Min · zum Abschluss\nFokus: Präzision trotz Ermüdung"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Ausschlagen locker 5 Min · Dehnen Oberschenkel, Waden, Schulter, Hüfte"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "2 Erholungstage (Mi/Do) vor diesem Training → volle Intensität angebracht\nHF-Ziel: Z3–Z4 · Peaks Z5 ok · Nachher: Proteinreich essen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-16",
+          "wochentag": "Sa",
+          "typ": "pause",
+          "titel": "Pause / Regeneration",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "cooldown",
+              "label": "Aktive Regeneration",
+              "inhalt": "Spaziergang 30–45 Min · lockeres Dehnen\nFoam Roller: Oberschenkel, Wade, Hüftbeuger · je 60 Sek."
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Nach Fr Intensivtraining ist Sa Pause wichtiger denn je.\nViel trinken · proteinreich essen · früh schlafen gehen."
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-17",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8–10 Min · Z2 (105–120 bpm)\nSchulter-Mobilisation: Arme kreisen, Thorax-Rotation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper – 7 Übungen",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "Schulterblatt aktiv",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw20_c1"
+                },
+                {
+                  "name": "Rudern sitzend",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "70 kg",
+                  "notiz": "",
+                  "id": "kw20_c2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "Rotation aus Core",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw20_c3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "Pause hinten halten",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "Schulter",
+                  "id": "kw20_c4"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "hoch→tief",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "Core",
+                  "id": "kw20_c5"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "Becken stabil",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw20_c6"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "aufrechte Haltung",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "kw20_c7"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Rad locker 6–8 Min · Puls <100 bpm\nDehnen: Brust, Schulter, Trizeps, Lat"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung & Hinweis",
+              "inhalt": "Vor: Leichte KH + Protein · 1–2h vorher\nNach: Proteinreich · keine schnellen KH abends\nZiel: Mäßig (5-6) · gleiche Logik wie Mo GYM diese Woche"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kw": 21,
+      "start": "2026-05-18",
+      "ende": "2026-05-24",
+      "fokus": "3×GYM + 2×Badminton + Basketball + Mobilität",
+      "tage": [
+        {
+          "datum": "2026-05-18",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM Oberkörper + Core",
+          "dauer": 75,
+          "intensitaet": 5,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Z2 · Schulter-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper + Core",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "Schulterblatt aktiv",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "2026-05-18_ob1"
+                },
+                {
+                  "name": "Rudern sitzend",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "70 kg",
+                  "notiz": "",
+                  "id": "2026-05-18_ob2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "Rotation",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "2026-05-18_ob3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "Pause hinten",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "2026-05-18_ob4"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "hoch→tief",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "2026-05-18_ob5"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "Becken stabil",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "2026-05-18_ob6"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "aufrechte Haltung",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-18_ob7"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Rad locker 6–8 Min · Dehnen"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung",
+              "inhalt": "Vor: Leichte KH + Protein · Nach: Proteinreich"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-19",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton Traun",
+          "dauer": 90,
+          "intensitaet": 6,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min · Footwork Drills"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Technik + Spielpraxis"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Ausschlagen · Dehnen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-20",
+          "wochentag": "Mi",
+          "typ": "badminton",
+          "titel": "Badminton Enns (moderat)",
+          "dauer": 90,
+          "intensitaet": 5,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min · Footwork Drills"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Technik + Spielpraxis"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Ausschlagen · Dehnen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-21",
+          "wochentag": "Do",
+          "typ": "andere",
+          "titel": "Basketball",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Aktivität",
+              "inhalt": "Basketball"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-22",
+          "wochentag": "Fr",
+          "typ": "gym",
+          "titel": "GYM Unterkörper + Core",
+          "dauer": 75,
+          "intensitaet": 5,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Bike 10 Min · Hüft-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Unterkörper + Core",
+              "uebungen": [
+                {
+                  "name": "RDL Kurzhantel",
+                  "info": "Hüftscharnierend",
+                  "egym": "",
+                  "sxw": "4×8",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-22_uk1"
+                },
+                {
+                  "name": "Bulg. Split Squat",
+                  "info": "unilateral",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "20 kg",
+                  "notiz": "",
+                  "id": "2026-05-22_uk2"
+                },
+                {
+                  "name": "Beinpresse",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "80 kg",
+                  "notiz": "Mäßig",
+                  "id": "2026-05-22_uk3"
+                },
+                {
+                  "name": "Wadenheben",
+                  "info": "volle ROM",
+                  "egym": "r",
+                  "sxw": "3×15",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "2026-05-22_uk4"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "Anti-Rotation",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "2026-05-22_uk5"
+                },
+                {
+                  "name": "Suitcase Carry",
+                  "info": "Lateral Stabilität",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "28 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-22_uk6"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Foam Rolling · Dehnen: Hüftbeuger, Hamstrings"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung",
+              "inhalt": "Vor: KH + Protein · Nach: Proteinreich"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-23",
+          "wochentag": "Sa",
+          "typ": "gym",
+          "titel": "GYM Oberkörper + Core",
+          "dauer": 75,
+          "intensitaet": 5,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Z2 · Schulter-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper + Core",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "Schulterblatt aktiv",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "2026-05-23_ob1"
+                },
+                {
+                  "name": "Rudern sitzend",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "70 kg",
+                  "notiz": "",
+                  "id": "2026-05-23_ob2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "Rotation",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "2026-05-23_ob3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "Pause hinten",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "2026-05-23_ob4"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "hoch→tief",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "2026-05-23_ob5"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "Becken stabil",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "2026-05-23_ob6"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "aufrechte Haltung",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-23_ob7"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Rad locker 6–8 Min · Dehnen"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung",
+              "inhalt": "Vor: Leichte KH + Protein · Nach: Proteinreich"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-24",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM Mobilität + Core",
+          "dauer": 75,
+          "intensitaet": 3,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Mobilität + Core",
+              "inhalt": "World Greatest Stretch · Bird Dog 3×8/8 · Dead Bug 3×8/8\nFoam Roller: Oberschenkel, Wade, Hüftbeuger je 60 Sek."
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Kein schweres Gewicht – aktive Regeneration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kw": 22,
+      "start": "2026-05-25",
+      "ende": "2026-05-31",
+      "fokus": "Badminton-Schwerpunkt + 2×GYM",
+      "tage": [
+        {
+          "datum": "2026-05-25",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM Unterkörper + Core",
+          "dauer": 75,
+          "intensitaet": 5,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Bike 10 Min · Hüft-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Unterkörper + Core",
+              "uebungen": [
+                {
+                  "name": "RDL Kurzhantel",
+                  "info": "Hüftscharnierend",
+                  "egym": "",
+                  "sxw": "4×8",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-25_uk1"
+                },
+                {
+                  "name": "Bulg. Split Squat",
+                  "info": "unilateral",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "20 kg",
+                  "notiz": "",
+                  "id": "2026-05-25_uk2"
+                },
+                {
+                  "name": "Beinpresse",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "80 kg",
+                  "notiz": "Mäßig",
+                  "id": "2026-05-25_uk3"
+                },
+                {
+                  "name": "Wadenheben",
+                  "info": "volle ROM",
+                  "egym": "r",
+                  "sxw": "3×15",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "2026-05-25_uk4"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "Anti-Rotation",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "2026-05-25_uk5"
+                },
+                {
+                  "name": "Suitcase Carry",
+                  "info": "Lateral Stabilität",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "28 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-25_uk6"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Foam Rolling · Dehnen: Hüftbeuger, Hamstrings"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung",
+              "inhalt": "Vor: KH + Protein · Nach: Proteinreich"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-26",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton Traun",
+          "dauer": 90,
+          "intensitaet": 6,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min · Footwork Drills"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Technik + Spielpraxis"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Ausschlagen · Dehnen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-27",
+          "wochentag": "Mi",
+          "typ": "pause",
+          "titel": "Pause / Erholung nach Di Traun",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Aktive Regeneration: Spaziergang, Dehnen, viel Wasser trinken."
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-28",
+          "wochentag": "Do",
+          "typ": "andere",
+          "titel": "Basketball",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Aktivität",
+              "inhalt": "Basketball"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-29",
+          "wochentag": "Fr",
+          "typ": "badminton",
+          "titel": "Badminton",
+          "dauer": 90,
+          "intensitaet": 6,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Einschlagen 10 Min · Footwork Drills"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Training",
+              "inhalt": "Technik + Spielpraxis"
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Ausschlagen · Dehnen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-30",
+          "wochentag": "Sa",
+          "typ": "pause",
+          "titel": "Pause · Wochenpuffer",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Aktive Regeneration: Spaziergang, Dehnen, viel Wasser trinken."
+            }
+          ]
+        },
+        {
+          "datum": "2026-05-31",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM Oberkörper + Mobilität",
+          "dauer": 75,
+          "intensitaet": 4,
+          "status": "geplant",
+          "abschluss_pct": 0,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8 Min · Z2 · Schulter-Mobilisation"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper + Core",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "Schulterblatt aktiv",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "2026-05-31_ob1"
+                },
+                {
+                  "name": "Rudern sitzend",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "70 kg",
+                  "notiz": "",
+                  "id": "2026-05-31_ob2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "Rotation",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "2026-05-31_ob3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "Pause hinten",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "2026-05-31_ob4"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "hoch→tief",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "2026-05-31_ob5"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "Becken stabil",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "2026-05-31_ob6"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "aufrechte Haltung",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "je Hand",
+                  "id": "2026-05-31_ob7"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Rad locker 6–8 Min · Dehnen"
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Ernährung",
+              "inhalt": "Vor: Leichte KH + Protein · Nach: Proteinreich"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
