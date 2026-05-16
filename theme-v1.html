@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MyBadmintonPlan">
+<meta name="theme-color" content="#0a0e1a">
+<title>MyBadmintonPlan – V1 Athletic Dark</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--surface:#111827;--surface2:#1a2540;--accent:#e8ff47;--accent2:#60a5fa;--text:#f0f0f0;--muted:rgba(255,255,255,.35);--border:rgba(255,255,255,.07);--gym:#f87135;--bad:#60a5fa;--cool:#4ade80;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;font-size:14px}
+.hdr{background:var(--surface);padding:12px 16px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#fff}
+.logo em{color:var(--accent);font-style:normal}
+.date-tag{font-size:10px;color:var(--muted);letter-spacing:.5px}
+.nav{display:flex}
+.nb{flex:1;padding:9px 4px;background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;border-bottom:2px solid transparent}
+.nb.a{color:var(--accent);border-bottom-color:var(--accent)}
+.content{padding:12px;padding-bottom:48px}
+.hero{background:var(--surface2);border:1px solid rgba(232,255,71,.12);border-radius:var(--radius);padding:16px;margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-30px;top:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(232,255,71,.06),transparent 70%);pointer-events:none}
+.hero-kw{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.hero-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:5px;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;color:#fff;line-height:1;margin-bottom:6px}
+.hero-meta{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.badge.gym{background:rgba(248,113,52,.12);color:var(--gym);border:1px solid rgba(248,113,52,.25)}
+.badge.bad{background:rgba(96,165,250,.12);color:var(--bad);border:1px solid rgba(96,165,250,.25)}
+.ibars{display:flex;gap:3px;margin-top:8px}
+.ibar{flex:1;height:4px;border-radius:2px;background:var(--border)}
+.ibar.g{background:#4ade80}.ibar.y{background:#fbbf24}.ibar.o{background:#f97316}.ibar.r{background:#ef4444}
+.sec-label{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.2);margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.ueb-row{display:flex;align-items:center;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:11px 13px;margin-bottom:5px;gap:10px}
+.unum{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--accent);min-width:22px;line-height:1}
+.uinfo{flex:1}
+.uname{font-size:13px;font-weight:500;color:#fff;line-height:1.2}
+.udetail{font-size:9px;color:var(--muted);margin-top:2px;letter-spacing:.3px}
+.umeta{text-align:right;min-width:42px}
+.usxw{font-size:11px;font-weight:600;color:rgba(255,255,255,.55)}
+.usoll{font-size:9px;color:var(--muted);margin-top:2px}
+.ist-w{padding:0}
+.ist-num{width:46px;padding:5px 3px;background:rgba(232,255,71,.07);border:1px solid rgba(232,255,71,.2);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:var(--accent);text-align:center}
+.ist-num::placeholder{color:rgba(232,255,71,.25);font-size:9px}
+.ist-num:focus{outline:none;border-color:rgba(232,255,71,.5)}
+.ist-free{width:46px;padding:5px 3px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.1);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted);text-align:center}
+.ist-free::placeholder{color:rgba(255,255,255,.12);font-size:9px}
+.ist-free:focus{outline:none;border-color:rgba(255,255,255,.2)}
+.prog{display:flex;align-items:center;gap:10px;margin-top:14px;padding:10px 13px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px}
+.prog-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.prog-bg{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:2px;width:45%}
+.prog-pct{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent);min-width:42px;text-align:right;line-height:1}
+.bereich-info{background:rgba(255,255,255,.02);border-left:2px solid;border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;font-size:12px;line-height:1.6;white-space:pre-line}
+.bereich-info.aufw{border-color:var(--gym);color:rgba(248,113,52,.8)}
+.bereich-info.cool{border-color:var(--cool);color:rgba(74,222,128,.7)}
+.bereich-info.hint{border-color:rgba(139,92,246,1);color:rgba(167,139,250,.8)}
+.save-btn{width:100%;margin-top:14px;padding:14px;background:var(--accent);color:#0a0e1a;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="logo">My<em>Badminton</em>Plan</div>
+    <div class="date-tag">Fr · 15. Mai · KW20</div>
+  </div>
+  <nav class="nav">
+    <button class="nb a">Training</button>
+    <button class="nb">Woche</button>
+    <button class="nb">Plan</button>
+    <button class="nb">Archiv</button>
+    <button class="nb">Stats</button>
+  </nav>
+</div>
+<div class="content">
+  <div class="hero">
+    <div class="hero-kw"><span class="hero-dot"></span>KW 20 · Heute · Aktiv</div>
+    <div class="hero-title">GYM – Skill-orientiert</div>
+    <div class="hero-meta">85 Min <span class="badge gym">GYM</span></div>
+    <div class="ibars">
+      <div class="ibar g"></div><div class="ibar g"></div><div class="ibar y"></div>
+      <div class="ibar y"></div><div class="ibar o"></div><div class="ibar o"></div>
+      <div class="ibar"></div><div class="ibar"></div><div class="ibar"></div><div class="ibar"></div>
+    </div>
+  </div>
+
+  <div class="sec-label">Aufwärmen</div>
+  <div class="bereich-info aufw">Ergometer 8–10 Min · Z2 (105–120 bpm)
+Dynamische Mobilisation 3–5 Min: Hüfte, Sprunggelenk, BWS</div>
+
+  <div class="sec-label">Block A – Unterkörper</div>
+  <div class="ueb-row"><div class="unum">1</div><div class="uinfo"><div class="uname">Reverse Lunge</div><div class="udetail">kontrolliert absenken · Beinarbeit</div></div><div class="umeta"><div class="usxw">3×8/8</div><div class="usoll">SOLL 22 kg</div></div><div class="ist-w"><input class="ist-num" type="number" placeholder="IST"></div></div>
+  <div class="ueb-row"><div class="unum">2</div><div class="uinfo"><div class="uname">Beinpresse EGYM</div><div class="udetail">nicht ans Limit</div></div><div class="umeta"><div class="usxw">3×8</div><div class="usoll">SOLL 80 kg</div></div><div class="ist-w"><input class="ist-num" type="number" placeholder="IST"></div></div>
+  <div class="ueb-row"><div class="unum">3</div><div class="uinfo"><div class="uname">Dead Bug</div><div class="udetail">Becken stabil</div></div><div class="umeta"><div class="usxw">3×8/8</div><div class="usoll">–</div></div><div class="ist-w"><input class="ist-free" type="text" placeholder="frei"></div></div>
+
+  <div class="sec-label">Block B – Oberkörper</div>
+  <div class="ueb-row"><div class="unum">4</div><div class="uinfo"><div class="uname">Latzug</div><div class="udetail">Schulterblatt aktiv</div></div><div class="umeta"><div class="usxw">3×8</div><div class="usoll">SOLL 75 kg</div></div><div class="ist-w"><input class="ist-num" type="number" placeholder="IST"></div></div>
+  <div class="ueb-row"><div class="unum">5</div><div class="uinfo"><div class="uname">Face Pulls</div><div class="udetail">Pause hinten halten · Schulter</div></div><div class="umeta"><div class="usxw">3×15</div><div class="usoll">SOLL 27 kg</div></div><div class="ist-w"><input class="ist-num" type="number" placeholder="IST"></div></div>
+  <div class="ueb-row"><div class="unum">6</div><div class="uinfo"><div class="uname">Farmer Carry</div><div class="udetail">aufrechte Haltung · je Hand</div></div><div class="umeta"><div class="usxw">3×30m</div><div class="usoll">SOLL 32 kg</div></div><div class="ist-w"><input class="ist-num" type="number" placeholder="IST"></div></div>
+
+  <div class="prog"><div class="prog-label">Abschluss</div><div class="prog-bg"><div class="prog-fill"></div></div><div class="prog-pct">45%</div></div>
+
+  <div class="sec-label" style="margin-top:14px">Cool-Down</div>
+  <div class="bereich-info cool">Rad locker 6–8 Min · Puls &lt;100 bpm
+Dehnen 3–4 Min: Hüfte, Schulter, BWS</div>
+
+  <div class="sec-label">Ernährung</div>
+  <div class="bereich-info hint">Vor: Leichte KH + Protein · 1–2h vorher
+Nach: Proteinreich, gemüsereich · keine schnellen KH abends</div>
+
+  <button class="save-btn">✓ Abschliessen & Speichern</button>
+</div>
+</body></html>

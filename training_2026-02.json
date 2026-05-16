@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "monat": "2026-02",
+    "monat_name": "Februar 2026",
+    "version": "1.0"
+  },
+  "wochen": [
+    {
+      "kw": 6,
+      "start": "2026-02-02",
+      "ende": "2026-02-08",
+      "fokus": "Knieschonend – Oberkörper/Core",
+      "tage": [
+        {
+          "datum": "2026-02-02",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper knieschonend",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "72 kg",
+                  "notiz": "",
+                  "id": "kw6_a1"
+                },
+                {
+                  "name": "Rudern sitzend",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "68 kg",
+                  "notiz": "",
+                  "id": "kw6_a2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "20 kg",
+                  "notiz": "",
+                  "id": "kw6_a3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw6_a4"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "20 kg",
+                  "notiz": "",
+                  "id": "kw6_a5"
+                }
+              ]
+            },
+            {
+              "bereich": "hinweis",
+              "label": "Hinweis",
+              "inhalt": "Knie schonen – keine kniedomin. Übungen"
+            }
+          ]
+        },
+        {
+          "datum": "2026-02-03",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-04",
+          "wochentag": "Mi",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-05",
+          "wochentag": "Do",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-06",
+          "wochentag": "Fr",
+          "typ": "badminton",
+          "titel": "Badminton – Freitag",
+          "dauer": 120,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-07",
+          "wochentag": "Sa",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-08",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper knieschonend",
+          "dauer": 70,
+          "intensitaet": 5,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "72 kg",
+                  "notiz": "",
+                  "id": "kw6_b1"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw6_b2"
+                },
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12",
+                  "soll": "20 kg",
+                  "notiz": "",
+                  "id": "kw6_b3"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw6_b4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kw": 7,
+      "start": "2026-02-09",
+      "ende": "2026-02-15",
+      "fokus": "Wettkampf + strukturiertes GYM",
+      "tage": [
+        {
+          "datum": "2026-02-09",
+          "wochentag": "Mo",
+          "typ": "gym",
+          "titel": "GYM – Oberkörper knieschonend",
+          "dauer": 75,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Oberkörper",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "73 kg",
+                  "notiz": "",
+                  "id": "kw7_a1"
+                },
+                {
+                  "name": "Einarm. KH-Rudern",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "28 kg",
+                  "notiz": "",
+                  "id": "kw7_a2"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw7_a3"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw7_a4"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw7_a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "datum": "2026-02-10",
+          "wochentag": "Di",
+          "typ": "badminton",
+          "titel": "Badminton – Traun",
+          "dauer": 130,
+          "intensitaet": 7,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-11",
+          "wochentag": "Mi",
+          "typ": "badminton",
+          "titel": "Badminton – Wettkampf",
+          "dauer": 180,
+          "intensitaet": 9,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Wettkampf",
+              "inhalt": "Meisterschaft · Z3–Z5 · lange Anteile Zone 4"
+            }
+          ]
+        },
+        {
+          "datum": "2026-02-12",
+          "wochentag": "Do",
+          "typ": "pause",
+          "titel": "Pause / Erholung",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-13",
+          "wochentag": "Fr",
+          "typ": "gym",
+          "titel": "GYM – Skill Ganzkörper",
+          "dauer": 80,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "hauptteil",
+              "label": "Ganzkörper",
+              "uebungen": [
+                {
+                  "name": "Reverse Lunge",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw7_b1"
+                },
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "73 kg",
+                  "notiz": "",
+                  "id": "kw7_b2"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "kw7_b3"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "32 kg",
+                  "notiz": "",
+                  "id": "kw7_b4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "datum": "2026-02-14",
+          "wochentag": "Sa",
+          "typ": "pause",
+          "titel": "Pause",
+          "dauer": 0,
+          "intensitaet": 0,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": []
+        },
+        {
+          "datum": "2026-02-15",
+          "wochentag": "So",
+          "typ": "gym",
+          "titel": "GYM – Skill-orientiert strukturiert",
+          "dauer": 85,
+          "intensitaet": 6,
+          "status": "abgeschlossen",
+          "abschluss_pct": 100,
+          "blocks": [
+            {
+              "bereich": "aufwaermen",
+              "label": "Aufwärmen",
+              "inhalt": "Ergometer 8–10 Min · Z2\nDynamische Mobilisation 3–5 Min"
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block A – Unterkörper",
+              "uebungen": [
+                {
+                  "name": "Reverse Lunge",
+                  "info": "kontrolliert",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw7_c1"
+                },
+                {
+                  "name": "Step-up Knee Drive",
+                  "info": "explosiv",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "18 kg",
+                  "notiz": "",
+                  "id": "kw7_c2"
+                },
+                {
+                  "name": "Beinpresse",
+                  "info": "EGYM",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "115 kg",
+                  "notiz": "",
+                  "id": "kw7_c3"
+                },
+                {
+                  "name": "Wadenheben",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×15",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw7_c4"
+                }
+              ]
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Block B – Oberkörper & Rotation",
+              "uebungen": [
+                {
+                  "name": "Latzug",
+                  "info": "",
+                  "egym": "r",
+                  "sxw": "3×8",
+                  "soll": "75 kg",
+                  "notiz": "",
+                  "id": "kw7_c5"
+                },
+                {
+                  "name": "Landmine Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw7_c6"
+                },
+                {
+                  "name": "Face Pulls",
+                  "info": "",
+                  "egym": "a",
+                  "sxw": "3×15",
+                  "soll": "27 kg",
+                  "notiz": "",
+                  "id": "kw7_c7"
+                },
+                {
+                  "name": "Cable Chop",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×10/10",
+                  "soll": "30 kg",
+                  "notiz": "",
+                  "id": "kw7_c8"
+                }
+              ]
+            },
+            {
+              "bereich": "hauptteil",
+              "label": "Core",
+              "uebungen": [
+                {
+                  "name": "Pallof Press",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×12/12",
+                  "soll": "22 kg",
+                  "notiz": "",
+                  "id": "kw7_c9"
+                },
+                {
+                  "name": "Dead Bug",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×8/8",
+                  "soll": "–",
+                  "notiz": "",
+                  "id": "kw7_c10"
+                },
+                {
+                  "name": "Farmer Carry",
+                  "info": "",
+                  "egym": "",
+                  "sxw": "3×30m",
+                  "soll": "34 kg",
+                  "notiz": "je Hand",
+                  "id": "kw7_c11"
+                }
+              ]
+            },
+            {
+              "bereich": "cooldown",
+              "label": "Cool-Down",
+              "inhalt": "Rad locker 6–8 Min · Dehnen Hüfte, Schulter, BWS"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

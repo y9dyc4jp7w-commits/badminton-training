@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MyBadmintonPlan">
+<meta name="theme-color" content="#1E3A5F">
+<title>MyBadmintonPlan – Aktuelles Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--hdr:#1E3A5F;--hdr2:#2E5080;--bg:#f2f4f7;--white:#fff;--border:#dde1e8;--text:#1a1a2e;--muted:#6b7280;--aufw:#E8690A;--aufw-bg:#FFF3EB;--haupt:#1E3A5F;--haupt-bg:#EBF0F7;--cool:#16a34a;--cool-bg:#EDFBF2;--hint:#7c3aed;--hint-bg:#F4EEFF;--ist-bg:#fef9c3;--ist-bdr:#f59e0b;--radius:10px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;font-size:14px}
+.hdr{background:var(--hdr);color:#fff;padding:12px 16px 0;position:sticky;top:0;z-index:100}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px}
+.hdr-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px}
+.hdr-logo{width:26px;height:26px;background:#e8ff47;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.hdr-title span{color:#e8ff47}
+.hdr-date{font-size:0.7rem;opacity:.65}
+.nav{display:flex;border-bottom:1px solid rgba(255,255,255,.15)}
+.nav-btn{flex:1;padding:9px 4px;background:none;border:none;color:rgba(255,255,255,.5);font-family:inherit;font-size:.68rem;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;text-transform:uppercase;letter-spacing:.04em}
+.nav-btn.active{color:#e8ff47;border-bottom-color:#e8ff47}
+.content{padding:12px;padding-bottom:48px}
+.plan-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:12px}
+.plan-hdr{background:var(--hdr);color:#fff;padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.ph-datum{font-size:.68rem;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.ph-name{font-size:1.05rem;font-weight:700;line-height:1.2}
+.ph-meta{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:3px}
+.ibars{display:flex;flex-direction:column;gap:2px;padding-top:2px}
+.ibar{width:18px;height:5px;border-radius:2px;background:var(--hdr2)}
+.ibar.lv1,.ibar.lv2,.ibar.lv3{background:#4ade80}
+.ibar.lv4,.ibar.lv5{background:#fbbf24}
+.ibar.lv6,.ibar.lv7{background:#f97316}
+.ibar.lv8,.ibar.lv9,.ibar.lv10{background:#ef4444}
+.bh{display:flex;align-items:center;gap:8px;padding:8px 14px 6px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--border)}
+.bdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.bh-h{color:var(--haupt);background:var(--haupt-bg)}.bh-h .bdot{background:var(--haupt)}
+.bh-a{color:var(--aufw);background:var(--aufw-bg)}.bh-a .bdot{background:var(--aufw)}
+.bh-c{color:var(--cool);background:var(--cool-bg)}.bh-c .bdot{background:var(--cool)}
+.bh-n{color:var(--hint);background:var(--hint-bg)}.bh-n .bdot{background:var(--hint)}
+.info-box{margin:0 14px 12px;padding:10px 12px;border-radius:0 6px 6px 0;font-size:.78rem;line-height:1.55;white-space:pre-line}
+.ib-a{background:var(--aufw-bg);border-left:3px solid var(--aufw);color:#7c2d12}
+.ib-c{background:var(--cool-bg);border-left:3px solid var(--cool);color:#14532d}
+.ib-n{background:var(--hint-bg);border-left:3px solid var(--hint);color:#4c1d95}
+.utable{width:100%;border-collapse:collapse}
+.utable thead tr{background:#f8f9fb}
+.utable th{padding:5px 5px;font-size:.58rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:left;border-bottom:1px solid var(--border)}
+.utable th.c{text-align:center}
+.utable td{padding:6px 5px;font-size:.77rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.utable tr:last-child td{border-bottom:none}
+.td-n{font-weight:500;min-width:80px}
+.td-n small{display:block;font-size:.6rem;color:var(--muted);font-weight:400;margin-top:1px}
+.td-c{text-align:center}
+.egym-b{display:inline-block;background:var(--haupt-bg);color:var(--haupt);border-radius:3px;padding:1px 5px;font-size:.62rem;font-weight:700}
+.td-soll{text-align:center;font-size:.75rem;color:var(--muted)}
+.td-ist{text-align:center;padding:3px 3px}
+.ist-inp{width:48px;padding:5px 2px;background:var(--ist-bg);border:1.5px solid var(--ist-bdr);border-radius:5px;font-family:inherit;font-size:.8rem;font-weight:600;color:#92400e;text-align:center;-webkit-appearance:none;display:block;margin:0 auto}
+.ist-inp:focus{outline:none;border-color:#d97706}
+.ist-inp::placeholder{color:#d97706;font-size:.65rem}
+.ist-free{width:48px;padding:5px 2px;background:#f8f9fb;border:1.5px dashed var(--border);border-radius:5px;font-family:inherit;font-size:.72rem;color:var(--text);text-align:center;display:block;margin:0 auto}
+.ist-free::placeholder{color:var(--muted);font-size:.6rem}
+.prog-wrap{padding:7px 14px 10px;display:flex;align-items:center;gap:10px}
+.prog-bg{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--cool);border-radius:3px;width:45%}
+.prog-lbl{font-size:.7rem;font-weight:600;color:var(--cool);min-width:30px;text-align:right}
+.save-btn{width:calc(100% - 28px);margin:0 14px 14px;padding:11px;background:var(--hdr);color:#fff;border:none;border-radius:8px;font-family:inherit;font-weight:600;font-size:.85rem;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="hdr-title"><div class="hdr-logo">🏸</div>My<span>BadmintonPlan</span></div>
+    <span class="hdr-date">Fr 15. Mai 2026</span>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn active">Training</button>
+    <button class="nav-btn">Woche</button>
+    <button class="nav-btn">Plan</button>
+    <button class="nav-btn">Archiv</button>
+    <button class="nav-btn">Stats</button>
+  </nav>
+</div>
+<div class="content">
+  <div class="plan-card">
+    <div class="plan-hdr">
+      <div>
+        <div class="ph-datum">Fr, 15. Mai 2026 · KW 20 · Heute</div>
+        <div class="ph-name">GYM – Skill-orientiert</div>
+        <div class="ph-meta">85 Min · GYM</div>
+      </div>
+      <div class="ibars">
+        <div class="ibar"></div><div class="ibar"></div><div class="ibar"></div><div class="ibar"></div>
+        <div class="ibar lv6"></div><div class="ibar lv5"></div><div class="ibar lv4"></div>
+        <div class="ibar lv3"></div><div class="ibar lv2"></div><div class="ibar lv1"></div>
+      </div>
+    </div>
+    <div class="bh bh-a"><span class="bdot"></span>Aufwärmen</div>
+    <div class="info-box ib-a">Ergometer 8–10 Min · Z2 (105–120 bpm)
+Dynamische Mobilisation 3–5 Min: Hüfte, Sprunggelenk, BWS</div>
+    <div class="bh bh-h"><span class="bdot"></span>Block A – Unterkörper</div>
+    <table class="utable">
+      <thead><tr><th>Übung</th><th class="c">EGYM</th><th class="c">S×W</th><th class="c">SOLL</th><th class="c">IST</th><th>Notiz</th></tr></thead>
+      <tbody>
+        <tr><td class="td-n">Reverse Lunge<small>kontrolliert absenken</small></td><td class="td-c">–</td><td class="td-c">3×8/8</td><td class="td-soll">22 kg</td><td class="td-ist"><input class="ist-inp" type="number" placeholder="IST"></td><td style="font-size:.62rem;color:var(--muted)">Beinarbeit</td></tr>
+        <tr><td class="td-n">Beinpresse<small>EGYM</small></td><td class="td-c"><span class="egym-b">r</span></td><td class="td-c">3×8</td><td class="td-soll">80 kg</td><td class="td-ist"><input class="ist-inp" type="number" placeholder="IST"></td><td style="font-size:.62rem;color:var(--muted)">nicht ans Limit</td></tr>
+        <tr><td class="td-n">Dead Bug<small>Becken stabil</small></td><td class="td-c">–</td><td class="td-c">3×8/8</td><td class="td-soll">–</td><td class="td-ist"><input class="ist-free" type="text" placeholder="frei"></td><td style="font-size:.62rem;color:var(--muted)"></td></tr>
+      </tbody>
+    </table>
+    <div class="bh bh-h"><span class="bdot"></span>Block B – Oberkörper & Rotation</div>
+    <table class="utable">
+      <thead><tr><th>Übung</th><th class="c">EGYM</th><th class="c">S×W</th><th class="c">SOLL</th><th class="c">IST</th><th>Notiz</th></tr></thead>
+      <tbody>
+        <tr><td class="td-n">Latzug<small>Schulterblatt aktiv</small></td><td class="td-c"><span class="egym-b">r</span></td><td class="td-c">3×8</td><td class="td-soll">75 kg</td><td class="td-ist"><input class="ist-inp" type="number" placeholder="IST"></td><td style="font-size:.62rem;color:var(--muted)"></td></tr>
+        <tr><td class="td-n">Face Pulls<small>Pause hinten</small></td><td class="td-c"><span class="egym-b">a</span></td><td class="td-c">3×15</td><td class="td-soll">27 kg</td><td class="td-ist"><input class="ist-inp" type="number" placeholder="IST"></td><td style="font-size:.62rem;color:var(--muted)">Schulter</td></tr>
+        <tr><td class="td-n">Farmer Carry<small>aufrechte Haltung</small></td><td class="td-c">–</td><td class="td-c">3×30m</td><td class="td-soll">32 kg</td><td class="td-ist"><input class="ist-inp" type="number" placeholder="IST"></td><td style="font-size:.62rem;color:var(--muted)">je Hand</td></tr>
+      </tbody>
+    </table>
+    <div class="prog-wrap">
+      <span style="font-size:.68rem;color:var(--muted)">Abschluss</span>
+      <div class="prog-bg"><div class="prog-fill"></div></div>
+      <span class="prog-lbl">45%</span>
+    </div>
+    <div class="bh bh-c"><span class="bdot"></span>Cool-Down</div>
+    <div class="info-box ib-c">Rad locker 6–8 Min · Puls &lt;100 bpm
+Dehnen 3–4 Min: Hüfte, Schulter, BWS</div>
+    <div class="bh bh-n"><span class="bdot"></span>Ernährung & Hinweis</div>
+    <div class="info-box" style="background:var(--hint-bg);border-left:3px solid var(--hint);color:#4c1d95">Vor: Leichte KH + Protein · 1–2h vorher
+Nach: Proteinreich, gemüsereich · keine schnellen KH abends</div>
+    <button class="save-btn">✓ Training abschliessen & speichern</button>
+  </div>
+</div>
+</body></html>

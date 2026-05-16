@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MyBadmintonPlan">
+<meta name="theme-color" content="#ffffff">
+<title>MyBadmintonPlan – V2 Clean Sport</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f3ef;--white:#fff;--dark:#1a1a2e;--accent:#e8690a;--accent2:#1a1a2e;--border:#e5e7eb;--muted:#9ca3af;--text:#1a1a2e;--cool:#16a34a;--cool-bg:#f0fdf4;--radius:14px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;font-size:14px}
+.hdr{background:var(--white);padding:14px 18px 0;border-bottom:2.5px solid var(--dark);position:sticky;top:0;z-index:100}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px}
+.logo{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:var(--dark);letter-spacing:-.5px}
+.logo em{color:var(--accent);font-style:normal}
+.date-pill{background:var(--dark);color:#e8ff47;font-size:10px;font-weight:500;padding:4px 12px;border-radius:20px;letter-spacing:.5px;font-family:'Syne',sans-serif}
+.nav{display:flex}
+.nb{flex:1;padding:9px 4px;background:none;border:none;border-bottom:3px solid transparent;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;cursor:pointer}
+.nb.a{color:var(--dark);border-bottom-color:var(--accent)}
+.content{padding:14px;padding-bottom:48px}
+.card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--border);margin-bottom:12px}
+.card-hdr{background:var(--dark);padding:14px 16px;display:flex;justify-content:space-between;align-items:flex-start}
+.card-kw{font-family:'Syne',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.card-title{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:#fff;line-height:1.1}
+.card-meta{font-size:11px;color:rgba(255,255,255,.45);margin-top:5px}
+.ibar-col{display:flex;flex-direction:column;gap:2px;align-items:flex-end;padding-top:2px}
+.ibar-h{height:4px;border-radius:2px;background:rgba(255,255,255,.1)}
+.ibar-h.g{background:#4ade80}.ibar-h.y{background:#fbbf24}.ibar-h.o{background:#f97316}
+.bh{display:flex;align-items:center;gap:8px;padding:9px 16px 7px;background:#f9fafb;border-bottom:1px solid var(--border)}
+.bstripe{width:3px;height:14px;border-radius:1.5px}
+.blabel{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.bh.aufw .bstripe{background:var(--accent)}.bh.aufw .blabel{color:var(--accent)}
+.bh.haupt .bstripe{background:var(--dark)}.bh.haupt .blabel{color:var(--dark)}
+.bh.cool .bstripe{background:var(--cool)}.bh.cool .blabel{color:var(--cool)}
+.bh.hint .bstripe{background:#7c3aed}.bh.hint .blabel{color:#7c3aed}
+.info-txt{padding:10px 16px 12px;font-size:12px;line-height:1.6;white-space:pre-line}
+.info-txt.aufw{color:#7c2d12;background:#fff8f5}
+.info-txt.cool{color:#14532d;background:var(--cool-bg)}
+.info-txt.hint{color:#4c1d95;background:#f5f3ff}
+.col-hdr{display:grid;grid-template-columns:1fr 42px 56px 50px;gap:0;padding:5px 16px;background:#f9fafb;border-bottom:1px solid var(--border)}
+.col-th{font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;text-align:center}
+.col-th:first-child{text-align:left}
+.urow{display:grid;grid-template-columns:1fr 42px 56px 50px;gap:0;padding:9px 16px;border-bottom:1px solid #f5f5f5;align-items:center}
+.urow:last-child{border-bottom:none}
+.uname{font-size:12px;font-weight:500;color:var(--dark);line-height:1.3}
+.uinfo{font-size:10px;color:var(--muted);margin-top:1px}
+.usxw{font-size:11px;font-weight:600;color:#6b7280;text-align:center}
+.usoll{font-size:11px;color:var(--muted);text-align:center}
+.ist-num{width:44px;padding:5px 2px;background:#fef9c3;border:1.5px solid #f59e0b;border-radius:6px;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#92400e;text-align:center;display:block;margin:0 auto}
+.ist-num::placeholder{color:#d97706;font-size:9px}
+.ist-num:focus{outline:none;border-color:#d97706}
+.ist-free{width:44px;padding:5px 2px;background:#f9fafb;border:1.5px dashed var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:10px;color:var(--text);text-align:center;display:block;margin:0 auto}
+.ist-free::placeholder{color:var(--muted);font-size:9px}
+.ist-free:focus{outline:none;border-color:var(--dark)}
+.prog-bar{height:4px;background:#f1f1f1;margin:0 16px;border-radius:2px;overflow:hidden}
+.prog-inner{height:100%;background:var(--accent);border-radius:2px;width:45%}
+.prog-row{display:flex;justify-content:space-between;align-items:center;padding:7px 16px 10px}
+.prog-txt{font-family:'Syne',sans-serif;font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.prog-pct{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--accent)}
+.save-btn{width:calc(100% - 32px);margin:0 16px 16px;padding:13px;background:var(--dark);color:#fff;border:none;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="logo">My<em>Badminton</em>Plan</div>
+    <div class="date-pill">Fr · 15. Mai</div>
+  </div>
+  <nav class="nav">
+    <button class="nb a">Training</button>
+    <button class="nb">Woche</button>
+    <button class="nb">Plan</button>
+    <button class="nb">Archiv</button>
+    <button class="nb">Stats</button>
+  </nav>
+</div>
+<div class="content">
+  <div class="card">
+    <div class="card-hdr">
+      <div>
+        <div class="card-kw">KW 20 · Heute</div>
+        <div class="card-title">GYM –<br>Skill-orientiert</div>
+        <div class="card-meta">85 Min · GYM · Mäßig (6)</div>
+      </div>
+      <div class="ibar-col">
+        <div class="ibar-h" style="width:40px"></div><div class="ibar-h" style="width:36px"></div>
+        <div class="ibar-h o" style="width:32px"></div><div class="ibar-h o" style="width:28px"></div>
+        <div class="ibar-h y" style="width:24px"></div><div class="ibar-h y" style="width:20px"></div>
+        <div class="ibar-h g" style="width:16px"></div><div class="ibar-h g" style="width:12px"></div>
+        <div class="ibar-h g" style="width:8px"></div><div class="ibar-h g" style="width:5px"></div>
+      </div>
+    </div>
+    <div class="bh aufw"><div class="bstripe"></div><div class="blabel">Aufwärmen</div></div>
+    <div class="info-txt aufw">Ergometer 8–10 Min · Z2 (105–120 bpm)
+Dynamische Mobilisation 3–5 Min</div>
+    <div class="bh haupt"><div class="bstripe"></div><div class="blabel">Block A – Unterkörper</div></div>
+    <div class="col-hdr"><div class="col-th">Übung</div><div class="col-th">S×W</div><div class="col-th">SOLL</div><div class="col-th">IST</div></div>
+    <div class="urow"><div><div class="uname">Reverse Lunge</div><div class="uinfo">kontrolliert absenken</div></div><div class="usxw">3×8/8</div><div class="usoll">22 kg</div><div><input class="ist-num" type="number" placeholder="IST"></div></div>
+    <div class="urow"><div><div class="uname">Beinpresse EGYM</div><div class="uinfo">nicht ans Limit</div></div><div class="usxw">3×8</div><div class="usoll">80 kg</div><div><input class="ist-num" type="number" placeholder="IST"></div></div>
+    <div class="urow"><div><div class="uname">Dead Bug</div><div class="uinfo">Becken stabil</div></div><div class="usxw">3×8/8</div><div class="usoll">–</div><div><input class="ist-free" type="text" placeholder="frei"></div></div>
+    <div class="bh haupt"><div class="bstripe"></div><div class="blabel">Block B – Oberkörper</div></div>
+    <div class="col-hdr"><div class="col-th">Übung</div><div class="col-th">S×W</div><div class="col-th">SOLL</div><div class="col-th">IST</div></div>
+    <div class="urow"><div><div class="uname">Latzug</div><div class="uinfo">Schulterblatt aktiv</div></div><div class="usxw">3×8</div><div class="usoll">75 kg</div><div><input class="ist-num" type="number" placeholder="IST"></div></div>
+    <div class="urow"><div><div class="uname">Face Pulls</div><div class="uinfo">Pause hinten · Schulter</div></div><div class="usxw">3×15</div><div class="usoll">27 kg</div><div><input class="ist-num" type="number" placeholder="IST"></div></div>
+    <div class="urow"><div><div class="uname">Farmer Carry</div><div class="uinfo">aufrechte Haltung · je Hand</div></div><div class="usxw">3×30m</div><div class="usoll">32 kg</div><div><input class="ist-num" type="number" placeholder="IST"></div></div>
+    <div class="prog-bar"><div class="prog-inner"></div></div>
+    <div class="prog-row"><div class="prog-txt">Abschluss</div><div class="prog-pct">45%</div></div>
+    <div class="bh cool"><div class="bstripe"></div><div class="blabel">Cool-Down</div></div>
+    <div class="info-txt cool">Rad locker 6–8 Min · Puls &lt;100 bpm · Dehnen: Hüfte, Schulter</div>
+    <div class="bh hint"><div class="bstripe"></div><div class="blabel">Ernährung</div></div>
+    <div class="info-txt hint">Vor: Leichte KH + Protein · 1–2h vorher
+Nach: Proteinreich, gemüsereich · keine schnellen KH abends</div>
+    <button class="save-btn">✓ Training abschliessen</button>
+  </div>
+</div>
+</body></html>

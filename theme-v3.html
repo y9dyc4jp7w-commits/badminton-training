@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MyBadmintonPlan">
+<meta name="theme-color" content="#0d0d0d">
+<title>MyBadmintonPlan – V3 Neon Minimal</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0d;--s1:#141414;--s2:#1a1a1a;--s3:#222;--accent:#e8ff47;--gym:#e8690a;--bad:#3b82f6;--cool:#4ade80;--muted:#444;--text:#ccc;--white:#fff;--radius:12px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Space Grotesk',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;font-size:14px}
+.hdr{padding:14px 16px 10px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--s2)}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-icon{width:28px;height:28px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.logo-text{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;color:var(--white);letter-spacing:.5px}
+.logo-text em{color:var(--accent);font-style:normal}
+.hdr-date{font-size:11px;color:var(--muted)}
+.nav{display:flex;background:var(--bg);padding:6px 8px;gap:4px;border-bottom:1px solid var(--s2)}
+.nb{flex:1;padding:8px 2px;background:none;border:none;border-radius:8px;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;cursor:pointer}
+.nb.a{background:var(--s1);color:var(--accent)}
+.content{padding:12px;padding-bottom:48px}
+.day-strip{display:flex;gap:4px;margin-bottom:14px}
+.day-cell{flex:1;background:var(--s1);border-radius:8px;padding:6px 3px;text-align:center;border:1px solid var(--s2);cursor:pointer}
+.day-cell.sel{background:var(--accent);border-color:var(--accent)}
+.day-cell.sel .dc-wd,.day-cell.sel .dc-d{color:var(--bg)}
+.dc-wd{font-size:8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.dc-d{font-size:14px;font-weight:700;color:#666;line-height:1.1;margin-top:1px}
+.dc-dot{width:4px;height:4px;border-radius:50%;background:var(--s3);margin:3px auto 0}
+.day-cell.gym .dc-dot{background:var(--gym)}
+.day-cell.bad .dc-dot{background:var(--bad)}
+.day-cell.done .dc-dot{background:var(--cool)}
+.main-card{background:var(--s1);border-radius:var(--radius);overflow:hidden;border:1px solid var(--s2)}
+.mhdr{padding:14px 16px;border-bottom:1px solid var(--s2);display:flex;align-items:flex-start;justify-content:space-between}
+.mkw{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
+.mtitle{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--white);letter-spacing:.3px;line-height:1}
+.mbadge{display:inline-flex;align-items:center;gap:4px;margin-top:5px;background:var(--s2);border:1px solid var(--s3);border-radius:5px;padding:3px 8px;font-size:9px;font-weight:600;color:var(--gym);letter-spacing:1px;text-transform:uppercase}
+.mbadge-dot{width:5px;height:5px;border-radius:50%;background:var(--gym)}
+.ibar-group{display:flex;gap:2px;align-items:flex-end}
+.ib{width:5px;border-radius:2px;background:var(--s2)}
+.ib.g{background:#4ade80}.ib.y{background:#fbbf24}.ib.o{background:#f97316}
+.section-hdr{display:flex;align-items:center;gap:6px;padding:8px 16px;background:#111}
+.sec-stripe{width:2px;height:12px;border-radius:1px;background:var(--accent)}
+.sec-txt{font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px}
+.urow{display:flex;align-items:center;padding:10px 16px;gap:8px;border-bottom:1px solid #191919}
+.urow:last-child{border-bottom:none}
+.unum{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--s3);min-width:20px;line-height:1}
+.uinfo{flex:1}
+.uname{font-size:12px;font-weight:500;color:var(--text);line-height:1.2}
+.udetail{font-size:9px;color:var(--muted);margin-top:2px}
+.usxw{font-size:11px;font-weight:600;color:var(--muted);min-width:36px;text-align:center}
+.ist-num{width:46px;padding:5px 2px;background:rgba(232,255,71,.06);border:1px solid rgba(232,255,71,.18);border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;color:var(--accent);text-align:center}
+.ist-num::placeholder{color:rgba(232,255,71,.2);font-size:9px}
+.ist-num:focus{outline:none;border-color:rgba(232,255,71,.4)}
+.ist-free{width:46px;padding:5px 2px;background:var(--s1);border:1px dashed var(--s3);border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:10px;color:var(--muted);text-align:center}
+.ist-free::placeholder{color:var(--s3);font-size:9px}
+.ist-free:focus{outline:none;border-color:var(--muted)}
+.footer{padding:12px 16px 14px;border-top:1px solid var(--s2)}
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.prog-label{font-size:9px;color:var(--muted);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;min-width:65px}
+.prog-track{flex:1;height:2px;background:var(--s2);border-radius:1px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:1px;width:45%}
+.prog-pct{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--accent);min-width:42px;text-align:right;line-height:1}
+.info-section{padding:10px 16px 12px;font-size:11px;line-height:1.6;border-top:1px solid var(--s2);white-space:pre-line}
+.info-section.cool{color:rgba(74,222,128,.65)}
+.info-section.hint{color:rgba(167,139,250,.65)}
+.save-btn{width:100%;padding:13px;background:transparent;color:var(--accent);border:1px solid rgba(232,255,71,.3);border-radius:9px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="logo">
+    <div class="logo-icon">🏸</div>
+    <div class="logo-text">My<em>Badminton</em>Plan</div>
+  </div>
+  <div class="hdr-date">Fr. 15. Mai 2026</div>
+</div>
+<nav class="nav">
+  <button class="nb a">Training</button>
+  <button class="nb">Woche</button>
+  <button class="nb">Plan</button>
+  <button class="nb">Archiv</button>
+  <button class="nb">Stats</button>
+</nav>
+<div class="content">
+  <div class="day-strip">
+    <div class="day-cell done gym"><div class="dc-wd">Mo</div><div class="dc-d">11</div><div class="dc-dot"></div></div>
+    <div class="day-cell done bad"><div class="dc-wd">Di</div><div class="dc-d">12</div><div class="dc-dot"></div></div>
+    <div class="day-cell done bad"><div class="dc-wd">Mi</div><div class="dc-d">13</div><div class="dc-dot"></div></div>
+    <div class="day-cell done gym"><div class="dc-wd">Do</div><div class="dc-d">14</div><div class="dc-dot"></div></div>
+    <div class="day-cell sel bad"><div class="dc-wd">Fr</div><div class="dc-d">15</div><div class="dc-dot" style="background:#0d0d0d"></div></div>
+    <div class="day-cell"><div class="dc-wd">Sa</div><div class="dc-d">16</div><div class="dc-dot"></div></div>
+    <div class="day-cell gym"><div class="dc-wd">So</div><div class="dc-d">17</div><div class="dc-dot"></div></div>
+  </div>
+  <div class="main-card">
+    <div class="mhdr">
+      <div>
+        <div class="mkw">KW 20 · Heute</div>
+        <div class="mtitle">GYM –<br>Skill-orientiert</div>
+        <div class="mbadge"><span class="mbadge-dot"></span>GYM · 85 Min</div>
+      </div>
+      <div class="ibar-group">
+        <div class="ib g" style="height:10px"></div><div class="ib g" style="height:14px"></div>
+        <div class="ib y" style="height:18px"></div><div class="ib y" style="height:22px"></div>
+        <div class="ib o" style="height:26px"></div><div class="ib o" style="height:30px"></div>
+        <div class="ib" style="height:27px"></div><div class="ib" style="height:23px"></div>
+        <div class="ib" style="height:19px"></div><div class="ib" style="height:15px"></div>
+      </div>
+    </div>
+    <div class="section-hdr"><div class="sec-stripe"></div><div class="sec-txt">Unterkörper</div></div>
+    <div class="urow"><div class="unum">01</div><div class="uinfo"><div class="uname">Reverse Lunge</div><div class="udetail">kontrolliert absenken · 22 kg</div></div><div class="usxw">3×8/8</div><input class="ist-num" type="number" placeholder="IST"></div>
+    <div class="urow"><div class="unum">02</div><div class="uinfo"><div class="uname">Beinpresse EGYM</div><div class="udetail">nicht ans Limit · 80 kg</div></div><div class="usxw">3×8</div><input class="ist-num" type="number" placeholder="IST"></div>
+    <div class="urow"><div class="unum">03</div><div class="uinfo"><div class="uname">Dead Bug</div><div class="udetail">Becken stabil</div></div><div class="usxw">3×8/8</div><input class="ist-free" type="text" placeholder="frei"></div>
+    <div class="section-hdr"><div class="sec-stripe"></div><div class="sec-txt">Oberkörper</div></div>
+    <div class="urow"><div class="unum">04</div><div class="uinfo"><div class="uname">Latzug</div><div class="udetail">Schulterblatt aktiv · 75 kg</div></div><div class="usxw">3×8</div><input class="ist-num" type="number" placeholder="IST"></div>
+    <div class="urow"><div class="unum">05</div><div class="uinfo"><div class="uname">Face Pulls</div><div class="udetail">Pause hinten · Schulter · 27 kg</div></div><div class="usxw">3×15</div><input class="ist-num" type="number" placeholder="IST"></div>
+    <div class="urow"><div class="unum">06</div><div class="uinfo"><div class="uname">Farmer Carry</div><div class="udetail">aufrechte Haltung · je Hand · 32 kg</div></div><div class="usxw">3×30m</div><input class="ist-num" type="number" placeholder="IST"></div>
+    <div class="info-section cool">Cool-Down: Rad locker 6–8 Min · Puls &lt;100 bpm
+Dehnen: Hüfte, Schulter, BWS</div>
+    <div class="info-section hint">Ernährung: Vor: Leichte KH + Protein
+Nach: Proteinreich · keine schnellen KH abends</div>
+    <div class="footer">
+      <div class="prog-row">
+        <div class="prog-label">Abschluss</div>
+        <div class="prog-track"><div class="prog-fill"></div></div>
+        <div class="prog-pct">45%</div>
+      </div>
+      <button class="save-btn">✓ Abschliessen & Speichern</button>
+    </div>
+  </div>
+</div>
+</body></html>
